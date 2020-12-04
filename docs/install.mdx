@@ -1,0 +1,109 @@
+---
+id: install
+title: Install
+---
+
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+import CodeBlock from '@theme/CodeBlock';
+
+export const commands = {
+    downloadMac: `
+$ cd ~/development
+$ curl -O https://s3.amazonaws.com/dropsource-monarch/dist/beta/macos/monarch_macos_0.2.0.zip
+$ unzip monarch_macos_0.2.0.zip
+    `,
+    downloadWindows:`
+cd development
+curl -O https://s3.amazonaws.com/dropsource-monarch/dist/beta/windows/monarch_windows_0.2.1.zip
+tar -x -f monarch_windows_0.2.1.zip
+    `,
+    pathMac: '$ export PATH="$PATH:`pwd`/monarch/bin"',
+    pathWindows: 'set PATH=%PATH%;C:\\path\\to\\monarch\\bin'
+}
+
+### Add dependencies
+1. Add `monarch` and `build_runner` to your project dev_dependencies:
+```yaml
+dev_dependencies:
+  monarch: ^0.0.32
+  build_runner: ^1.10.3
+```
+
+2. Run `flutter pub get` on your project.
+
+3. Create a build.yaml file at the top level of your project and add the 
+following:
+```yaml
+targets:
+  $default:
+    sources:
+      - $package$
+      - lib/**
+      - stories/**
+```
+
+### Download the Monarch binaries
+Download the Monarch binaries, which include the Monarch CLI and desktop app. 
+Download them into your directory of choice using `curl`, for example:
+
+<Tabs
+  groupId="operating-systems"
+  defaultValue="mac"
+  values={[
+    {label: 'macOS', value: 'mac'},
+    {label: 'Windows', value: 'win'},
+  ]
+}>
+    <TabItem value="mac">
+        <CodeBlock language="bash">{commands.downloadMac}</CodeBlock>
+    </TabItem>
+    <TabItem value="win">
+        <CodeBlock language="bash">{commands.downloadWindows}</CodeBlock>
+    </TabItem>
+</Tabs>
+
+
+Add the monarch binaries to your path:
+
+<Tabs
+  groupId="operating-systems"
+  defaultValue="mac"
+  values={[
+    {label: 'macOS', value: 'mac'},
+    {label: 'Windows', value: 'win'},
+  ]
+}>
+    <TabItem value="mac">
+        <CodeBlock language="bash">{commands.pathMac}</CodeBlock>
+    </TabItem>
+    <TabItem value="win">
+        <CodeBlock language="bash">{commands.pathWindows}</CodeBlock>
+    </TabItem>
+</Tabs>
+
+
+This command sets your PATH variable for the current terminal window only. To permanently add Monarch to your path, see [Update your path](#update-your-path).
+
+### Update your path
+Follow these instructions to update your path variable permanently, which will let you run `monarch` from any terminal window.
+
+In macOS:
+1. Open your `rc` file, which may be ~/.bash_profile, ~/.bashrc or ~/.zshrc.
+2. Add the following line and change [PATH_TO_MONARCH] to be the path where you unzipped Monarch:
+```shell
+export PATH="$PATH:[PATH_TO_MONARCH]/monarch/bin"
+```
+3. Run `source ~/.<rc file>` to refresh the current window, or open a new terminal window to automatically source the file.
+4. Verify that the monarch/bin directory is now in your PATH by running:
+```shell
+$ echo $PATH
+```
+5. Verify that the monarch command is available by running:
+```
+$ monarch --version
+```
+
+In Windows:
+1. From the Start search bar, enter ‘env’ and select Edit environment variables for your account.
+2. Under User variables, look for an entry called Path, then append the full path of monarch\bin using ; as a separator from existing values.

@@ -2,6 +2,7 @@ import React from 'react';
 import clsx from 'clsx';
 import Layout from '@theme/Layout';
 import CodeBlock from '@theme/CodeBlock';
+import { useThemeConfig } from '@docusaurus/theme-common';
 import Link from '@docusaurus/Link';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import useBaseUrl from '@docusaurus/useBaseUrl';
@@ -20,66 +21,45 @@ import 'package:flutter/material.dart';
 import 'package:my_fancy_app/button.dart';
 
 Widget primary() => Button(
-  'Button', style: ButtonStyles.primary);
+  'Button', style: MyStyles.primary);
 
 Widget secondary() => Button(
-  'Button', style: ButtonStyles.secondary);
+  'Button', style: MyStyles.secondary);
 
 Widget disabled() => Button(
-  'Button', style: ButtonStyles.disabled);  
+  'Button', style: MyStyles.disabled);  
   `,
   browse: `
-You can render your stories using the Monarch desktop apps for macOS and 
-Windows. (Linux coming soon).
+You can see your widgets, via the stories your wrote, using the Monarch desktop 
+apps for macOS and Windows. (Linux coming soon).
+<br/><br/>
+Your widgets render in isolation. No need for a simulator, device or backend.
+  `,
+  develop: `
+Use the Monarch CLI to prepare your stories and launch the desktop app. The CLI 
+will also detect changes in your stories or widget files. See your stories 
+change automatically as you code.
+  `,
+  cliLog: `
+~/development/my_fancy_app $ monarch run
+
+Starting Monarch
+
+Preparing stories...
+Preparing stories completed, took 3.7sec
+
+Launching Monarch app...
+Launching Monarch app completed, took 1.4sec
+
+Monarch is ready to use
+
+Setting up stories watch...
+2.1sec elapsed, 0/2 tasks completed
+Setting up stories watch completed, took 4.1sec
+
+Reloading stories...
+Reloading stories completed, took 3.1sec
   `
-}
-
-const features = [
-  {
-    title: 'Easy to Use Foo!',
-    imageUrl: 'img/undraw_docusaurus_mountain.svg',
-    description: (
-      <>
-        Docusaurus was designed from the ground up to be easily installed and
-        used to get your website up and running quickly.
-      </>
-    ),
-  },
-  {
-    title: 'Focus on What Matters',
-    imageUrl: 'img/undraw_docusaurus_tree.svg',
-    description: (
-      <>
-        Docusaurus lets you focus on your docs, and we&apos;ll do the chores. Go
-        ahead and move your docs into the <code>docs</code> directory.
-      </>
-    ),
-  },
-  {
-    title: 'Powered by React',
-    imageUrl: 'img/undraw_docusaurus_react.svg',
-    description: (
-      <>
-        Extend or customize your website layout by reusing React. Docusaurus can
-        be extended while reusing the same header and footer.
-      </>
-    ),
-  },
-];
-
-function FeatureOg({ imageUrl, title, description }) {
-  const imgUrl = useBaseUrl(imageUrl);
-  return (
-    <div className={clsx('col col--4', styles.feature)}>
-      {imgUrl && (
-        <div className="text--center">
-          <img className={styles.featureImage} src={imgUrl} alt={title} />
-        </div>
-      )}
-      <h3>{title}</h3>
-      <p>{description}</p>
-    </div>
-  );
 }
 
 function FeatureRow({ imageUrl, title, description }) {
@@ -115,17 +95,65 @@ function FeatureRowTwoColumns({ columnOne, columnTwo }) {
 }
 
 function WriteStories() {
+  const { prism } = useThemeConfig();
+  prism.defaultLanguage = 'dart';
   return (
-    <FeatureRowTwoColumns
-      columnOne={
-        <>
-          <h3>Write stories for your widgets</h3>
-          <p dangerouslySetInnerHTML={{ __html: textContent.write }} />
-        </>
-      }
-      columnTwo={
-        <CodeBlock language="javascript">{textContent.storiesCodeExample}</CodeBlock>
-      } />
+    <div className="dartCode">
+      <FeatureRowTwoColumns
+        columnOne={
+          <>
+            <h3>Write stories for your widgets</h3>
+            <p dangerouslySetInnerHTML={{ __html: textContent.write }} />
+          </>
+        }
+        columnTwo={
+          <div style={{ paddingBottom: 40 }}>
+            <CodeBlock language="dart">{textContent.storiesCodeExample}</CodeBlock>
+          </div>
+        } />
+    </div>
+  );
+}
+
+function SeeWidgets() {
+  return (
+    <div className="seeWidgets">
+      <FeatureRowTwoColumns
+        columnOne={
+          <>
+            <h3>See your widgets in isolation</h3>
+            <p dangerouslySetInnerHTML={{ __html: textContent.browse }} />
+          </>
+        }
+        columnTwo={
+          <div style={{ paddingBottom: 40 }}>
+            <img alt="" src={useBaseUrl('img/button_primary.png')} />
+            <img alt="" src={useBaseUrl('img/button_secondary.png')} />
+            <img alt="" src={useBaseUrl('img/button_disabled.png')} />
+          </div>
+        } />
+    </div>
+  );
+}
+
+function DevelopWidgets() {
+  const { prism } = useThemeConfig();
+  prism.defaultLanguage = 'bash';
+  return (
+    <div className="cliLog">
+      <FeatureRowTwoColumns
+        columnOne={
+          <>
+            <h3>Interactively develop widgets</h3>
+            <p dangerouslySetInnerHTML={{ __html: textContent.develop }} />
+          </>
+        }
+        columnTwo={
+          <div style={{ paddingBottom: 40 }}>
+            <CodeBlock language="bash">{textContent.cliLog}</CodeBlock>
+          </div>
+        } />
+    </div>
   );
 }
 
@@ -146,24 +174,20 @@ function Home() {
                 'button button--outline button--secondary button--lg',
                 styles.getStarted,
               )}
-              to={useBaseUrl('docs/')}>
+              to={useBaseUrl('docs/install/')}>
               Get Started
             </Link>
           </div>
         </div>
       </header>
       <main>
-        {features && features.length > 0 && (
-          <section className={styles.features}>
-            <div className="container">
-              <WriteStories />
-              {features.map((props, idx) => (
-                <FeatureRow key={idx} {...props} />
-              ))}
-
-            </div>
-          </section>
-        )}
+        <section className={styles.features}>
+          <div className="container">
+            <WriteStories />
+            <SeeWidgets />
+            <DevelopWidgets />
+          </div>
+        </section>
       </main>
     </Layout>
   );

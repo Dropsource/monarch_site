@@ -1,6 +1,6 @@
 module.exports = {
-  title: 'Monarch',
-  tagline: 'Build high-quality Flutter widgets faster.',
+  title: 'Build high-quality Flutter widgets faster',
+  tagline: 'Monarch is a tool for developing Flutter widgets in isolation. It makes building beautiful widgets a more pleasant and faster experience.',
   url: 'https://your-docusaurus-test-site.com',
   baseUrl: '/',
   onBrokenLinks: 'throw',
@@ -10,21 +10,24 @@ module.exports = {
   projectName: 'docusaurus', // Usually your repo name.
   themeConfig: {
     navbar: {
-      title: 'My Site',
+      title: 'Monarch',
       logo: {
-        alt: 'My Site Logo',
-        src: 'img/logo.svg',
+        alt: 'Monarch Logo',
+        src: 'img/logo_stock.jpg',
       },
       items: [
         {
-          to: 'docs/',
+          to: 'docs/install',
           activeBasePath: 'docs',
           label: 'Docs',
-          position: 'left',
+          position: 'right',
         },
-        {to: 'blog', label: 'Blog', position: 'left'},
         {
-          href: 'https://github.com/facebook/docusaurus',
+          to: 'blog',
+          label: 'Releases', 
+          position: 'right'},
+        {
+          href: 'https://github.com/Dropsource/monarch',
           label: 'GitHub',
           position: 'right',
         },
@@ -32,34 +35,25 @@ module.exports = {
     },
     footer: {
       style: 'dark',
+      logo: {
+        alt: 'Monarch Logo',
+        src: 'img/logo_stock.jpg',
+      },
       links: [
         {
           title: 'Docs',
           items: [
             {
-              label: 'Style Guide',
-              to: 'docs/',
+              label: 'Get Started',
+              to: 'docs/install',
             },
             {
-              label: 'Second Doc',
-              to: 'docs/doc2/',
-            },
-          ],
-        },
-        {
-          title: 'Community',
-          items: [
-            {
-              label: 'Stack Overflow',
-              href: 'https://stackoverflow.com/questions/tagged/docusaurus',
+              label: 'Advanced Usage',
+              to: 'docs/themes',
             },
             {
-              label: 'Discord',
-              href: 'https://discordapp.com/invite/docusaurus',
-            },
-            {
-              label: 'Twitter',
-              href: 'https://twitter.com/docusaurus',
+              label: 'Reference',
+              to: 'docs/cli-commands',
             },
           ],
         },
@@ -67,22 +61,39 @@ module.exports = {
           title: 'More',
           items: [
             {
-              label: 'Blog',
+              label: 'Releases',
               to: 'blog',
             },
             {
               label: 'GitHub',
-              href: 'https://github.com/facebook/docusaurus',
+              href: 'https://github.com/Dropsource/monarch',
             },
+            {
+              label: 'Dropsource',
+              href: 'https://dropsource.com',
+            }
           ],
         },
+        // {
+        //   title: 'More',
+        //   items: [
+        //     {
+        //       label: 'Releases',
+        //       to: 'blog',
+        //     },
+        //     {
+        //       label: 'GitHub',
+        //       href: 'https://github.com/facebook/docusaurus',
+        //     },
+        //   ],
+        // },
       ],
-      copyright: `Copyright © ${new Date().getFullYear()} My Project, Inc. Built with Docusaurus.`,
+      copyright: `Copyright © ${new Date().getFullYear()} Dropsource, Inc.`,
     },
     prism: {
       theme: require('prism-react-renderer/themes/vsDark'),
       defaultLanguage: 'dart',
-      additionalLanguages: ['java', 'kotlin', 'objectivec', 'swift', 'dart', 'bash'],
+      additionalLanguages: ['dart', 'bash'],
     }
   },
   presets: [
@@ -91,15 +102,9 @@ module.exports = {
       {
         docs: {
           sidebarPath: require.resolve('./sidebars.js'),
-          // Please change this to your repo.
-          editUrl:
-            'https://github.com/facebook/docusaurus/edit/master/website/',
         },
         blog: {
-          showReadingTime: true,
-          // Please change this to your repo.
-          editUrl:
-            'https://github.com/facebook/docusaurus/edit/master/website/blog/',
+          showReadingTime: false,
         },
         theme: {
           customCss: require.resolve('./src/css/custom.css'),
