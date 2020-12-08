@@ -36,3 +36,7 @@
   font-size: 30px;
   padding-bottom: 6px;
 }
+
+[class^="docMainContainer"] .prism-code {
+  font-size: 90%;
+}

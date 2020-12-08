@@ -12,11 +12,11 @@ import clsx from 'clsx';
 export const commands = {
     extractMac: `
 $ cd ~/development
-$ unzip monarch_macos_0.2.0.zip
+$ unzip monarch_macos_0.2.3.zip
     `,
     extractWindows:`
 cd development
-tar -x -f monarch_windows_0.2.1.zip
+tar -x -f monarch_windows_0.2.3.zip
     `,
     pathMac: '$ export PATH="$PATH:`pwd`/monarch/bin"',
     pathWindows: 'set PATH=%PATH%;C:\\path\\to\\monarch\\bin'
@@ -90,3 +90,30 @@ permanently add Monarch to your path, see [Update your path](#update-your-path).
 ### Update your path
 Follow these instructions to update your path variable permanently, which will 
 let you run `monarch` from any terminal window.
+
+<Tabs
+  groupId="operating-systems"
+  defaultValue="mac"
+  values={[
+    {label: 'macOS', value: 'mac'},
+    {label: 'Windows', value: 'win'},
+  ]
+}>
+  <TabItem value="mac">
+    <ol start="1"><li>Open your <code>rc</code> file, which may be ~/.bash_profile, ~/.bashrc or ~/.zshrc.</li></ol>
+    <ol start="2"><li>Add the following line and change [PATH_TO_MONARCH] to be the path where you unzipped Monarch:</li></ol>
+    <CodeBlock language="bash">export PATH="$PATH:[PATH_TO_MONARCH]/monarch/bin"</CodeBlock>
+    <br/>
+    <ol start="3"><li>Run <code>source ~/. rc file</code> to refresh the current window, or open a new terminal window to automatically source the file.</li></ol>
+    <ol start="4"><li>Verify that the monarch/bin directory is now in your PATH by running:</li></ol>
+    <CodeBlock language="bash">$ echo $PATH</CodeBlock>
+    <br/>
+    <ol start="5"><li>Verify that the monarch command is available by running:</li></ol>
+    <CodeBlock language="bash">$ monarch --version</CodeBlock>
+    <br/>
+  </TabItem>
+  <TabItem value="win">
+    <ol start="1"><li>From the Start search bar, enter ‘env’ and select Edit environment variables for your account.</li></ol>
+    <ol start="2"><li>Under User variables, look for an entry called Path, then append the full path of <code>monarch\bin</code> using <code>;</code> as a separator from existing values.</li></ol>
+  </TabItem>
+</Tabs>
