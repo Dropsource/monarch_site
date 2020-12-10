@@ -22,27 +22,6 @@ tar -x -f monarch_windows_0.2.3.zip
     pathWindows: 'set PATH=%PATH%;C:\\path\\to\\monarch\\bin'
 }
 
-### Add dependencies
-1. Add `monarch` and `build_runner` to your project dev_dependencies:
-```yaml
-dev_dependencies:
-  monarch: ^0.0.32
-  build_runner: ^1.10.3
-```
-
-2. Run `flutter pub get` on your project.
-
-3. Create a build.yaml file at the top level of your project and add the 
-following:
-```yaml
-targets:
-  $default:
-    sources:
-      - $package$
-      - lib/**
-      - stories/**
-```
-
 ### Download the Monarch binaries
 <Tabs
   groupId="operating-systems"
@@ -86,6 +65,24 @@ binaries, which include the Monarch CLI and desktop app. </li></ol>
 
 This command sets your PATH variable for the current terminal window only. To 
 permanently add Monarch to your path, see [Update your path](#update-your-path).
+
+### Run Monarch
+1. Go to one of your Flutter projects and then run `monarch init`. Run it inside 
+your existing project’s root directory:
+```bash
+$ monarch init
+```
+The `monarch init` command will set up all the dependencies needed to run monarch. 
+It will also create a few sample stories in your project.
+
+2. Run monarch using `monarch run`
+```bash
+$ monarch run
+```
+The `monarch run` command will prepare the stories in your project so they can
+be rendered by the Monarch desktop app. The `monarch run` command will launch
+the Monarch app so you can see your stories. 
+
 
 ### Update your path
 Follow these instructions to update your path variable permanently, which will 
