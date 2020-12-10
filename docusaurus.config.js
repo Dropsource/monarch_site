@@ -1,6 +1,6 @@
 module.exports = {
   title: 'Build high-quality Flutter widgets faster',
-  tagline: 'Monarch is a tool for developing Flutter widgets in isolation. It makes building beautiful widgets a more pleasant and faster experience.',
+  tagline: 'Monarch is a tool for developing Flutter widgets in isolation. It makes building beautiful widgets a more pleasant and faster experience. It is inspired by Storybook.',
   url: 'https://your-docusaurus-test-site.com',
   baseUrl: '/',
   onBrokenLinks: 'throw',

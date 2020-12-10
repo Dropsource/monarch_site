@@ -2,3 +2,89 @@
 id: write-first-story
 title: Write your first story
 ---
+
+## What's a Story
+Monarch is inspired by [Storybook](https://storybook.js.org/). Conceptually, 
+Monarch stories are the same as Storybook stories.
+
+:::tip What's a Story
+A story captures the rendered state of a Flutter widget. Developers write 
+multiple stories per widget that describe all the “interesting” states 
+a widget can support.
+:::
+
+In code, a story is a function that returns a `Widget`. Stories should be 
+placed in dart files that end with `*_stories.dart`.
+
+The `monarch init` command created a `stories` directory in your project. You
+can place stories inside the `stories` directory or, if you prefer, you can place them 
+inside your `lib` directory. The only requirement is that story files should 
+end in `*_stories.dart`.
+
+Since stories are functions that return a `Widget`, your stories code
+doesn't need to import the `monarch` package. Also, since stories are 
+plain functions, they can be re-used from your widget tests.
+
+## Examples of stories
+
+### Sample stories
+The `monarch init` command created the file `stories\sample_stories.dart`. You 
+can open up that file to see how those stories are written. After you run 
+`monarch run` you should see those stories in the Monarch desktop app.
+
+You should see something like this:
+
+_add image_
+
+Feel free to edit those stories to see their visual state change.
+
+### Flutter SDK stories
+You can write stories for widgets in the Flutter SDK. This is a good way 
+to quickly prototype a view. Add the following code to `stories\sample_stories.dart`:
+
+```dart
+Widget foo() => Text('foo');
+Widget bar() => Icon(Icons.pets);
+Widget foobar() => Row(children: [foo(), bar()]);
+```
+
+Save those changes, you should see something like this:
+
+_add image_
+
+### Stories for your own widgets
+Let's say your project has a couple of widgets files. One is inside `lib`
+and one inside `lib\src`.
+
+```
+- my_project
+    - lib
+        - my_fancy_button.dart
+        - src
+            - my_fancy_card.dart
+```
+
+To write stories for those widgets, you just need to import them into a 
+`*_stories.dart` file, then you can write stories for those widgets.
+```dart
+// stories/my_stories.dart
+import 'package:my_project/my_fancy_button.dart';
+import 'package:my_project/src/my_fancy_card.dart';
+
+Widget someButton => MyFancyButton(...);
+Widget anotherButton => MyFancyButton(...);
+
+Widget someCard => MyFancyCard(...);
+Widget anotherCard => MyFancyCard(...);
+```
+
+After you run `monarch run` you should see those stories in the Monarch desktop 
+app.
+
+## gitignore .monarch directory
+`monarch run` will generate a `.monarch` directory in your project. You
+can gitignore that directory.
+```
+# in .gitignore
+.monarch/
+```
