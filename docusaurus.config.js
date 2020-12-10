@@ -10,10 +10,10 @@ module.exports = {
   projectName: 'docusaurus', // Usually your repo name.
   themeConfig: {
     navbar: {
-      title: 'Monarch',
+      title: '',
       logo: {
         alt: 'Monarch Logo',
-        src: 'img/logo_stock.jpg',
+        src: 'img/logo_monarch_black.png',
       },
       items: [
         {
@@ -37,7 +37,7 @@ module.exports = {
       style: 'dark',
       logo: {
         alt: 'Monarch Logo',
-        src: 'img/logo_stock.jpg',
+        src: 'img/logo_monarch_white.png',
       },
       links: [
         {
