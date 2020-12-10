@@ -14,6 +14,7 @@ module.exports = {
       logo: {
         alt: 'Monarch Logo',
         src: 'img/logo_monarch_black.png',
+        srcDark: 'img/logo_monarch_white.png'
       },
       items: [
         {
