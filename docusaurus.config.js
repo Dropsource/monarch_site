@@ -51,11 +51,7 @@ module.exports = {
             {
               label: 'Advanced Usage',
               to: 'docs/themes',
-            },
-            {
-              label: 'Reference',
-              to: 'docs/cli-commands',
-            },
+            }
           ],
         },
         {
