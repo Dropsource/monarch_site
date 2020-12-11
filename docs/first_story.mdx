@@ -7,6 +7,8 @@ import TabItem from '@theme/TabItem';
 
 import my_project_macos_sample_stories from './assets/my_project_macos_sample_stories.png';
 import my_project_windows_sample_stories from './assets/my_project_windows_sample_stories.png';
+import my_project_macos_flutter_sdk_stories from './assets/my_project_macos_flutter_sdk_stories.png';
+import my_project_windows_flutter_sdk_stories from './assets/my_project_windows_flutter_sdk_stories.png';
 
 ## What's a Story
 Monarch is inspired by [Storybook](https://storybook.js.org/). Conceptually, 
@@ -62,14 +64,28 @@ You can write stories for widgets in the Flutter SDK, which is a good way
 to quickly prototype a view. Add the following code to `stories\sample_stories.dart`:
 
 ```dart
-Widget foo() => Text('foo');
-Widget bar() => Icon(Icons.pets);
-Widget foobar() => Row(children: [foo(), bar()]);
+Widget foo() => Text('foo', style: TextStyle(fontSize: 50));
+Widget bar() => Icon(Icons.pets, size: 50);
+Widget foobar() => Center(child: Column(children: [foo(), bar()]));
 ```
 
 Save those changes, you should see something like this:
 
-_add image_
+<Tabs
+  groupId="operating-systems"
+  defaultValue="mac"
+  values={[
+    {label: 'macOS', value: 'mac'},
+    {label: 'Windows', value: 'win'},
+  ]
+}>
+  <TabItem value="mac">
+    <img alt="my_project macOS Flutter SDK stories" src={my_project_macos_flutter_sdk_stories}/>
+  </TabItem>
+  <TabItem value="win">
+    <img alt="my_project Windows Flutter SDK stories" src={my_project_windows_flutter_sdk_stories}/>
+  </TabItem>
+</Tabs>
 
 ### Stories for your own widgets
 Let's say your project has a couple of widgets files. One is inside `lib`
