@@ -2,6 +2,8 @@
 id: write-first-story
 title: Write your first story
 ---
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
 
 ## What's a Story
 Monarch is inspired by [Storybook](https://storybook.js.org/). Conceptually, 
@@ -29,17 +31,31 @@ plain functions, they can be re-used from your widget tests.
 
 ### Sample stories
 The `monarch init` command created the file `stories\sample_stories.dart`. You 
-can open up that file to see how those stories are written. After you run 
+can open that file to see how those stories are written. After you run 
 `monarch run` you should see those stories in the Monarch desktop app.
 
 You should see something like this:
 
-_add image_
+<Tabs
+  groupId="operating-systems"
+  defaultValue="mac"
+  values={[
+    {label: 'macOS', value: 'mac'},
+    {label: 'Windows', value: 'win'},
+  ]
+}>
+  <TabItem value="mac">
+    <img alt="my_project macOS sample stories" src="docs_images/my_project_macos_sample_stories.png"/>
+  </TabItem>
+  <TabItem value="win">
+    <img alt="my_project Windows sample stories" src="docs_images/my_project_windows_sample_stories.png"/>
+  </TabItem>
+</Tabs>
 
 Feel free to edit those stories to see their visual state change.
 
 ### Flutter SDK stories
-You can write stories for widgets in the Flutter SDK. This is a good way 
+You can write stories for widgets in the Flutter SDK, which is a good way 
 to quickly prototype a view. Add the following code to `stories\sample_stories.dart`:
 
 ```dart
