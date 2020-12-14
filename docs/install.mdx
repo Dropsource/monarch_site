@@ -9,15 +9,15 @@ import CodeBlock from '@theme/CodeBlock';
 import Link from '@docusaurus/Link';
 import clsx from 'clsx';
 
+import macosVersionInfo from './versions/macos_version_info.json';
+import windowsVersionInfo from './versions/windows_version_info.json';
+
 export const commands = {
-    extractMac: `
-$ cd ~/development
-$ unzip monarch_macos_0.2.3.zip
-    `,
-    extractWindows:`
-cd development
-tar -x -f monarch_windows_0.2.3.zip
-    `,
+    extractMac: `$ cd ~/development
+$ unzip ` + macosVersionInfo.installation_bundle_file
+    ,
+    extractWindows:`cd development
+tar -x -f ` + windowsVersionInfo.installation_bundle_file,
     pathMac: '$ export PATH="$PATH:`pwd`/monarch/bin"',
     pathWindows: 'set PATH=%PATH%;C:\\path\\to\\monarch\\bin'
 }
@@ -41,7 +41,7 @@ binaries, which include the Monarch CLI and desktop app. </li></ol>
     <div>
       <a 
         className={clsx('button button--outline button--primary button--lg')}
-        href='https://s3.amazonaws.com/dropsource-monarch/dist/beta/macos/monarch_macos_0.2.3.zip'>monarch_macos_0.2.3.zip</a>
+        href={macosVersionInfo.installation_bundle_url}>{macosVersionInfo.installation_bundle_file}</a>
     </div>
     <br/>
     <ol start="2"><li>Extract the file in the desired location, for example:</li></ol>
@@ -57,7 +57,7 @@ binaries, which include the Monarch CLI and desktop app. </li></ol>
     <div>
       <a 
         className={clsx('button button--outline button--primary button--lg')}
-        href='https://s3.amazonaws.com/dropsource-monarch/dist/beta/windows/monarch_windows_0.2.3.zip'>monarch_windows_0.2.3.zip</a>
+        href={windowsVersionInfo.installation_bundle_url}>{windowsVersionInfo.installation_bundle_file}</a>
     </div>
     <br/>
     <ol start="2"><li>Extract the file in the desired location, for example:</li></ol>
