@@ -30,7 +30,7 @@
   width: 100%;
 }
 
-.valuePropSectionAlt {
+[data-theme='light'] .valuePropSectionAlt {
   background-color: rgb(246, 249, 252);
 }
 
