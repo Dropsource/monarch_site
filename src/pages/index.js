@@ -1,79 +1,24 @@
 import React from 'react';
 import clsx from 'clsx';
 import Layout from '@theme/Layout';
-import CodeBlock from '@theme/CodeBlock';
-import { useThemeConfig } from '@docusaurus/theme-common';
 import Link from '@docusaurus/Link';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import useBaseUrl from '@docusaurus/useBaseUrl';
 import styles from './styles.module.css';
 
-const textContent = {
-  write: `
-A story captures the rendered visual state of a Flutter widget. You can write 
-multiple stories per widget to exercise and capture the most important states 
-a widget can support.
-<br/><br/>
-In code, a story is a function that returns a widget in a specific visual state.
-  `,
-  storiesCodeExample: `
-import 'package:flutter/material.dart';
-import 'package:my_fancy_app/button.dart';
 
-Widget primary() => Button(
-  'Button', style: MyStyles.primary);
-
-Widget secondary() => Button(
-  'Button', style: MyStyles.secondary);
-
-Widget disabled() => Button(
-  'Button', style: MyStyles.disabled);  
-  `,
-  browse: `
-You can see your widgets, via the stories your wrote, using the Monarch desktop 
-apps for macOS and Windows. (Linux coming soon).
-<br/><br/>
-Your widgets render in isolation. No need for a simulator, device or backend.
-  `,
-  develop: `
-Use the Monarch CLI to prepare your stories and launch the desktop app. The CLI 
-will also detect changes in your stories or widget files. See your stories 
-change automatically as you code.
-  `,
-  cliLog: `
-~/development/my_fancy_app $ monarch run
-
-Starting Monarch
-
-Preparing stories...
-Preparing stories completed, took 3.7sec
-
-Launching Monarch app...
-Launching Monarch app completed, took 1.4sec
-
-Monarch is ready to use
-
-Setting up stories watch...
-2.1sec elapsed, 0/2 tasks completed
-Setting up stories watch completed, took 4.1sec
-
-Reloading stories...
-Reloading stories completed, took 3.1sec
-  `
-}
-
-function FeatureRow({ imageUrl, title, description }) {
+function ValuePropTitle({ name, description, imageUrl }) {
   const imgUrl = useBaseUrl(imageUrl);
   return (
-    <div className="row">
-      <div className={clsx('col col--6', styles.feature)}>
-        <h3>{title}</h3>
+    <div className={clsx("row", styles.valuePropTitle)}>
+      <div className={clsx('col col--5')}>
+        <h1>{name}</h1>
         <p>{description}</p>
       </div>
-      <div className={clsx('col col--6', styles.feature)}>
+      <div className={clsx('col col--7')}>
         {imgUrl && (
           <div className="text--center">
-            <img className={styles.featureImage} src={imgUrl} alt={title} />
+            <img src={imgUrl} alt={name} />
           </div>
         )}
       </div>
@@ -81,81 +26,25 @@ function FeatureRow({ imageUrl, title, description }) {
   );
 }
 
-function FeatureRowTwoColumns({ columnOne, columnTwo }) {
+function ValuePropItem({ name, description, imageUrl }) {
+  const imgUrl = useBaseUrl(imageUrl);
   return (
-    <div className="row">
-      <div className={clsx('col col--6', styles.feature)}>
-        {columnOne}
+    <div className={clsx("row", styles.valuePropItem)}>
+      <div className={clsx('col col--4')} style={{ flex: '0 0 calc(4/12 *100%)', maxWidth: '0 0 calc(4/12 *100%)' }}>
+        {imgUrl && (
+          <div className="text--center">
+            <img src={imgUrl} alt={name} />
+          </div>
+        )}
       </div>
-      <div className={clsx('col col--6', styles.feature)}>
-        {columnTwo}
+      <div className={clsx('col col--8')} style={{ flex: '0 0 calc(8/12 *100%)', maxWidth: '0 0 calc(8/12 *100%)', paddingLeft: 0 }}>
+        <h3>{name}</h3>
+        <p>{description}</p>
       </div>
     </div>
   );
 }
 
-function WriteStories() {
-  const { prism } = useThemeConfig();
-  prism.defaultLanguage = 'dart';
-  return (
-    <div className="dartCode">
-      <FeatureRowTwoColumns
-        columnOne={
-          <>
-            <h3>Write stories for your widgets</h3>
-            <p dangerouslySetInnerHTML={{ __html: textContent.write }} />
-          </>
-        }
-        columnTwo={
-          <div style={{ paddingBottom: 40 }}>
-            <CodeBlock language="dart">{textContent.storiesCodeExample}</CodeBlock>
-          </div>
-        } />
-    </div>
-  );
-}
-
-function SeeWidgets() {
-  return (
-    <div className="seeWidgets">
-      <FeatureRowTwoColumns
-        columnOne={
-          <>
-            <h3>See your widgets in isolation</h3>
-            <p dangerouslySetInnerHTML={{ __html: textContent.browse }} />
-          </>
-        }
-        columnTwo={
-          <div style={{ paddingBottom: 40 }}>
-            <img alt="" src={useBaseUrl('img/button_primary.png')} />
-            <img alt="" src={useBaseUrl('img/button_secondary.png')} />
-            <img alt="" src={useBaseUrl('img/button_disabled.png')} />
-          </div>
-        } />
-    </div>
-  );
-}
-
-function DevelopWidgets() {
-  const { prism } = useThemeConfig();
-  prism.defaultLanguage = 'bash';
-  return (
-    <div className="cliLog">
-      <FeatureRowTwoColumns
-        columnOne={
-          <>
-            <h3>Interactively develop widgets</h3>
-            <p dangerouslySetInnerHTML={{ __html: textContent.develop }} />
-          </>
-        }
-        columnTwo={
-          <div style={{ paddingBottom: 40 }}>
-            <CodeBlock language="bash">{textContent.cliLog}</CodeBlock>
-          </div>
-        } />
-    </div>
-  );
-}
 
 function Home() {
   const context = useDocusaurusContext();
@@ -181,11 +70,64 @@ function Home() {
         </div>
       </header>
       <main>
-        <section className={styles.features}>
+        <section className={styles.valuePropSection}>
           <div className="container">
-            <WriteStories />
-            <SeeWidgets />
-            <DevelopWidgets />
+            <ValuePropTitle
+              name="Develop high-quality UIs"
+              description="Monarch provides a sandbox to build Flutter widgets in isolation (inspired by Storybook JS)."
+              imageUrl="img/480x320.png" />
+            <ValuePropItem
+              name="Build widgets in isolation"
+              description="Create widgets without worrying about data, screens, emulators, backends or business logic."
+              imageUrl="img/220x220.png" />
+            <ValuePropItem
+              name="Mock hard to reach use cases"
+              description="Render widgets in visual states that are difficult to reproduce."
+              imageUrl="img/220x220.png" />
+            <ValuePropItem
+              name="Compose your widgets into complex screens"
+              description="Monarch can render screens or pages just like any other widget."
+              imageUrl="img/220x220.png" />
+          </div>
+        </section>
+        <section className={clsx(styles.valuePropSection, styles.valuePropSectionAlt)}>
+          <div className="container">
+            <ValuePropTitle
+              name="Test with ease"
+              description="Monarch makes it very easy to test complex UIs."
+              imageUrl="img/480x320.png" />
+            <ValuePropItem
+              name="Verify your UX is right"
+              description="A story is a visual spec. Browse your stories to make sure your UI and animations are consistent and look right."
+              imageUrl="img/220x220.png" />
+            <ValuePropItem
+              name="Unit test widgets"
+              description="Reuse stories in your widget tests."
+              imageUrl="img/220x220.png" />
+            <ValuePropItem
+              name="Test fast"
+              description="Monarch renders your changes much faster than an emulator."
+              imageUrl="img/220x220.png" />
+            <ValuePropItem
+              name="Detect issues in common scenarios"
+              description="Quickly see your widgets under different scaled text sizes, localizations, and device configurations."
+              imageUrl="img/220x220.png" />
+          </div>
+        </section>
+        <section className={styles.valuePropSection}>
+          <div className="container">
+            <ValuePropTitle
+              name="Get a component library"
+              description="As you create stories, you are also creating a component library."
+              imageUrl="img/480x320.png" />
+            <ValuePropItem
+              name="Share components across screens"
+              description="Easily find widgets to reuse in other screens."
+              imageUrl="img/220x220.png" />
+            <ValuePropItem
+              name="Organize your component library"
+              description="As you write stories you get a referenceable design library for all of your coded components."
+              imageUrl="img/220x220.png" />
           </div>
         </section>
       </main>

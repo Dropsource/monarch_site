@@ -6,7 +6,7 @@
  */
 
 .heroBanner {
-  padding: 4rem 0;
+  padding: 6rem 2rem;
   text-align: center;
   position: relative;
   overflow: hidden;
@@ -14,7 +14,7 @@
 
 @media screen and (max-width: 966px) {
   .heroBanner {
-    padding: 2rem;
+    padding: 4rem 0;
   }
 }
 
@@ -24,14 +24,44 @@
   justify-content: center;
 }
 
-.features {
-  display: flex;
-  align-items: center;
-  padding: 2rem 0;
+.valuePropSection {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  padding: 5rem 2rem 2rem 2rem;
   width: 100%;
 }
 
-.featureImage {
-  height: 200px;
-  width: 200px;
+.valuePropSectionAlt {
+  background-color: rgb(246, 249, 252);
 }
+
+@media screen and (max-width: 966px) {
+  .valuePropSection {
+    padding: 3rem 0 1rem 0;
+  }
+}
+
+.valuePropTitle {
+  align-items: center;
+  padding-bottom: 4rem;
+}
+
+.valuePropTitle h1 {
+  padding-top: 2rem;
+}
+
+.valuePropTitle p {
+  font-size: 1.3rem;
+}
+
+.valuePropTitle img {
+  width: 480;
+  height: 320;
+}
+
+.valuePropItem {
+  align-items: center;
+  padding-bottom: 2rem;
+}
+
+
+
