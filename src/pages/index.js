@@ -67,6 +67,9 @@ function Home() {
               Get Started
             </Link>
           </div>
+          <div className="" style={{ marginTop: '4rem'}}>
+            <img src={useBaseUrl("gifs/monarch_ratings_demo.gif")} />
+          </div>
         </div>
       </header>
       <main>
@@ -75,15 +78,15 @@ function Home() {
             <ValuePropTitle
               name="Develop high-quality UIs"
               description="Monarch provides a sandbox to build Flutter widgets in isolation (inspired by Storybook JS)."
-              imageUrl="img/480x320.png" />
+              imageUrl="gifs/monarch_toolbox.gif" />
             <ValuePropItem
               name="Build widgets in isolation"
               description="Create widgets without worrying about data, screens, emulators, backends or business logic."
-              imageUrl="img/220x220.png" />
+              imageUrl="img/transaction_list_cards.png" />
             <ValuePropItem
               name="Mock hard to reach use cases"
               description="Render widgets in visual states that are difficult to reproduce."
-              imageUrl="img/220x220.png" />
+              imageUrl="img/transaction_list_edge.png" />
             <ValuePropItem
               name="Compose your widgets into complex screens"
               description="Monarch can render screens or pages just like any other widget."
