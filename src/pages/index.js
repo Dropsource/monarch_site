@@ -84,11 +84,11 @@ function Home() {
               description="Create widgets without worrying about data, screens, emulators, backends or business logic."
               imageUrl="img/transaction_list_cards.png" />
             <ValuePropItem
-              name="Mock hard to reach use cases"
-              description="Render widgets in visual states that are difficult to reproduce."
+              name="Render hard-to-reach use cases with ease"
+              description="Mock widget dependencies and widget inputs to render visual states that are time-consuming to reach or difficult to reproduce."
               imageUrl="img/transaction_list_edge.png" />
             <ValuePropItem
-              name="Compose your widgets into complex screens"
+              name="Compose your widgets into complex pages"
               description="Monarch can render screens or pages just like any other widget."
               imageUrl="img/220x220.png" />
           </div>
@@ -101,7 +101,7 @@ function Home() {
               imageUrl="img/480x320.png" />
             <ValuePropItem
               name="Verify your UX is right"
-              description="A story is a visual spec. Browse your stories to make sure your UI and animations are consistent and look right."
+              description="Browse your stories to make sure your UI and animations are consistent and look right."
               imageUrl="img/220x220.png" />
             <ValuePropItem
               name="Unit test widgets"
