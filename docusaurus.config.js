@@ -1,5 +1,5 @@
 module.exports = {
-  title: 'Build high-quality UIs with ease',
+  title: 'Build high-quality UIs with ease  ',
   tagline: 'Monarch is a tool for developing Flutter widgets in isolation. It makes it super easy to build widgets for complex UIs.',
   url: 'https://your-docusaurus-test-site.com',
   baseUrl: '/',

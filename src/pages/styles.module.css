@@ -26,7 +26,7 @@
 
 .valuePropSection {
   border-bottom: 1px solid rgba(0, 0, 0, 0.1);
-  padding: 5rem 2rem 2rem 2rem;
+  padding: 5rem 2rem 5rem 2rem;
   width: 100%;
 }
 
@@ -40,28 +40,24 @@
   }
 }
 
-.valuePropTitle {
-  align-items: center;
-  padding-bottom: 4rem;
+.valueProp {
+  /* align-items: center; */
+  /* padding-bottom: 4rem; */
 }
 
-.valuePropTitle h1 {
+.valueProp h1 {
   padding-top: 2rem;
 }
 
-.valuePropTitle p {
+.valueProp p {
   font-size: 1.3rem;
 }
 
-.valuePropTitle img {
-  /* width: 480; */
-  height: 420px;
+.valueProp img {
+  width: 600;
+  /* height: 420px; */
 }
 
-.valuePropItem {
-  align-items: center;
-  padding-bottom: 2rem;
-}
 
 
 

@@ -7,13 +7,17 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 import styles from './styles.module.css';
 
 
-function ValuePropTitle({ name, description, imageUrl }) {
+function ValueProp({ name, items, imageUrl }) {
   const imgUrl = useBaseUrl(imageUrl);
   return (
-    <div className={clsx("row", styles.valuePropTitle)}>
+    <div className={clsx("row", styles.valueProp)}>
       <div className={clsx('col col--5')}>
         <h1>{name}</h1>
-        <p>{description}</p>
+        <ul>
+          {
+            items.map(item => <li key={item}>{item}</li>)
+          }
+        </ul>
       </div>
       <div className={clsx('col col--7')}>
         {imgUrl && (
@@ -21,25 +25,6 @@ function ValuePropTitle({ name, description, imageUrl }) {
             <img src={imgUrl} alt={name} />
           </div>
         )}
-      </div>
-    </div>
-  );
-}
-
-function ValuePropItem({ name, description, imageUrl }) {
-  const imgUrl = useBaseUrl(imageUrl);
-  return (
-    <div className={clsx("row", styles.valuePropItem)}>
-      <div className={clsx('col col--4')} style={{ flex: '0 0 calc(4/12 *100%)', maxWidth: '0 0 calc(4/12 *100%)' }}>
-        {imgUrl && (
-          <div className="text--center">
-            <img src={imgUrl} alt={name} />
-          </div>
-        )}
-      </div>
-      <div className={clsx('col col--8')} style={{ flex: '0 0 calc(8/12 *100%)', maxWidth: '0 0 calc(8/12 *100%)', paddingLeft: 0 }}>
-        <h3>{name}</h3>
-        <p>{description}</p>
       </div>
     </div>
   );
@@ -67,70 +52,59 @@ function Home() {
               Get Started
             </Link>
           </div>
-          <div className="" style={{ marginTop: '4rem'}}>
-            <img src={useBaseUrl("gifs/monarch_ratings_demo.gif")} />
-          </div>
         </div>
       </header>
       <main>
         <section className={styles.valuePropSection}>
           <div className="container">
-            <ValuePropTitle
-              name="Develop high-quality UIs"
-              description="Monarch provides a sandbox to build Flutter widgets in isolation (inspired by Storybook JS)."
-              imageUrl="gifs/monarch_toolbox.gif" />
-            <ValuePropItem
-              name="Build widgets in isolation"
-              description="Create widgets without worrying about data, screens, emulators, backends or business logic."
-              imageUrl="img/transaction_list_cards.png" />
-            <ValuePropItem
-              name="Render hard-to-reach use cases with ease"
-              description="Mock widget dependencies and widget inputs to render visual states that are time-consuming to reach or difficult to reproduce."
-              imageUrl="img/transaction_list_edge.png" />
-            <ValuePropItem
-              name="Compose your widgets into complex pages"
-              description="Monarch can render screens or pages just like any other widget."
-              imageUrl="img/220x220.png" />
+            <ValueProp
+              name="Build widgets faster"
+              items={[
+                'Monarch provides a sandbox to build Flutter widgets in isolation.',
+                'Create widgets without worrying about data, screens, emulators, backends or business logic.',
+                'Browse stories to verify your UX is right.',
+                'Ditch the emulator for common tasks.',
+                'Inspired by Storybook JS.'
+              ]}
+              imageUrl="img/600x750.png" />
           </div>
         </section>
         <section className={clsx(styles.valuePropSection, styles.valuePropSectionAlt)}>
           <div className="container">
-            <ValuePropTitle
-              name="Test with ease"
-              description="Monarch makes it very easy to test complex UIs."
-              imageUrl="img/480x320.png" />
-            <ValuePropItem
-              name="Verify your UX is right"
-              description="Browse your stories to make sure your UI and animations are consistent and look right."
-              imageUrl="img/220x220.png" />
-            <ValuePropItem
-              name="Unit test widgets"
-              description="Reuse stories in your widget tests."
-              imageUrl="img/220x220.png" />
-            <ValuePropItem
-              name="Test fast"
-              description="Monarch renders your changes much faster than an emulator."
-              imageUrl="img/220x220.png" />
-            <ValuePropItem
-              name="Detect issues in common scenarios"
-              description="Quickly see your widgets under different scaled text sizes, localizations, and device configurations."
-              imageUrl="img/220x220.png" />
+            <ValueProp
+              name="Find and fix bugs with ease"
+              items={[
+                'Render edge cases with ease.',
+                'From your stories, navigate to your code to find and fix bugs.',
+                'Monarch renders your fixes much faster than an emulator.',
+                'Mock dependencies to render visual states that are hard to reproduce.',
+                'You can also reuse your stories from your widget tests.'
+              ]}
+              imageUrl="img/600x750.png" />
           </div>
         </section>
         <section className={styles.valuePropSection}>
           <div className="container">
-            <ValuePropTitle
-              name="Get a component library"
-              description="As you create stories, you are also creating a component library."
-              imageUrl="img/480x320.png" />
-            <ValuePropItem
-              name="Share components across screens"
-              description="Easily find widgets to reuse in other screens."
-              imageUrl="img/220x220.png" />
-            <ValuePropItem
-              name="Organize your component library"
-              description="As you write stories you get a referenceable design library for all of your coded components."
-              imageUrl="img/220x220.png" />
+            <ValueProp
+              name="Switch themes, locales, device resolutions and text scale"
+              items={[
+                'See your widgets in different device resolutions.',
+                'Switch between dark mode, light mode or your own custom theme.',
+                'See how your widgets render under different locales.',
+                'Play with the text scale factor to see how your widgets will render to different users.',
+              ]}
+              imageUrl="img/600x750.png" />
+          </div>
+        </section>
+        <section className={clsx(styles.valuePropSection, styles.valuePropSectionAlt)}>
+          <div className="container">
+            <ValueProp
+              name="Create a component library"
+              items={[
+                'Create stories that reflect your component library using real code.',
+                'Easily find widgets to reuse in other screens.'
+              ]}
+              imageUrl="img/600x750.png" />
           </div>
         </section>
       </main>
