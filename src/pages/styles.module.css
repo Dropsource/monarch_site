@@ -53,8 +53,12 @@
   font-size: 1.3rem;
 }
 
+.valueProp li {
+  font-size: 1.1rem;
+}
+
 .valueProp img {
-  width: 600;
+  width: 600px;
   /* height: 420px; */
 }
 
