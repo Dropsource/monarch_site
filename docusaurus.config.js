@@ -8,6 +8,9 @@ module.exports = {
   favicon: 'img/monarch_favicon.ico',
   organizationName: 'facebook', // Usually your GitHub org/user name.
   projectName: 'docusaurus', // Usually your repo name.
+  stylesheets: [
+    'https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap'
+  ],
   themeConfig: {
     colorMode: {
       disableSwitch: true

@@ -6,14 +6,19 @@
  */
 
 /* You can override the default Infima variables here. */
+
+/* If you change the primary color, use the tool below to find
+   the lighter and darker hex codes
+   https://v2.docusaurus.io/docs/styling-layout
+*/
 :root {
   --ifm-color-primary: #00b3b8;
-  --ifm-color-primary-dark: rgb(0, 154, 159);
-  --ifm-color-primary-darker: rgb(0, 128, 133);
-  --ifm-color-primary-darkest: rgb(0, 103, 108);
-  --ifm-color-primary-light: rgb(26, 205, 210);
-  --ifm-color-primary-lighter: rgb(51, 230, 235);
-  --ifm-color-primary-lightest: rgb(77, 255, 255);
+  --ifm-color-primary-dark: #00a1a6;
+  --ifm-color-primary-darker: #00989c;
+  --ifm-color-primary-darkest: #007d81;
+  --ifm-color-primary-light: #00c5ca;
+  --ifm-color-primary-lighter: #00ced4;
+  --ifm-color-primary-lightest: #00e9ef;
   --ifm-code-font-size: 95%;
 }
 

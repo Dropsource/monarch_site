@@ -10,6 +10,7 @@
   text-align: center;
   position: relative;
   overflow: hidden;
+  font-family: 'DM Sans', sans-serif;
 }
 
 @media screen and (max-width: 966px) {
@@ -28,6 +29,7 @@
   border-bottom: 1px solid rgba(0, 0, 0, 0.1);
   padding: 5rem 2rem 5rem 2rem;
   width: 100%;
+  font-family: 'DM Sans', sans-serif;
 }
 
 [data-theme='light'] .valuePropSectionAlt {
