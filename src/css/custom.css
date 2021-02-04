@@ -20,7 +20,64 @@
   --ifm-color-primary-lighter: #00ced4;
   --ifm-color-primary-lightest: #00e9ef;
   --ifm-code-font-size: 95%;
+  --mon-dark-text-color: #f5f6f7;
+  --mon-dark-background-color: #2C2C32;
 }
+
+.navbar {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 1.1rem;
+  background-color: var(--mon-dark-background-color);
+  color: var(--mon-dark-text-color);
+}
+
+.navbar .navbar__logo {
+  width: 48px;
+  height: 48px;
+}
+
+.navbar .navbar__title {
+  font-size: 1.3rem;
+  color: var(--mon-dark-text-color);
+}
+
+.navbar__link {
+  color: var(--mon-dark-text-color);
+}
+
+.hero {
+  background-color: var(--mon-dark-background-color);
+  color: var(--mon-dark-text-color);
+}
+
+.hero .hero__title {
+  font-size: 3.3rem;
+}
+
+.hero .hero__subtitle {
+  font-size: 1.8rem;
+}
+
+.hero .button {
+  background-color: var(--ifm-color-primary);
+  border: none;
+  font-size: 1.6rem;
+}
+
+@media screen and (max-width: 966px) {
+  .hero .hero__title {
+    font-size: 2.6rem;
+  }
+
+  .hero .hero__subtitle {
+    font-size: 1.4rem;
+  }
+}
+
+.footer {
+  background-color: var(--mon-dark-background-color);
+}
+
 
 .docusaurus-highlight-code-line {
   background-color: rgb(72, 77, 91);
@@ -36,11 +93,6 @@
 .cliLog .prism-code {
   font-size: 80%;
 }
-
-/* .navbar__title {
-  font-size: 30px;
-  padding-bottom: 6px;
-} */
 
 [class^="docMainContainer"] .prism-code {
   font-size: 90%;

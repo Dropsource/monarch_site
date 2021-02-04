@@ -6,8 +6,8 @@ module.exports = {
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
   favicon: 'img/monarch_favicon.ico',
-  organizationName: 'facebook', // Usually your GitHub org/user name.
-  projectName: 'docusaurus', // Usually your repo name.
+  organizationName: 'Dropsource', // Usually your GitHub org/user name.
+  projectName: 'monarch', // Usually your repo name.
   stylesheets: [
     'https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap'
   ],
@@ -16,11 +16,11 @@ module.exports = {
       disableSwitch: true
     },
     navbar: {
-      title: '',
+      title: 'Monarch',
       logo: {
         alt: 'Monarch Logo',
-        src: 'img/logo_monarch_black.png',
-        srcDark: 'img/logo_monarch_white.png'
+        src: 'img/monarch_m.png',
+        srcDark: 'img/monarch_m.png'
       },
       items: [
         {
