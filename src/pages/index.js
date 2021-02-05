@@ -66,7 +66,7 @@ function Home() {
                 'Ditch the emulator for common tasks.',
                 'Inspired by Storybook JS.'
               ]}
-              imageUrl="img/build_widgets_faster_1200.png" />
+              imageUrl="gifs/build_widgets_faster.gif" />
           </div>
         </section>
         <section className={clsx(styles.valuePropSection, styles.valuePropSectionAlt)}>
@@ -80,7 +80,7 @@ function Home() {
                 'Mock dependencies to render visual states that are hard to reproduce.',
                 'You can also reuse your stories from your widget tests.'
               ]}
-              imageUrl="img/find_fix_bugs_1200.png" />
+              imageUrl="gifs/find_fix_bugs.gif" />
           </div>
         </section>
         <section className={styles.valuePropSection}>
@@ -104,7 +104,7 @@ function Home() {
                 'Create stories that reflect your component library using real code.',
                 'Easily find widgets to reuse in other screens.'
               ]}
-              imageUrl="img/create_component_library_1200.png" />
+              imageUrl="img/create_component_library.png" />
           </div>
         </section>
       </main>
