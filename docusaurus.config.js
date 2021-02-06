@@ -77,6 +77,19 @@ module.exports = {
             }
           ],
         },
+        {
+          title: 'Credits',
+          items: [
+            {
+              label: 'Storybook (inspiration for Monarch)',
+              href: 'https://storybook.js.org/'
+            },
+            {
+              label: 'Developer Quest app (used for samples above)',
+              href: 'https://github.com/2d-inc/developer_quest'
+            }
+          ]
+        }
         // {
         //   title: 'More',
         //   items: [

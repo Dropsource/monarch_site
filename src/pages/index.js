@@ -30,6 +30,31 @@ function ValueProp({ name, items, imageUrl }) {
   );
 }
 
+function ValuePropVideo({ name, items, videoUrl }) {
+  const resolvedVideoUrl = useBaseUrl(videoUrl);
+  return (
+    <div className={clsx("row", styles.valueProp)}>
+      <div className={clsx('col col--5')}>
+        <h1>{name}</h1>
+        <ul>
+          {
+            items.map(item => <li key={item}>{item}</li>)
+          }
+        </ul>
+      </div>
+      <div className={clsx('col col--7')}>
+        {resolvedVideoUrl && (
+          <div className="text--center">
+            <video autoPlay={true} muted={true} loop={true}>
+              <source src={resolvedVideoUrl} type="video/mp4"/>
+            </video>
+          </div>
+        )}
+      </div>
+    </div>
+  );
+}
+
 
 function Home() {
   const context = useDocusaurusContext();
@@ -57,21 +82,20 @@ function Home() {
       <main>
         <section className={styles.valuePropSection}>
           <div className="container">
-            <ValueProp
+            <ValuePropVideo
               name="Build widgets faster"
               items={[
                 'Monarch provides a sandbox to build Flutter widgets in isolation.',
                 'Create widgets without worrying about data, screens, emulators, backends or business logic.',
                 'Browse stories to verify your UX is right.',
-                'Ditch the emulator for common tasks.',
-                'Inspired by Storybook JS.'
+                'Ditch the emulator for common tasks.'
               ]}
-              imageUrl="gifs/build_widgets_faster.gif" />
+              videoUrl="assets/build-widgets-faster.mp4" />
           </div>
         </section>
         <section className={clsx(styles.valuePropSection, styles.valuePropSectionAlt)}>
           <div className="container">
-            <ValueProp
+            <ValuePropVideo
               name="Find and fix bugs with ease"
               items={[
                 'Render edge cases with ease.',
@@ -80,12 +104,12 @@ function Home() {
                 'Mock dependencies to render visual states that are hard to reproduce.',
                 'You can also reuse your stories from your widget tests.'
               ]}
-              imageUrl="gifs/find_fix_bugs.gif" />
+              videoUrl="assets/find-fix-bugs.mp4" />
           </div>
         </section>
         <section className={styles.valuePropSection}>
           <div className="container">
-            <ValueProp
+            <ValuePropVideo
               name="Switch themes, locales, device resolutions and text scale"
               items={[
                 'See your widgets in different device resolutions.',
@@ -93,7 +117,7 @@ function Home() {
                 'See how your widgets render under different locales.',
                 'Play with the text scale factor to see how your widgets will render to different users.',
               ]}
-              imageUrl="gifs/switch_knobs.gif" />
+              videoUrl="assets/switch-knobs.mp4" />
           </div>
         </section>
         <section className={clsx(styles.valuePropSection, styles.valuePropSectionAlt)}>
@@ -104,7 +128,7 @@ function Home() {
                 'Create stories that reflect your component library using real code.',
                 'Easily find widgets to reuse in other screens.'
               ]}
-              imageUrl="img/create_component_library.png" />
+              imageUrl="assets/create_component_library.png" />
           </div>
         </section>
       </main>
