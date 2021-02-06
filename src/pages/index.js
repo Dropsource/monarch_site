@@ -45,7 +45,7 @@ function ValuePropVideo({ name, items, videoUrl }) {
       <div className={clsx('col col--7')}>
         {resolvedVideoUrl && (
           <div className="text--center">
-            <video autoPlay={true} muted={true} loop={true}>
+            <video autoPlay={true} muted={true} loop={true} playsInline={true}>
               <source src={resolvedVideoUrl} type="video/mp4"/>
             </video>
           </div>
