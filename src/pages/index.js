@@ -46,11 +46,32 @@ function ValuePropVideo({ name, items, videoUrl }) {
         {resolvedVideoUrl && (
           <div className="text--center">
             <video autoPlay={true} muted={true} loop={true} playsInline={true}>
-              <source src={resolvedVideoUrl} type="video/mp4"/>
+              <source src={resolvedVideoUrl} type="video/mp4" />
             </video>
           </div>
         )}
       </div>
+    </div>
+  );
+}
+
+function OsLogo({className}) {
+  return (
+    <div className={clsx(styles.osLogo, className)}>
+    </div>
+  )
+}
+
+function CtaButton({ text }) {
+  return (
+    <div className={styles.buttons}>
+      <Link
+        className={clsx(
+          'button button--outline button--secondary button--lg',
+        )}
+        to={useBaseUrl('docs/install/')}>
+        {text}
+      </Link>
     </div>
   );
 }
@@ -67,16 +88,7 @@ function Home() {
         <div className="container">
           <h1 className="hero__title">{siteConfig.title}</h1>
           <p className="hero__subtitle">{siteConfig.tagline}</p>
-          <div className={styles.buttons}>
-            <Link
-              className={clsx(
-                'button button--outline button--secondary button--lg',
-                styles.getStarted,
-              )}
-              to={useBaseUrl('docs/install/')}>
-              Get Started
-            </Link>
-          </div>
+          <CtaButton text="Get Started" />
         </div>
       </header>
       <main>
@@ -129,6 +141,24 @@ function Home() {
                 'Easily find widgets to reuse in other screens.'
               ]}
               imageUrl="assets/create_component_library.png" />
+          </div>
+        </section>
+        <section>
+          <div className="container">
+            <div className="row">
+              <div className="col col--4">
+                <OsLogo className={styles.apple} />
+                <CtaButton text="Get Started on macOS" />
+              </div>
+              <div className="col col--4">
+                <OsLogo className={styles.windows} />
+                <CtaButton text="Get Started on Windows" />
+              </div>
+              <div className="col col--4">
+                <OsLogo className={styles.linux} />
+                <CtaButton text="Get Started on Linux" />
+              </div>
+            </div>
           </div>
         </section>
       </main>

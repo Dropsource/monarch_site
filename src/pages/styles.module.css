@@ -80,6 +80,32 @@
   }
 }
 
+/* 
+.osLogo {
+  height: 140px;
+  text-align: center;
+}
 
+.osLogo img {
+  width: 100px;
+} */
 
+.osLogo {
+  height: 100px;
+  width: 100px;
+  background-size: contain !important;
+  margin: 0 auto;
+  -ms-high-contrast-adjust: none;
+}
 
+.osLogo.windows {
+  background: url(/assets/windows-logo.png) center center no-repeat;
+}
+
+.osLogo.linux {
+  background: url(/assets/linux-logo.png) center center no-repeat;
+}
+
+.osLogo.apple {
+  background: url(/assets/apple-logo.svg) center center no-repeat;
+}
