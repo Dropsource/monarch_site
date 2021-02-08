@@ -116,7 +116,7 @@ function Home() {
                 'Mock dependencies to render visual states that are hard to reproduce.',
                 'You can also reuse your stories from your widget tests.'
               ]}
-              videoUrl="assets/find-fix-bugs.mp4" />
+              videoUrl="assets/build-widgets-faster-ft.mp4" />
           </div>
         </section>
         <section className={styles.valuePropSection}>
