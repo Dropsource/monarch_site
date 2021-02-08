@@ -19,12 +19,6 @@
   }
 }
 
-.buttons {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
 .valuePropSection {
   border-bottom: 1px solid rgba(0, 0, 0, 0.1);
   padding: 5rem 2rem 5rem 2rem;
@@ -38,14 +32,10 @@
 
 @media screen and (max-width: 966px) {
   .valuePropSection {
-    padding: 3rem 0 1rem 0;
+    padding: 3rem 0 3rem 0;
   }
 }
 
-.valueProp {
-  /* align-items: center; */
-  /* padding-bottom: 4rem; */
-}
 
 .valueProp h1 {
   padding-top: 2rem;
@@ -80,16 +70,6 @@
   }
 }
 
-/* 
-.osLogo {
-  height: 140px;
-  text-align: center;
-}
-
-.osLogo img {
-  width: 100px;
-} */
-
 .osLogo {
   height: 100px;
   width: 100px;
@@ -108,4 +88,8 @@
 
 .osLogo.apple {
   background: url(/assets/apple-logo.svg) center center no-repeat;
+}
+
+.osSection {
+  padding-bottom: 0;
 }

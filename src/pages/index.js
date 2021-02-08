@@ -64,7 +64,7 @@ function OsLogo({className}) {
 
 function CtaButton({ text }) {
   return (
-    <div className={styles.buttons}>
+    <div className="button__container">
       <Link
         className={clsx(
           'button button--outline button--secondary button--lg',
@@ -143,9 +143,9 @@ function Home() {
               imageUrl="assets/create_component_library.png" />
           </div>
         </section>
-        <section>
+        <section className={clsx(styles.valuePropSection, styles.osSection)}>
           <div className="container">
-            <div className="row">
+            <div className="row os__buttons">
               <div className="col col--4">
                 <OsLogo className={styles.apple} />
                 <CtaButton text="Get Started on macOS" />
@@ -156,7 +156,9 @@ function Home() {
               </div>
               <div className="col col--4">
                 <OsLogo className={styles.linux} />
-                <CtaButton text="Get Started on Linux" />
+                <div className="button__container">
+                  <p className="coming__soon">Coming soon on Linux</p>
+                </div>
               </div>
             </div>
           </div>

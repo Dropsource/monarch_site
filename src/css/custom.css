@@ -58,11 +58,35 @@
   font-size: 1.8rem;
 }
 
-.hero .button {
+.button__container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.button__container .button {
   background-color: var(--ifm-color-primary);
   border: none;
   font-size: 1.6rem;
   margin-top: 15px;
+}
+
+.button__container .button:hover {
+  background-color: var(--ifm-color-primary-darker);
+}
+
+.os__buttons .button__container .button {
+  font-size: 1.2rem;
+}
+
+.button__container .coming__soon {
+  font-size: 1.2rem;
+  margin-top: 23px;
+  font-weight: var(--ifm-button-font-weight);
+}
+
+.os__buttons .col {
+  padding-bottom: 3rem;
 }
 
 @media screen and (max-width: 966px) {
