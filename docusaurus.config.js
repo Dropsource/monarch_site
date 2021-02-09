@@ -1,7 +1,7 @@
 module.exports = {
-  title: 'Build high-quality UIs with ease  ',
-  tagline: 'Monarch is a tool for developing Flutter widgets in isolation. It makes it super easy to build widgets for complex UIs.',
-  url: 'https://your-docusaurus-test-site.com',
+  title: 'Monarch',
+  tagline: 'Build high-quality UIs with ease',
+  url: 'https://monarchapp.io/',
   baseUrl: '/',
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
@@ -12,6 +12,7 @@ module.exports = {
     'https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap'
   ],
   themeConfig: {
+    image: 'assets/build-widgets-faster.gif',
     colorMode: {
       disableSwitch: true
     },

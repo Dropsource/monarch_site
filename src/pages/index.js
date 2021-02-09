@@ -80,14 +80,22 @@ function CtaButton({ text }) {
 function Home() {
   const context = useDocusaurusContext();
   const { siteConfig = {} } = context;
+  
+  // @GOTCHA: if you change `monarchPurpose` make sure to find-replace-all instances
+  // of its string contents in the *.md and *.mdx files. The monarch purpose is
+  // set as the `description` field in every markdown file. The `description` field
+  // becomes the <meta name="description" content="..."/> and <meta property="og:description" content="..."/> 
+  // in <head>, used by search engines. 
+  const monarchPurpose = "Monarch is a tool for developing Flutter widgets in isolation. It makes it super easy to build widgets for complex UIs.";
+  
   return (
     <Layout
-      title={`Monarch | ${siteConfig.title}`}
-      description="Description will go into a meta tag in <head />">
+      title={siteConfig.tagline}
+      description={monarchPurpose}>
       <header className={clsx('hero hero--primary', styles.heroBanner)}>
         <div className="container">
-          <h1 className="hero__title">{siteConfig.title}</h1>
-          <p className="hero__subtitle">{siteConfig.tagline}</p>
+          <h1 className="hero__title">{siteConfig.tagline}</h1>
+          <p className="hero__subtitle">{monarchPurpose}</p>
           <CtaButton text="Get Started" />
         </div>
       </header>
