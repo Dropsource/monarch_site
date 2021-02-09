@@ -1,7 +1,7 @@
 module.exports = {
   title: 'Monarch',
   tagline: 'Build high-quality UIs with ease',
-  url: 'https://monarchapp.io/',
+  url: 'https://monarchapp.io',
   baseUrl: '/',
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
