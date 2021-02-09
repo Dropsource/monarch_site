@@ -11,7 +11,16 @@ module.exports = {
   stylesheets: [
     'https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap'
   ],
+  plugins: ['@docusaurus/plugin-google-analytics','@docusaurus/plugin-google-gtag'],
   themeConfig: {
+    googleAnalytics: {
+      trackingID: 'G-GHR4Z83T6D',
+      anonymizeIP: false
+    },
+    gtag: {
+      trackingID: 'G-GHR4Z83T6D',
+      anonymizeIP: false
+    },
     image: 'assets/monarch-open-graph.png',
     colorMode: {
       disableSwitch: true
