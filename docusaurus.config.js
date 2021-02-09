@@ -12,7 +12,7 @@ module.exports = {
     'https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap'
   ],
   themeConfig: {
-    image: 'assets/build-widgets-faster.gif',
+    image: 'assets/monarch-open-graph.png',
     colorMode: {
       disableSwitch: true
     },
