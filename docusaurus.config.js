@@ -126,7 +126,15 @@ module.exports = {
         theme: {
           customCss: require.resolve('./src/css/custom.css'),
         },
+        googleAnalytics: {
+          trackingID: 'G-GHR4Z83T6D',
+          anonymizeIP: false
+        },
+        gtag: {
+          trackingID: 'G-GHR4Z83T6D',
+          anonymizeIP: false
+        },
       },
     ],
-  ],
+  ]
 };
