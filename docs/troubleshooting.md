@@ -12,7 +12,7 @@ To get more detail information about your issue, you could run monarch in
 verbose mode:
 
 ```shell
-$ monarch run -v
+monarch run -v
 ```
 
 Also, if you are running Monarch on Windows, you may experience some 

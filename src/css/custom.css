@@ -111,14 +111,12 @@
   padding: 0 var(--ifm-pre-padding);
 }
 
-.dartCode .prism-code {
-  font-size: 90%;
-}
-
-.cliLog .prism-code {
-  font-size: 80%;
-}
-
 [class^="docMainContainer"] .prism-code {
-  font-size: 90%;
+  font-size: 0.9rem;
+}
+
+.docs-app-screenshot {
+  border-radius: 5px;
+  object-fit: cover;
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px;
 }

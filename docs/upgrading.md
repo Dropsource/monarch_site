@@ -6,5 +6,5 @@ description: Monarch is a tool for developing Flutter widgets in isolation. It m
 
 To upgrade to the latest version of Monarch just run this command:
 ```shell
-$ monarch upgrade
+monarch upgrade
 ```

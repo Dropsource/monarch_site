@@ -14,15 +14,15 @@ import macosVersionInfo from './versions/macos_version_info.json';
 import windowsVersionInfo from './versions/windows_version_info.json';
 
 export const commands = {
-    downloadMac: `$ cd ~/development
-$ curl -O ` + macosVersionInfo.installation_bundle_url 
+    downloadMac: `cd ~/development
+curl -O ` + macosVersionInfo.installation_bundle_url 
     ,
-    extractMac: `$ unzip ` + macosVersionInfo.installation_bundle_file
+    extractMac: `unzip ` + macosVersionInfo.installation_bundle_file
     ,
     extractWindows:`cd development
 tar -x -f ` + windowsVersionInfo.installation_bundle_file
     ,
-    pathMac: '$ export PATH="$PATH:`pwd`/monarch/bin"',
+    pathMac: 'export PATH="$PATH:`pwd`/monarch/bin"',
     pathWindows: 'set PATH=%PATH%;C:\\path\\to\\monarch\\bin'
 }
 
@@ -75,14 +75,14 @@ permanently add Monarch to your path, see [Update your path](#update-your-path).
 1. Go to one of your Flutter projects and then run `monarch init`. Run it inside 
 your existing project’s root directory:
 ```bash
-$ monarch init
+monarch init
 ```
 The `monarch init` command will set up all the dependencies needed to run monarch. 
 It will also create a few sample stories in your project.
 
 2. Run monarch using `monarch run`
 ```bash
-$ monarch run
+monarch run
 ```
 The `monarch run` command will prepare the stories in your project so they can
 be rendered by the Monarch desktop app. The `monarch run` command will launch
@@ -108,10 +108,10 @@ let you run `monarch` from any terminal window.
     <br/>
     <ol start="3"><li>Run <code>source ~/. rc file</code> to refresh the current window, or open a new terminal window to automatically source the file.</li></ol>
     <ol start="4"><li>Verify that the monarch/bin directory is now in your PATH by running:</li></ol>
-    <CodeBlock language="bash">$ echo $PATH</CodeBlock>
+    <CodeBlock language="bash">echo $PATH</CodeBlock>
     <br/>
     <ol start="5"><li>Verify that the monarch command is available by running:</li></ol>
-    <CodeBlock language="bash">$ monarch --version</CodeBlock>
+    <CodeBlock language="bash">monarch --version</CodeBlock>
     <br/>
   </TabItem>
   <TabItem value="win">
