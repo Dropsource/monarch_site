@@ -115,8 +115,14 @@
   font-size: 0.9rem;
 }
 
-.docs-app-screenshot {
-  border-radius: 5px;
+
+.docs-screenshot {
   object-fit: cover;
   box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px;
+}
+.docs-screenshot.macos {
+  border-radius: 5px;
+}
+.docs-screenshot.windows {
+  border-radius: 0;
 }
