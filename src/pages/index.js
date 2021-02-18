@@ -157,7 +157,7 @@ function Home() {
             <div className={clsx("row", styles.valueProp)}>
               <div className={clsx('col col--12')}>
                 <h2>Why Monarch?</h2>
-                <p>Monarch helps you build widgets in isolation, the benefits are clear:</p>
+                <p>Monarch helps you build widgets in isolation. The benefits are clear:</p>
                 <ul>
                   <li>Building a widget in isolation is more pleasant and faster than building the same widget in the context of your entire app.</li>
                   <li>Finding and fixing bugs is less work and more precise when the widget is isolated.</li>
