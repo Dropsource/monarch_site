@@ -12,7 +12,7 @@ function ValueProp({ name, items, imageUrl }) {
   return (
     <div className={clsx("row", styles.valueProp)}>
       <div className={clsx('col col--5')}>
-        <h1>{name}</h1>
+        <h2>{name}</h2>
         <ul>
           {
             items.map(item => <li key={item}>{item}</li>)
@@ -32,10 +32,11 @@ function ValueProp({ name, items, imageUrl }) {
 
 function ValuePropVideo({ name, items, videoUrl }) {
   const resolvedVideoUrl = useBaseUrl(videoUrl);
+  const resolvedPosterUrl = useBaseUrl('assets/blank-ide.png');
   return (
     <div className={clsx("row", styles.valueProp)}>
       <div className={clsx('col col--5')}>
-        <h1>{name}</h1>
+        <h2>{name}</h2>
         <ul>
           {
             items.map(item => <li key={item}>{item}</li>)
@@ -55,7 +56,7 @@ function ValuePropVideo({ name, items, videoUrl }) {
   );
 }
 
-function OsLogo({className}) {
+function OsLogo({ className }) {
   return (
     <div className={clsx(styles.osLogo, className)}>
     </div>
@@ -67,7 +68,7 @@ function CtaButton({ text }) {
     <div className="button__container">
       <Link
         className={clsx(
-          'button button--outline button--secondary button--lg',
+          'button button--outline button--primary button--lg',
         )}
         to={useBaseUrl('docs/install/')}>
         {text}
@@ -80,14 +81,14 @@ function CtaButton({ text }) {
 function Home() {
   const context = useDocusaurusContext();
   const { siteConfig = {} } = context;
-  
+
   // @GOTCHA: if you change `monarchPurpose` make sure to find-replace-all instances
   // of its string contents in the *.md and *.mdx files. The monarch purpose is
   // set as the `description` field in every markdown file. The `description` field
   // becomes the <meta name="description" content="..."/> and <meta property="og:description" content="..."/> 
   // in <head>, used by search engines. 
   const monarchPurpose = "Monarch is a tool for developing Flutter widgets in isolation. It makes it super easy to build widgets for complex UIs.";
-  
+
   return (
     <Layout
       title={siteConfig.tagline}
@@ -140,7 +141,7 @@ function Home() {
               videoUrl="assets/switch-knobs.mp4" />
           </div>
         </section>
-        <section className={clsx(styles.valuePropSection, styles.valuePropSectionAlt)}>
+        {/* <section className={clsx(styles.valuePropSection, styles.valuePropSectionAlt)}>
           <div className="container">
             <ValueProp
               name="Create a component library"
@@ -149,6 +150,22 @@ function Home() {
                 'Easily find widgets to reuse in other screens.'
               ]}
               imageUrl="assets/create_component_library.png" />
+          </div>
+        </section> */}
+        <section className={clsx(styles.valuePropSection, styles.valuePropSectionAlt)}>
+          <div className="container">
+            <div className={clsx("row", styles.valueProp)}>
+              <div className={clsx('col col--12')}>
+                <h2>Why Monarch?</h2>
+                <p>Monarch helps you build widgets in isolation, the benefits are clear:</p>
+                <ul>
+                  <li>Building a widget in isolation is more pleasant and faster than building the same widget in the context of your entire app.</li>
+                  <li>Finding and fixing bugs is less work and more precise when the widget is isolated.</li>
+                  <li>A story is like a visual test. The more stories you have, the more confidence your components work in all possible scenarios.</li>
+                  <li>Parallelize development: widget isolation enables multiple team members to work on multiple widgets at the same time.</li>
+                </ul>
+              </div>
+            </div>
           </div>
         </section>
         <section className={clsx(styles.valuePropSection, styles.osSection)}>
