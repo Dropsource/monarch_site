@@ -108,6 +108,7 @@ function Home() {
               items={[
                 'Monarch provides a sandbox to build Flutter widgets in isolation.',
                 'Create widgets without worrying about data, screens, emulators, backends or business logic.',
+                'Define the relevant states of your widgets, we call these relevant states "stories".',
                 'Browse stories to verify your UX is right.',
                 'Ditch the emulator for common tasks.'
               ]}
@@ -159,8 +160,8 @@ function Home() {
                 <h2>Why Monarch?</h2>
                 <p>Monarch helps you build widgets in isolation. The benefits are clear:</p>
                 <ul>
-                  <li>Building a widget in isolation is more pleasant and faster than building the same widget in the context of your entire app.</li>
-                  <li>Finding and fixing bugs is less work and more precise when the widget is isolated.</li>
+                  <li>Build widgets in isolation to avoid the pain and frustration of developing widgets in the context of an entire app.</li>
+                  <li>Stories help you pinpoint bugs quickly. It’s more efficient than debugging using entire screens.</li>
                   <li>A story is like a visual test. The more stories you have, the more confidence your components work in all possible scenarios.</li>
                   <li>Parallelize development: widget isolation enables multiple team members to work on multiple widgets at the same time.</li>
                 </ul>
