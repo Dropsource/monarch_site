@@ -30,9 +30,9 @@ function ValueProp({ name, items, imageUrl }) {
   );
 }
 
-function ValuePropVideo({ name, items, videoUrl }) {
-  const resolvedVideoUrl = useBaseUrl(videoUrl);
-  const resolvedPosterUrl = useBaseUrl('assets/blank-ide.png');
+function ValuePropVideo({ name, items, mp4VideoUrl, webmVideoUrl }) {
+  const resolvedMp4VideoUrl = useBaseUrl(mp4VideoUrl);
+  const resolvedWebmVideoUrl = useBaseUrl(webmVideoUrl);
   return (
     <div className={clsx("row", styles.valueProp)}>
       <div className={clsx('col col--5')}>
@@ -44,13 +44,12 @@ function ValuePropVideo({ name, items, videoUrl }) {
         </ul>
       </div>
       <div className={clsx('col col--7')}>
-        {resolvedVideoUrl && (
-          <div className="text--center">
-            <video autoPlay={true} muted={true} loop={true} playsInline={true}>
-              <source src={resolvedVideoUrl} type="video/mp4" />
-            </video>
-          </div>
-        )}
+        <div className="text--center">
+          <video autoPlay={true} muted={true} loop={true} playsInline={true}>
+            <source src={resolvedWebmVideoUrl} type="video/webm" />
+            <source src={resolvedMp4VideoUrl} type="video/mp4" />
+          </video>
+        </div>
       </div>
     </div>
   );
@@ -112,7 +111,8 @@ function Home() {
                 'Browse stories to verify your UX is right.',
                 'Ditch the emulator for common tasks.'
               ]}
-              videoUrl="assets/build-widgets-faster.mp4" />
+              mp4VideoUrl="assets/build-widgets-faster-hevc.mp4"
+              webmVideoUrl="assets/build-widgets-faster-vp9.webm" />
           </div>
         </section>
         <section className={clsx(styles.valuePropSection, styles.valuePropSectionAlt)}>
@@ -126,7 +126,8 @@ function Home() {
                 'Mock dependencies to render visual states that are hard to reproduce.',
                 'You can also reuse your stories from your widget tests.'
               ]}
-              videoUrl="assets/find-fix-bugs.mp4" />
+              mp4VideoUrl="assets/find-fix-bugs-hevc.mp4"
+              webmVideoUrl="assets/find-fix-bugs-vp9.webm" />
           </div>
         </section>
         <section className={styles.valuePropSection}>
@@ -139,7 +140,8 @@ function Home() {
                 'See how your widgets render under different locales.',
                 'Play with the text scale factor to see how your widgets will render to different users.',
               ]}
-              videoUrl="assets/switch-knobs.mp4" />
+              mp4VideoUrl="assets/build-widgets-faster-hevc.mp4"
+              webmVideoUrl="assets/build-widgets-faster-vp9.webm" />
           </div>
         </section>
         {/* <section className={clsx(styles.valuePropSection, styles.valuePropSectionAlt)}>

@@ -16,22 +16,23 @@ Monarch is inspired by [Storybook](https://storybook.js.org/). Conceptually,
 Monarch stories are the same as Storybook stories.
 
 :::tip What's a Story
-A story captures the rendered state of a Flutter widget. Developers write 
-multiple stories per widget that describe all the “interesting” states 
-a widget can support.
+A story captures a rendered state of a Flutter widget. Developers write 
+multiple stories per widget to describe all the relevant states 
+a widget can have.
 :::
 
-In code, a story is a function that returns a `Widget`. Stories should be 
-placed in dart files that end with `*_stories.dart`.
+In code, a story is a function that returns a `Widget`. You don't need any
+dependencies to write a story. You don't even have to import the `monarch`
+package. 
+
+Monarch will look for stories in dart files that end with `*_stories.dart`.
 
 The `monarch init` command created a `stories` directory in your project. You
 can place stories inside the `stories` directory or, if you prefer, you can place them 
 inside your `lib` directory. The only requirement is that story files should 
 end in `*_stories.dart`.
 
-Since stories are functions that return a `Widget`, your stories code
-doesn't need to import the `monarch` package. Also, since stories are 
-plain functions, they can be re-used from your widget tests.
+Also, since stories are plain functions, they can be re-used from your widget tests.
 
 ## Examples of stories
 
