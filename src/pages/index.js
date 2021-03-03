@@ -140,8 +140,8 @@ function Home() {
                 'See how your widgets render under different locales.',
                 'Play with the text scale factor to see how your widgets will render to different users.',
               ]}
-              mp4VideoUrl="assets/build-widgets-faster-hevc.mp4"
-              webmVideoUrl="assets/build-widgets-faster-vp9.webm" />
+              mp4VideoUrl="assets/switch-context-hevc.mp4"
+              webmVideoUrl="assets/switch-context-vp9.webm" />
           </div>
         </section>
         {/* <section className={clsx(styles.valuePropSection, styles.valuePropSectionAlt)}>
