@@ -86,7 +86,7 @@ function Home() {
   // set as the `description` field in every markdown file. The `description` field
   // becomes the <meta name="description" content="..."/> and <meta property="og:description" content="..."/> 
   // in <head>, used by search engines. 
-  const monarchPurpose = "Monarch is a tool for developing Flutter widgets in isolation. It makes it super easy to build widgets for complex UIs.";
+  const monarchPurpose = "Monarch is a tool for Flutter developers. It makes building beautiful widgets a more pleasant and faster experience.";
 
   return (
     <Layout
@@ -120,7 +120,7 @@ function Home() {
             <ValuePropVideo
               name="Find and fix bugs with ease"
               items={[
-                'Render edge cases with ease.',
+                'Render edge cases with little effort.',
                 'From your stories, navigate to your code to find and fix bugs.',
                 'Monarch renders your fixes much faster than an emulator.',
                 'Mock dependencies to render visual states that are hard to reproduce.',
