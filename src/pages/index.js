@@ -106,7 +106,7 @@ function Home() {
               name="Build widgets faster"
               items={[
                 'Monarch provides a sandbox to build Flutter widgets in isolation.',
-                'Create widgets without worrying about data, screens, emulators, backends or business logic.',
+                'Create widgets without worrying about data, emulators, backends or business logic.',
                 'Define the relevant states of your widgets, we call these relevant states "stories".',
                 'Browse stories to verify your UX is right.',
                 'Ditch the emulator for common tasks.'
