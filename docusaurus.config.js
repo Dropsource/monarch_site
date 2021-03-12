@@ -33,7 +33,7 @@ module.exports = {
       },
       items: [
         {
-          to: 'docs/install',
+          to: 'docs/introduction',
           activeBasePath: 'docs',
           label: 'Docs',
           position: 'right',
@@ -61,7 +61,7 @@ module.exports = {
           items: [
             {
               label: 'Get Started',
-              to: 'docs/install',
+              to: 'docs/introduction',
             },
             {
               label: 'Advanced Usage',
@@ -113,7 +113,7 @@ module.exports = {
         //   ],
         // },
       ],
-      copyright: `Copyright © ${new Date().getFullYear()} Dropsource, Inc.`,
+      copyright: `Copyright © ${new Date().getFullYear()} Dropsource`,
     },
     prism: {
       theme: require('prism-react-renderer/themes/vsDark'),

@@ -69,7 +69,7 @@ function CtaButton({ text }) {
         className={clsx(
           'button button--outline button--primary button--lg',
         )}
-        to={useBaseUrl('docs/install/')}>
+        to={useBaseUrl('docs/introduction')}>
         {text}
       </Link>
     </div>
@@ -86,7 +86,7 @@ function Home() {
   // set as the `description` field in every markdown file. The `description` field
   // becomes the <meta name="description" content="..."/> and <meta property="og:description" content="..."/> 
   // in <head>, used by search engines. 
-  const monarchPurpose = "Monarch is a tool for Flutter developers. It makes building beautiful widgets a more pleasant and faster experience.";
+  const monarchPurpose = "Monarch is a tool for Flutter developers. It makes building beautiful apps a simpler and faster experience.";
 
   return (
     <Layout
@@ -105,8 +105,7 @@ function Home() {
             <ValuePropVideo
               name="Build widgets faster"
               items={[
-                'Monarch provides a sandbox to build Flutter widgets in isolation.',
-                'Create widgets without worrying about data, emulators, backends or business logic.',
+                'Render widgets without worrying about data, emulators, backends or business logic.',
                 'Define the relevant states of your widgets, we call these relevant states "stories".',
                 'Browse stories to verify your UX is right.',
                 'Ditch the emulator for common tasks.'
@@ -155,22 +154,6 @@ function Home() {
               imageUrl="assets/create_component_library.png" />
           </div>
         </section> */}
-        <section className={clsx(styles.valuePropSection, styles.valuePropSectionAlt)}>
-          <div className="container">
-            <div className={clsx("row", styles.valueProp)}>
-              <div className={clsx('col col--12')}>
-                <h2>Why Monarch?</h2>
-                <p>Monarch helps you build widgets in isolation. The benefits are clear:</p>
-                <ul>
-                  <li>Build widgets in isolation to avoid the pain and frustration of developing widgets in the context of an entire app.</li>
-                  <li>Stories help you pinpoint bugs quickly. It’s more efficient than debugging using entire screens.</li>
-                  <li>A story is like a visual test. The more stories you have, the more confidence your components work in all possible scenarios.</li>
-                  <li>Parallelize development: widget isolation enables multiple team members to work on multiple widgets at the same time.</li>
-                </ul>
-              </div>
-            </div>
-          </div>
-        </section>
         <section className={clsx(styles.valuePropSection, styles.osSection)}>
           <div className="container">
             <div className="row os__buttons">
