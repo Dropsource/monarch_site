@@ -40,18 +40,21 @@ Linux support coming soon.
   ]
 }>
   <TabItem value="mac">
-    <ol><li>Download the following bundle to get the latest release of the Monarch
+    <ol start="1"><li>Make sure you have <a href="https://developer.apple.com/xcode/" target="_blank">Xcode</a> installed.</li></ol>
+    <ol start="2"><li>Download the following bundle to get the latest release of the Monarch
 binaries, which include the Monarch CLI and desktop app. </li></ol>
     <CodeBlock language="bash">{commands.downloadMac}</CodeBlock>
     <br/>
-    <ol start="2"><li>Extract the file in the desired location, for example:</li></ol>
+    <ol start="3"><li>Extract the file in the desired location, for example:</li></ol>
     <CodeBlock language="bash">{commands.extractMac}</CodeBlock>
     <br/>
-    <ol start="3"><li>Add the monarch binaries to your path:</li></ol>
+    <ol start="4"><li>Add the monarch binaries to your path:</li></ol>
     <CodeBlock language="bash">{commands.pathMac}</CodeBlock>
   </TabItem>
   <TabItem value="win">
-    <ol><li>Download the following bundle to get the latest release of the Monarch
+    <ol start="1"><li>Make sure you have <a href="https://visualstudio.microsoft.com/downloads/" target="_blank">Visual Studio 2019</a> (not to be confused with Visual Studio <i>Code</i>) with the “Desktop development with C++” workload installed, 
+including all of its default components</li></ol>
+    <ol start="2"><li>Download the following bundle to get the latest release of the Monarch
 binaries, which include the Monarch CLI and desktop app. </li></ol>
     <div>
       <a 
@@ -59,10 +62,10 @@ binaries, which include the Monarch CLI and desktop app. </li></ol>
         href={windowsVersionInfo.installation_bundle_url}>{windowsVersionInfo.installation_bundle_file}</a>
     </div>
     <br/>
-    <ol start="2"><li>Extract the file in the desired location, for example:</li></ol>
+    <ol start="3"><li>Extract the file in the desired location, for example:</li></ol>
     <CodeBlock language="bash">{commands.extractWindows}</CodeBlock>
     <br/>
-    <ol start="3"><li>Add the monarch binaries to your path:</li></ol>
+    <ol start="4"><li>Add the monarch binaries to your path:</li></ol>
     <CodeBlock language="bash">{commands.pathWindows}</CodeBlock>
   </TabItem>
 </Tabs>
