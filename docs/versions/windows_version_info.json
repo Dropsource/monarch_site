@@ -1,5 +1,5 @@
 {
-    "version_number": "0.2.1-0.1.dev",
-    "installation_bundle_url": "https://s3.amazonaws.com/dropsource-monarch/dist/dev/windows/monarch_windows_0.2.1-0.1.dev.zip",
-    "installation_bundle_file": "monarch_windows_0.2.1-0.1.dev.zip"
+    "version_number": "0.3.8-6.0.dev",
+    "installation_bundle_url": "https://d3707f2dblv6g7.cloudfront.net/windows/monarch_windows_0.3.8-6.0.dev.zip",
+    "installation_bundle_file": "monarch_windows_0.3.8-6.0.dev.zip"
 }
