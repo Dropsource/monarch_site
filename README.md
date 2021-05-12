@@ -28,7 +28,9 @@ This command generates static content into the `build` directory and can be serv
 
 ## Deployment
 
-We use render.com to host the monarch_site. Ask someone in the team for the contents of the `.deploy_hook` file. Then run:
+We use render.com to host the production monarch_site. The production site deploys the contents of the master branch. Ask someone in the team for the contents of the `.deploy_hook` file. Then run:
 ```
 bash deploy.bash
 ```
+
+We also have a dev site on render.com which deploys from the dev branch. Make sure you are using the deploy hook for the site you want to deploy to.
