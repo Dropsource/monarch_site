@@ -33,7 +33,9 @@ We use render.com to host the production monarch_site. The production site deplo
 sh deploy.sh
 ```
 
-Then go to: https://monarchapp.io/
+Then go to: 
+- https://monarchapp.io/
+- https://monarch-site.onrender.com/
 
 ## Deployment DEV
 
@@ -41,4 +43,5 @@ We also have a dev site on render.com which deploys from the `dev` branch in Git
 ```
 sh deploy_dev.sh
 ```
-Then go to: https://monarch-site-dev.onrender.com/
+Then go to: 
+- https://monarch-site-dev.onrender.com/

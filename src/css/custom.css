@@ -130,3 +130,6 @@
   border-radius: 0;
 }
 
+.community-logo-container img {
+  height: 30px;
+}
