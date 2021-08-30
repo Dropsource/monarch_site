@@ -1,24 +1,39 @@
 module.exports = {
-  title: 'Build high-quality Flutter widgets faster',
-  tagline: 'Monarch is a tool for developing Flutter widgets in isolation. It makes building beautiful widgets a more pleasant and faster experience. It is inspired by Storybook.',
-  url: 'https://your-docusaurus-test-site.com',
+  title: 'Monarch',
+  tagline: 'Build high-quality UIs with ease',
+  url: 'https://monarchapp.io',
   baseUrl: '/',
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
   favicon: 'img/monarch_favicon.ico',
-  organizationName: 'facebook', // Usually your GitHub org/user name.
-  projectName: 'docusaurus', // Usually your repo name.
+  organizationName: 'Dropsource', // Usually your GitHub org/user name.
+  projectName: 'monarch', // Usually your repo name.
+  stylesheets: [
+    'https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap'
+  ],
   themeConfig: {
+    googleAnalytics: {
+      trackingID: 'G-GHR4Z83T6D',
+      anonymizeIP: false
+    },
+    gtag: {
+      trackingID: 'G-GHR4Z83T6D',
+      anonymizeIP: false
+    },
+    image: 'assets/monarch-open-graph.png',
+    colorMode: {
+      disableSwitch: true
+    },
     navbar: {
-      title: '',
+      title: 'Monarch',
       logo: {
         alt: 'Monarch Logo',
-        src: 'img/logo_monarch_black.png',
-        srcDark: 'img/logo_monarch_white.png'
+        src: 'img/monarch_m.png',
+        srcDark: 'img/monarch_m.png'
       },
       items: [
         {
-          to: 'docs/install',
+          to: 'docs/introduction',
           activeBasePath: 'docs',
           label: 'Docs',
           position: 'right',
@@ -46,7 +61,7 @@ module.exports = {
           items: [
             {
               label: 'Get Started',
-              to: 'docs/install',
+              to: 'docs/introduction',
             },
             {
               label: 'Advanced Usage',
@@ -71,6 +86,19 @@ module.exports = {
             }
           ],
         },
+        {
+          title: 'Credits',
+          items: [
+            {
+              label: 'Storybook (inspiration for Monarch)',
+              href: 'https://storybook.js.org/'
+            },
+            {
+              label: 'Developer Quest app (used for samples above)',
+              href: 'https://github.com/2d-inc/developer_quest'
+            }
+          ]
+        }
         // {
         //   title: 'More',
         //   items: [
@@ -85,7 +113,7 @@ module.exports = {
         //   ],
         // },
       ],
-      copyright: `Copyright © ${new Date().getFullYear()} Dropsource, Inc.`,
+      copyright: `Copyright © ${new Date().getFullYear()} Dropsource`,
     },
     prism: {
       theme: require('prism-react-renderer/themes/vsDark'),
@@ -106,7 +134,12 @@ module.exports = {
         theme: {
           customCss: require.resolve('./src/css/custom.css'),
         },
+        sitemap: {
+          changefreq: 'weekly',
+          priority: 0.5,
+          trailingSlash: false,
+        },
       },
     ],
-  ],
+  ]
 };

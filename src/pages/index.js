@@ -1,79 +1,28 @@
 import React from 'react';
 import clsx from 'clsx';
 import Layout from '@theme/Layout';
-import CodeBlock from '@theme/CodeBlock';
-import { useThemeConfig } from '@docusaurus/theme-common';
 import Link from '@docusaurus/Link';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import useBaseUrl from '@docusaurus/useBaseUrl';
 import styles from './styles.module.css';
 
-const textContent = {
-  write: `
-A story captures the rendered visual state of a Flutter widget. You can write 
-multiple stories per widget to exercise and capture the most important states 
-a widget can support.
-<br/><br/>
-In code, a story is a function that returns a widget in a specific visual state.
-  `,
-  storiesCodeExample: `
-import 'package:flutter/material.dart';
-import 'package:my_fancy_app/button.dart';
 
-Widget primary() => Button(
-  'Button', style: MyStyles.primary);
-
-Widget secondary() => Button(
-  'Button', style: MyStyles.secondary);
-
-Widget disabled() => Button(
-  'Button', style: MyStyles.disabled);  
-  `,
-  browse: `
-You can see your widgets, via the stories your wrote, using the Monarch desktop 
-apps for macOS and Windows. (Linux coming soon).
-<br/><br/>
-Your widgets render in isolation. No need for a simulator, device or backend.
-  `,
-  develop: `
-Use the Monarch CLI to prepare your stories and launch the desktop app. The CLI 
-will also detect changes in your stories or widget files. See your stories 
-change automatically as you code.
-  `,
-  cliLog: `
-~/development/my_fancy_app $ monarch run
-
-Starting Monarch
-
-Preparing stories...
-Preparing stories completed, took 3.7sec
-
-Launching Monarch app...
-Launching Monarch app completed, took 1.4sec
-
-Monarch is ready to use
-
-Setting up stories watch...
-2.1sec elapsed, 0/2 tasks completed
-Setting up stories watch completed, took 4.1sec
-
-Reloading stories...
-Reloading stories completed, took 3.1sec
-  `
-}
-
-function FeatureRow({ imageUrl, title, description }) {
+function ValueProp({ name, items, imageUrl }) {
   const imgUrl = useBaseUrl(imageUrl);
   return (
-    <div className="row">
-      <div className={clsx('col col--6', styles.feature)}>
-        <h3>{title}</h3>
-        <p>{description}</p>
+    <div className={clsx("row", styles.valueProp)}>
+      <div className={clsx('col col--5')}>
+        <h2>{name}</h2>
+        <ul>
+          {
+            items.map(item => <li key={item}>{item}</li>)
+          }
+        </ul>
       </div>
-      <div className={clsx('col col--6', styles.feature)}>
+      <div className={clsx('col col--7')}>
         {imgUrl && (
           <div className="text--center">
-            <img className={styles.featureImage} src={imgUrl} alt={title} />
+            <img src={imgUrl} alt={name} />
           </div>
         )}
       </div>
@@ -81,111 +30,148 @@ function FeatureRow({ imageUrl, title, description }) {
   );
 }
 
-function FeatureRowTwoColumns({ columnOne, columnTwo }) {
+function ValuePropVideo({ name, items, mp4VideoUrl, webmVideoUrl }) {
+  const resolvedMp4VideoUrl = useBaseUrl(mp4VideoUrl);
+  const resolvedWebmVideoUrl = useBaseUrl(webmVideoUrl);
   return (
-    <div className="row">
-      <div className={clsx('col col--6', styles.feature)}>
-        {columnOne}
+    <div className={clsx("row", styles.valueProp)}>
+      <div className={clsx('col col--5')}>
+        <h2>{name}</h2>
+        <ul>
+          {
+            items.map(item => <li key={item}>{item}</li>)
+          }
+        </ul>
       </div>
-      <div className={clsx('col col--6', styles.feature)}>
-        {columnTwo}
+      <div className={clsx('col col--7')}>
+        <div className="text--center">
+          <video autoPlay={true} muted={true} loop={true} playsInline={true}>
+            <source src={resolvedWebmVideoUrl} type="video/webm" />
+            <source src={resolvedMp4VideoUrl} type="video/mp4" />
+          </video>
+        </div>
       </div>
     </div>
   );
 }
 
-function WriteStories() {
-  const { prism } = useThemeConfig();
-  prism.defaultLanguage = 'dart';
+function OsLogo({ className }) {
   return (
-    <div className="dartCode">
-      <FeatureRowTwoColumns
-        columnOne={
-          <>
-            <h3>Write stories for your widgets</h3>
-            <p dangerouslySetInnerHTML={{ __html: textContent.write }} />
-          </>
-        }
-        columnTwo={
-          <div style={{ paddingBottom: 40 }}>
-            <CodeBlock language="dart">{textContent.storiesCodeExample}</CodeBlock>
-          </div>
-        } />
+    <div className={clsx(styles.osLogo, className)}>
+    </div>
+  )
+}
+
+function CtaButton({ text }) {
+  return (
+    <div className="button__container">
+      <Link
+        className={clsx(
+          'button button--outline button--primary button--lg',
+        )}
+        to={useBaseUrl('docs/introduction')}>
+        {text}
+      </Link>
     </div>
   );
 }
 
-function SeeWidgets() {
-  return (
-    <div className="seeWidgets">
-      <FeatureRowTwoColumns
-        columnOne={
-          <>
-            <h3>See your widgets in isolation</h3>
-            <p dangerouslySetInnerHTML={{ __html: textContent.browse }} />
-          </>
-        }
-        columnTwo={
-          <div style={{ paddingBottom: 40 }}>
-            <img alt="" src={useBaseUrl('img/button_primary.png')} />
-            <img alt="" src={useBaseUrl('img/button_secondary.png')} />
-            <img alt="" src={useBaseUrl('img/button_disabled.png')} />
-          </div>
-        } />
-    </div>
-  );
-}
-
-function DevelopWidgets() {
-  const { prism } = useThemeConfig();
-  prism.defaultLanguage = 'bash';
-  return (
-    <div className="cliLog">
-      <FeatureRowTwoColumns
-        columnOne={
-          <>
-            <h3>Interactively develop widgets</h3>
-            <p dangerouslySetInnerHTML={{ __html: textContent.develop }} />
-          </>
-        }
-        columnTwo={
-          <div style={{ paddingBottom: 40 }}>
-            <CodeBlock language="bash">{textContent.cliLog}</CodeBlock>
-          </div>
-        } />
-    </div>
-  );
-}
 
 function Home() {
   const context = useDocusaurusContext();
   const { siteConfig = {} } = context;
+
+  // @GOTCHA: if you change `monarchPurpose` make sure to find-replace-all instances
+  // of its string contents in the *.md and *.mdx files. The monarch purpose is
+  // set as the `description` field in every markdown file. The `description` field
+  // becomes the <meta name="description" content="..."/> and <meta property="og:description" content="..."/> 
+  // in <head>, used by search engines. 
+  const monarchPurpose = "Monarch is a tool for Flutter developers. It makes building beautiful apps a simpler and faster experience.";
+
   return (
     <Layout
-      title={`Monarch | ${siteConfig.title}`}
-      description="Description will go into a meta tag in <head />">
+      title={siteConfig.tagline}
+      description={monarchPurpose}>
       <header className={clsx('hero hero--primary', styles.heroBanner)}>
         <div className="container">
-          <h1 className="hero__title">{siteConfig.title}</h1>
-          <p className="hero__subtitle">{siteConfig.tagline}</p>
-          <div className={styles.buttons}>
-            <Link
-              className={clsx(
-                'button button--outline button--secondary button--lg',
-                styles.getStarted,
-              )}
-              to={useBaseUrl('docs/install/')}>
-              Get Started
-            </Link>
-          </div>
+          <h1 className="hero__title">{siteConfig.tagline}</h1>
+          <p className="hero__subtitle">{monarchPurpose}</p>
+          <CtaButton text="Get Started" />
         </div>
       </header>
       <main>
-        <section className={styles.features}>
+        <section className={styles.valuePropSection}>
           <div className="container">
-            <WriteStories />
-            <SeeWidgets />
-            <DevelopWidgets />
+            <ValuePropVideo
+              name="Build widgets faster"
+              items={[
+                'Render widgets without worrying about data, emulators, backends or business logic.',
+                'Define the relevant states of your widgets, we call these relevant states "stories".',
+                'Browse stories to verify your UX is right.',
+                'Ditch the emulator for common tasks.'
+              ]}
+              mp4VideoUrl="assets/build-widgets-faster-hevc.mp4"
+              webmVideoUrl="assets/build-widgets-faster-vp9.webm" />
+          </div>
+        </section>
+        <section className={clsx(styles.valuePropSection, styles.valuePropSectionAlt)}>
+          <div className="container">
+            <ValuePropVideo
+              name="Find and fix bugs with ease"
+              items={[
+                'Render edge cases with little effort.',
+                'From your stories, navigate to your code to find and fix bugs.',
+                'Monarch renders your fixes much faster than an emulator.',
+                'Mock dependencies to render visual states that are hard to reproduce.',
+                'You can also reuse your stories from your widget tests.'
+              ]}
+              mp4VideoUrl="assets/find-fix-bugs-hevc.mp4"
+              webmVideoUrl="assets/find-fix-bugs-vp9.webm" />
+          </div>
+        </section>
+        <section className={styles.valuePropSection}>
+          <div className="container">
+            <ValuePropVideo
+              name="Switch themes, locales, device resolutions and text scale"
+              items={[
+                'See your widgets in different device resolutions.',
+                'Switch between dark mode, light mode or your own custom theme.',
+                'See how your widgets render under different locales.',
+                'Play with the text scale factor to see how your widgets will render to different users.',
+              ]}
+              mp4VideoUrl="assets/switch-context-hevc.mp4"
+              webmVideoUrl="assets/switch-context-vp9.webm" />
+          </div>
+        </section>
+        {/* <section className={clsx(styles.valuePropSection, styles.valuePropSectionAlt)}>
+          <div className="container">
+            <ValueProp
+              name="Create a component library"
+              items={[
+                'Create stories that reflect your component library using real code.',
+                'Easily find widgets to reuse in other screens.'
+              ]}
+              imageUrl="assets/create_component_library.png" />
+          </div>
+        </section> */}
+        <section className={clsx(styles.valuePropSection, styles.osSection)}>
+          <div className="container">
+            <div className="row os__buttons">
+              <div className="col col--4">
+                <OsLogo className={styles.apple} />
+                <CtaButton text="Get Started on macOS" />
+              </div>
+              <div className="col col--4">
+                <OsLogo className={styles.windows} />
+                <CtaButton text="Get Started on Windows" />
+              </div>
+              <div className="col col--4">
+                <OsLogo className={styles.linux} />
+                <div className="button__container">
+                  <p className="coming__soon">Coming soon on Linux</p>
+                </div>
+              </div>
+            </div>
           </div>
         </section>
       </main>

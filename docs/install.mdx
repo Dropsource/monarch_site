@@ -1,6 +1,7 @@
 ---
 id: install
 title: Install
+description: Monarch is a tool for Flutter developers. It makes building beautiful apps a simpler and faster experience.
 ---
 
 import Tabs from '@theme/Tabs';
@@ -13,12 +14,15 @@ import macosVersionInfo from './versions/macos_version_info.json';
 import windowsVersionInfo from './versions/windows_version_info.json';
 
 export const commands = {
-    extractMac: `$ cd ~/development
-$ unzip ` + macosVersionInfo.installation_bundle_file
+    downloadMac: `cd ~/development
+curl -O ` + macosVersionInfo.installation_bundle_url 
+    ,
+    extractMac: `unzip ` + macosVersionInfo.installation_bundle_file
     ,
     extractWindows:`cd development
-tar -x -f ` + windowsVersionInfo.installation_bundle_file,
-    pathMac: '$ export PATH="$PATH:`pwd`/monarch/bin"',
+tar -x -f ` + windowsVersionInfo.installation_bundle_file
+    ,
+    pathMac: 'export PATH="$PATH:`pwd`/monarch/bin"',
     pathWindows: 'set PATH=%PATH%;C:\\path\\to\\monarch\\bin'
 }
 
@@ -36,23 +40,21 @@ Linux support coming soon.
   ]
 }>
   <TabItem value="mac">
-    <ol><li>Download the following bundle to get the latest release of the Monarch
+    <ol start="1"><li>Make sure you have <a href="https://developer.apple.com/xcode/" target="_blank">Xcode</a> installed.</li></ol>
+    <ol start="2"><li>Download the following bundle to get the latest release of the Monarch
 binaries, which include the Monarch CLI and desktop app. </li></ol>
-    <div>
-      <a 
-        className={clsx('button button--outline button--primary button--lg')}
-        href={macosVersionInfo.installation_bundle_url}>{macosVersionInfo.installation_bundle_file}</a>
-    </div>
+    <CodeBlock language="bash">{commands.downloadMac}</CodeBlock>
     <br/>
-    <ol start="2"><li>Extract the file in the desired location, for example:</li></ol>
+    <ol start="3"><li>Extract the file in the desired location, for example:</li></ol>
     <CodeBlock language="bash">{commands.extractMac}</CodeBlock>
     <br/>
-    <ol start="3"><li>Add the monarch binaries to your path:</li></ol>
+    <ol start="4"><li>Add the monarch binaries to your path:</li></ol>
     <CodeBlock language="bash">{commands.pathMac}</CodeBlock>
   </TabItem>
   <TabItem value="win">
-    <p><i>You may experience some stability issues with Monarch on Windows. Flutter desktop on Windows is still in alpha.</i></p>
-    <ol><li>Download the following bundle to get the latest release of the Monarch
+    <ol start="1"><li>Make sure you have <a href="https://visualstudio.microsoft.com/downloads/" target="_blank">Visual Studio 2019</a> (not to be confused with Visual Studio <i>Code</i>) with the “Desktop development with C++” workload installed, 
+including all of its default components</li></ol>
+    <ol start="2"><li>Download the following bundle to get the latest release of the Monarch
 binaries, which include the Monarch CLI and desktop app. </li></ol>
     <div>
       <a 
@@ -60,10 +62,10 @@ binaries, which include the Monarch CLI and desktop app. </li></ol>
         href={windowsVersionInfo.installation_bundle_url}>{windowsVersionInfo.installation_bundle_file}</a>
     </div>
     <br/>
-    <ol start="2"><li>Extract the file in the desired location, for example:</li></ol>
+    <ol start="3"><li>Extract the file in the desired location, for example:</li></ol>
     <CodeBlock language="bash">{commands.extractWindows}</CodeBlock>
     <br/>
-    <ol start="3"><li>Add the monarch binaries to your path:</li></ol>
+    <ol start="4"><li>Add the monarch binaries to your path:</li></ol>
     <CodeBlock language="bash">{commands.pathWindows}</CodeBlock>
   </TabItem>
 </Tabs>
@@ -75,14 +77,14 @@ permanently add Monarch to your path, see [Update your path](#update-your-path).
 1. Go to one of your Flutter projects and then run `monarch init`. Run it inside 
 your existing project’s root directory:
 ```bash
-$ monarch init
+monarch init
 ```
 The `monarch init` command will set up all the dependencies needed to run monarch. 
 It will also create a few sample stories in your project.
 
 2. Run monarch using `monarch run`
 ```bash
-$ monarch run
+monarch run
 ```
 The `monarch run` command will prepare the stories in your project so they can
 be rendered by the Monarch desktop app. The `monarch run` command will launch
@@ -108,10 +110,10 @@ let you run `monarch` from any terminal window.
     <br/>
     <ol start="3"><li>Run <code>source ~/. rc file</code> to refresh the current window, or open a new terminal window to automatically source the file.</li></ol>
     <ol start="4"><li>Verify that the monarch/bin directory is now in your PATH by running:</li></ol>
-    <CodeBlock language="bash">$ echo $PATH</CodeBlock>
+    <CodeBlock language="bash">echo $PATH</CodeBlock>
     <br/>
     <ol start="5"><li>Verify that the monarch command is available by running:</li></ol>
-    <CodeBlock language="bash">$ monarch --version</CodeBlock>
+    <CodeBlock language="bash">monarch --version</CodeBlock>
     <br/>
   </TabItem>
   <TabItem value="win">

@@ -6,32 +6,94 @@
  */
 
 .heroBanner {
-  padding: 4rem 0;
+  padding: 6rem 2rem;
   text-align: center;
   position: relative;
   overflow: hidden;
+  font-family: 'DM Sans', sans-serif;
 }
 
 @media screen and (max-width: 966px) {
   .heroBanner {
-    padding: 2rem;
+    padding: 4rem 0;
   }
 }
 
-.buttons {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.features {
-  display: flex;
-  align-items: center;
-  padding: 2rem 0;
+.valuePropSection {
+  /* border-bottom: 1px solid rgba(0, 0, 0, 0.1); */
+  padding: 7rem 2rem;
   width: 100%;
+  font-family: 'DM Sans', sans-serif;
 }
 
-.featureImage {
-  height: 200px;
-  width: 200px;
+[data-theme='light'] .valuePropSectionAlt {
+  background-color: #f5f5f5;
+}
+
+@media screen and (max-width: 966px) {
+  .valuePropSection {
+    padding: 5rem 0;
+  }
+}
+
+.valueProp h2 {
+  font-size: var(--ifm-h1-font-size);
+  padding-top: 2rem;
+  /* color: var(--ifm-color-primary); */
+  color: #008A8F
+}
+
+.valueProp p {
+  font-size: 1.1rem;
+}
+
+.valueProp li {
+  font-size: 1.1rem;
+}
+
+.valueProp img {
+  width: 604px;
+  border-radius: 5px;
+  object-fit: cover;
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px;
+}
+
+.valueProp video {
+  width: 604px;
+  border-radius: 5px;
+  object-fit: cover;
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px;
+  
+  background: no-repeat center url(/assets/video-loading-spinner.gif), var(--mon-dark-background-color);
+}
+
+@media screen and (max-width: 650px) {
+  .valueProp video {
+    width: 98%;
+  }
+}
+
+.osLogo {
+  height: 100px;
+  width: 100px;
+  background-size: contain !important;
+  margin: 0 auto;
+  -ms-high-contrast-adjust: none;
+}
+
+.osLogo.windows {
+  background: url(/assets/windows-logo.png) center center no-repeat;
+}
+
+.osLogo.linux {
+  background: url(/assets/linux-logo.png) center center no-repeat;
+}
+
+.osLogo.apple {
+  background: url(/assets/apple-logo.svg) center center no-repeat;
+}
+
+.osSection {
+  padding-bottom: 0;
+  background-color: #f5f5f5;
 }

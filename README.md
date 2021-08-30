@@ -26,26 +26,19 @@ yarn build
 
 This command generates static content into the `build` directory and can be served using any static contents hosting service.
 
-## Deployment
+## Deployment PROD
 
-As of 2020-12-15, we have two sites, a prod and a dev site:
-- the prod site is monarch-site.onrender.com
-- the dev site is monarch-site-dev.onrender.com
-
-The prod site uses the master branch. The dev site uses the dev branch.
-
-You should create a .deploy_hook file with the deploy hook url for the site you want to deploy to.
-You can get the deploy hook url from the render.com site.
-
-In general, the dev machines should deploy to the dev site. The build machines should deploy to the prod sites.
- 
-Deploy from macos:
+We use render.com to host the production monarch_site. The production site deploys the contents of the `master` branch in Github. Ask someone in the team for the contents of the `.deploy_hook` file. Then run:
 ```
-bash deploy.bash
+sh deploy.sh
 ```
 
-Deploy from windows:
-```
-deploy.bat
-```
+Then go to: https://monarchapp.io/
 
+## Deployment DEV
+
+We also have a dev site on render.com which deploys from the `dev` branch in Github. Make sure you are using the deploy hook for the site you want to deploy to.
+```
+sh deploy_dev.sh
+```
+Then go to: https://monarch-site-dev.onrender.com/

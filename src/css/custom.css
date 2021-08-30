@@ -6,16 +6,106 @@
  */
 
 /* You can override the default Infima variables here. */
+
+/* If you change the primary color, use the tool below to find
+   the lighter and darker hex codes
+   https://v2.docusaurus.io/docs/styling-layout
+*/
 :root {
-  --ifm-color-primary: #25c2a0;
-  --ifm-color-primary-dark: rgb(33, 175, 144);
-  --ifm-color-primary-darker: rgb(31, 165, 136);
-  --ifm-color-primary-darkest: rgb(26, 136, 112);
-  --ifm-color-primary-light: rgb(70, 203, 174);
-  --ifm-color-primary-lighter: rgb(102, 212, 189);
-  --ifm-color-primary-lightest: rgb(146, 224, 208);
+  --ifm-color-primary: #00b3b8;
+  --ifm-color-primary-dark: #00a1a6;
+  --ifm-color-primary-darker: #00989c;
+  --ifm-color-primary-darkest: #007d81;
+  --ifm-color-primary-light: #00c5ca;
+  --ifm-color-primary-lighter: #00ced4;
+  --ifm-color-primary-lightest: #00e9ef;
   --ifm-code-font-size: 95%;
+  --mon-dark-text-color: #f5f6f7;
+  --mon-dark-background-color: #2C2C32;
 }
+
+.navbar {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 1.1rem;
+  background-color: var(--mon-dark-background-color);
+  color: var(--mon-dark-text-color);
+}
+
+.navbar .navbar__logo {
+  width: 48px;
+  height: 48px;
+}
+
+.navbar .navbar__title {
+  font-size: 1.3rem;
+  color: var(--mon-dark-text-color);
+}
+
+.navbar__link {
+  color: var(--mon-dark-text-color);
+}
+
+.hero {
+  background-color: var(--mon-dark-background-color);
+  color: var(--mon-dark-text-color);
+}
+
+.hero .hero__title {
+  font-size: 3.3rem;
+}
+
+.hero .hero__subtitle {
+  font-size: 1.8rem;
+}
+
+.button__container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.button__container .button {
+  background-color: var(--ifm-color-primary);
+  border: none;
+  font-size: 1.6rem;
+  margin-top: 15px;
+  color: var(--mon-dark-text-color);
+  /* color: var(--ifm-font-color-base); */
+}
+
+.button__container .button:hover {
+  background-color: var(--ifm-color-primary-darker);
+}
+
+.os__buttons .button__container .button {
+  font-size: 1.2rem;
+}
+
+.button__container .coming__soon {
+  font-size: 1.2rem;
+  margin-top: 23px;
+  font-weight: var(--ifm-button-font-weight);
+}
+
+.os__buttons .col {
+  padding-bottom: 6rem;
+}
+
+@media screen and (max-width: 966px) {
+  .hero .hero__title {
+    font-size: 2.6rem;
+  }
+
+  .hero .hero__subtitle {
+    font-size: 1.4rem;
+  }
+}
+
+.footer {
+  background-color: var(--mon-dark-background-color);
+  padding-top: 5rem;
+}
+
 
 .docusaurus-highlight-code-line {
   background-color: rgb(72, 77, 91);
@@ -24,19 +114,19 @@
   padding: 0 var(--ifm-pre-padding);
 }
 
-.dartCode .prism-code {
-  font-size: 90%;
-}
-
-.cliLog .prism-code {
-  font-size: 80%;
-}
-
-/* .navbar__title {
-  font-size: 30px;
-  padding-bottom: 6px;
-} */
-
 [class^="docMainContainer"] .prism-code {
-  font-size: 90%;
+  font-size: 0.9rem;
 }
+
+
+.docs-screenshot {
+  object-fit: cover;
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px;
+}
+.docs-screenshot.macos {
+  border-radius: 5px;
+}
+.docs-screenshot.windows {
+  border-radius: 0;
+}
+
