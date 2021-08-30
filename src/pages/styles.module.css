@@ -40,7 +40,7 @@
   font-size: var(--ifm-h1-font-size);
   padding-top: 2rem;
   /* color: var(--ifm-color-primary); */
-  color: #008A8F
+  color: #008A8F;
 }
 
 .valueProp p {
@@ -96,4 +96,12 @@
 .osSection {
   padding-bottom: 0;
   background-color: #f5f5f5;
+}
+
+.newsletterSection {
+  text-align: center;
+}
+
+.newsletterSection p {
+  font-size: 1.1rem;
 }
