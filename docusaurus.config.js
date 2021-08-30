@@ -77,12 +77,29 @@ module.exports = {
               to: 'blog',
             },
             {
-              label: 'GitHub',
-              href: 'https://github.com/Dropsource/monarch',
-            },
-            {
               label: 'Dropsource',
               href: 'https://dropsource.com',
+            }
+          ],
+        },
+        {
+          title: 'Community',
+          items: [
+            {
+              label: 'Newsletter',
+              href: 'https://docs.google.com/forms/d/e/1FAIpQLSfD9L92rymZnf-z18hWj0gyqrnBFNcc7U3YB3QyiI0_3PMxhQ/viewform?usp=sf_link',
+            },
+            {
+              label: 'GitHub',
+              href: 'https://github.com/Dropsource/monarch', 
+            },
+            {
+              label: 'Twitter',
+              href: 'https://twitter.com',
+            },
+            {
+              label: 'YouTube',
+              href: 'https://youtube.com',
             }
           ],
         },
