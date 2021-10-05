@@ -1,6 +1,20 @@
 module.exports = {
   someSidebar: {
-    'Get Started': ['introduction', 'install', 'write-first-story', 'examples', 'community', 'learn-more'],
-    'Advanced Usage': ['themes', 'internationalization', 'upgrading', 'cli-usage', 'troubleshooting'],
+    'Get Started': [
+      'introduction',
+      'install',
+      'write-first-story',
+      'examples',
+      'community',
+      'learn-more'
+    ],
+    'Advanced Usage': [
+      'themes',
+      'internationalization',
+      'debug-your-story',
+      'upgrading',
+      'cli-usage',
+      'troubleshooting'
+    ],
   },
 };
