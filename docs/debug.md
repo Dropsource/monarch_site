@@ -4,11 +4,7 @@ title: Debug your story
 description: Monarch is a tool for Flutter developers. It makes building beautiful apps a simpler and faster experience.
 ---
 
-import debug_controls from './assets/debug-controls.png';
-import select_widget_mode from './assets/select-widget-mode.png';
-import details_tree from './assets/details-tree.png';
-
-<img className="docs-screenshot macos" alt="Debug Controls" src={debug_controls}/>
+<img className="docs-screenshot macos" alt="Debug Controls" src="/docs/assets/debug-controls.png"/>
 
 ## Visual debugging
 From Monarch you can enable several options to visually debug your stories:
@@ -33,8 +29,9 @@ After you click "Select Widget Mode", you can go to Monarch and select a widget 
 story. You can then go to the "Details Tree" to see useful information 
 about the selected widget’s properties, render object, and children.
 
-<img className="docs-screenshot macos" alt="Select Widget Mode" src={select_widget_mode}/>
-<img className="docs-screenshot macos" alt="Details Tree" src={details_tree}/>
+<img className="docs-screenshot macos" alt="Select Widget Mode" src="/docs/assets/select-widget-mode.png"/>
+<br/>
+<img className="docs-screenshot macos" alt="Details Tree" src="/docs/assets/details-tree.png"/>
 
 ## Debug your widgets source code
 With Monarch and DevTools you can debug your widgets source code in isolation, 
@@ -52,6 +49,10 @@ To debug a widget:
 7. The DevTools debugger will pause at your breakpoint.
 8. Now, you can inspect the call stack, variables and step through the code.
 9. Click Resume when you are done to let Monarch continue its normal operation.
+
+<img className="docs-screenshot macos" alt="Details Tree" src="/docs/assets/devtools-breakpoint-hit.png"/>
+<br/>
+<br/>
 
 For more information, see the
 [DevTool's Debugger](https://flutter.dev/docs/development/tools/devtools/debugger) 
