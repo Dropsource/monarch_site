@@ -45,3 +45,12 @@ sh deploy_dev.sh
 ```
 Then go to: 
 - https://monarch-site-dev.onrender.com/
+
+## Staging Site
+There is also a staging site, which deploys from the `staging` branch. The staging site is 
+set up under a shared account in render.com. 
+
+- The shared login is ftrigoso+marketing@dropsource.com.
+- The staging site is hosted at: https://monarch-site-staging.onrender.com/
+- To deploy to staging, login to render.com and do a manual deploy.
+- 
