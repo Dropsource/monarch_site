@@ -4,7 +4,9 @@ import Layout from '@theme/Layout';
 import Link from '@docusaurus/Link';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import useBaseUrl from '@docusaurus/useBaseUrl';
+
 import styles from './styles.module.css';
+import NewsletterCta from './newsletter_cta';
 
 
 function ValueProp({ name, items, imageUrl }) {
@@ -176,15 +178,7 @@ function Home() {
         </section>
         <section className={clsx(styles.valuePropSection, styles.newsletterSection)}>
           <div className="container">
-            <h2>Join our newsletter</h2>
-            <p>Sign up to receive low frequency emails on the latest Monarch updates, features and news!</p>
-            <div>
-              <a
-                className={clsx('button button--outline button--primary button--lg')}
-                target="_blank"
-                href="https://docs.google.com/forms/d/e/1FAIpQLSfD9L92rymZnf-z18hWj0gyqrnBFNcc7U3YB3QyiI0_3PMxhQ/viewform?usp=sf_link">
-                Sign Up Now</a>
-            </div>
+            <NewsletterCta />
           </div>
         </section>
       </main>
