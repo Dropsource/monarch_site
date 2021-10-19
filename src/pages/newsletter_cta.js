@@ -10,7 +10,7 @@ function NewsletterCta() {
         <a
           className={clsx('button button--outline button--primary button--lg')}
           target="_blank"
-          href="https://docs.google.com/forms/d/e/1FAIpQLSfD9L92rymZnf-z18hWj0gyqrnBFNcc7U3YB3QyiI0_3PMxhQ/viewform?usp=sf_link">
+          href="http://eepurl.com/hJ-S0L">
           Sign Up Now</a>
       </div>
     </div>
