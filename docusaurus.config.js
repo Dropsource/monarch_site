@@ -98,11 +98,11 @@ module.exports = {
             },
             {
               label: 'Twitter',
-              href: 'https://twitter.com',
+              href: 'https://twitter.com/monarch_app',
             },
             {
               label: 'YouTube',
-              href: 'https://youtube.com',
+              href: 'https://www.youtube.com/channel/UCuG4P4KTQ2HbikL57HIc1OQ',
             }
           ],
         },
