@@ -87,7 +87,7 @@ module.exports = {
           items: [
             {
               html: `
-                  <a href="https://docs.google.com/forms/d/e/1FAIpQLSfD9L92rymZnf-z18hWj0gyqrnBFNcc7U3YB3QyiI0_3PMxhQ/viewform?usp=sf_link" target="_blank" aria-label="Join our newsletter">
+                  <a href="http://eepurl.com/hJ-S0L" target="_blank" aria-label="Join our newsletter">
                     <b>Join our newsletter 💌</b>
                   </a>
                 `,
