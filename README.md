@@ -83,8 +83,13 @@ Then go to:
 - https://monarch-site-dev.onrender.com/
 
 ## Staging Site
-There is also a staging site, which deploys from the `staging` branch. The 
-staging site is set up under a shared account in render.com. 
+There is also a staging site, which we can use to collaborate with non-devs. The master and
+dev branch have protection rules in Github which only allows developers to modify those 
+branches. Other collaborator could submit changes to the staging branch which will then 
+need to be merged to dev or master.
+
+The stating deploys from the `staging` branch. The staging site is 
+set up under a shared account in render.com. 
 
 - The shared login is ftrigoso+marketing@dropsource.com.
 - The staging site is hosted at: https://monarch-site-staging.onrender.com/
