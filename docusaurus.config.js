@@ -5,7 +5,7 @@ module.exports = {
   baseUrl: '/',
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
-  favicon: 'img/monarch_favicon.ico',
+  favicon: 'assets/monarch-favicon.ico',
   organizationName: 'Dropsource', // Usually your GitHub org/user name.
   projectName: 'monarch', // Usually your repo name.
   stylesheets: [
@@ -28,8 +28,8 @@ module.exports = {
       title: 'Monarch',
       logo: {
         alt: 'Monarch Logo',
-        src: 'img/monarch_m.png',
-        srcDark: 'img/monarch_m.png'
+        src: 'assets/monarch-m.png',
+        srcDark: 'assets/monarch-m.png'
       },
       items: [
         {
@@ -53,7 +53,7 @@ module.exports = {
       style: 'dark',
       logo: {
         alt: 'Monarch Logo',
-        src: 'img/logo_monarch_white.png',
+        src: 'assets/logo-monarch-white.png',
       },
       links: [
         {

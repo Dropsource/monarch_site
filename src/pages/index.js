@@ -145,17 +145,6 @@ function Home() {
               webmVideoUrl="assets/switch-context-vp9.webm" />
           </div>
         </section>
-        {/* <section className={clsx(styles.valuePropSection, styles.valuePropSectionAlt)}>
-          <div className="container">
-            <ValueProp
-              name="Create a component library"
-              items={[
-                'Create stories that reflect your component library using real code.',
-                'Easily find widgets to reuse in other screens.'
-              ]}
-              imageUrl="assets/create_component_library.png" />
-          </div>
-        </section> */}
         <section className={clsx(styles.valuePropSection, styles.osSection)}>
           <div className="container">
             <div className="row os__buttons">
