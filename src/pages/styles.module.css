@@ -95,11 +95,12 @@
 
 .osSection {
   padding-bottom: 0;
-  background-color: #f5f5f5;
+  /* background-color: #f5f5f5; */
 }
 
 .newsletterSection {
   text-align: center;
+  background-color: #f5f5f5;
 }
 
 .newsletterSection p {

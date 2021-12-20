@@ -112,8 +112,8 @@ function Home() {
                 'Browse stories to verify your UX is right.',
                 'Ditch the emulator for common tasks.'
               ]}
-              mp4VideoUrl="assets/build-widgets-faster-hevc.mp4"
-              webmVideoUrl="assets/build-widgets-faster-vp9.webm" />
+              mp4VideoUrl="assets/booking-build-hevc.mp4"
+              webmVideoUrl="assets/booking-build-vp9.webm" />
           </div>
         </section>
         <section className={clsx(styles.valuePropSection, styles.valuePropSectionAlt)}>
@@ -125,10 +125,10 @@ function Home() {
                 'From your stories, navigate to your code to find and fix bugs.',
                 'Monarch renders your fixes much faster than an emulator.',
                 'Mock dependencies to render visual states that are hard to reproduce.',
-                'You can also reuse your stories from your widget tests.'
+                'Reuse your stories from your widget tests.'
               ]}
-              mp4VideoUrl="assets/find-fix-bugs-hevc.mp4"
-              webmVideoUrl="assets/find-fix-bugs-vp9.webm" />
+              mp4VideoUrl="assets/booking-fix-hevc.mp4"
+              webmVideoUrl="assets/booking-fix-vp9.webm" />
           </div>
         </section>
         <section className={styles.valuePropSection}>
@@ -141,8 +141,22 @@ function Home() {
                 'See how your widgets render under different locales.',
                 'Play with the text scale factor to see how your widgets will render to different users.',
               ]}
-              mp4VideoUrl="assets/switch-context-hevc.mp4"
-              webmVideoUrl="assets/switch-context-vp9.webm" />
+              mp4VideoUrl="assets/booking-knobs-hevc.mp4"
+              webmVideoUrl="assets/booking-knobs-vp9.webm" />
+          </div>
+        </section>
+        <section className={clsx(styles.valuePropSection, styles.valuePropSectionAlt)}>
+          <div className="container">
+            <ValuePropVideo
+              name="Debug widgets in isolation"
+              items={[
+                'Fine-tune animations, fix layout issues, align text.',
+                'Find images using too much memory.',
+                'Use DevTools.',
+                'Debug your widgets without running the full app.'
+              ]}
+              mp4VideoUrl="assets/booking-debug-hevc.mp4"
+              webmVideoUrl="assets/booking-debug-vp9.webm" />
           </div>
         </section>
         <section className={clsx(styles.valuePropSection, styles.osSection)}>
