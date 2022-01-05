@@ -4,5 +4,49 @@ title: CLI Usage
 description: Monarch is a tool for Flutter developers. It makes building beautiful apps a simpler and faster experience.
 ---
 
-<!--GENERATED DOC: do not modify below this line, to edit use cli_usage_src.mdx-->
-<!--START-GEN-->
+<!--
+    GENERATED DOC: do not modify by hand below this comment section. 
+    
+    To modify, edit cli_usage_doc.dart in the monarch_cli repo, then run command:
+    ```
+    dart cli_usage_doc.dart | pbcopy
+    ```
+    Then paste the contents below this comment section.
+-->
+The Monarch CLI supports the following commands:
+
+- `monarch init`: Initializes a Flutter project with Monarch.
+- `monarch run`: Runs the Monarch tasks and launches the Monarch desktop app.
+- `monarch upgrade`: Upgrades Monarch to its latest version.
+- `monarch newsletter`: Join the Monarch newsletter by providing an email.
+
+The command you will use the most is `monarch run`.
+
+### `monarch run`
+Usage: `monarch run [arguments]`
+
+Arguments:
+```text
+-h, --help                          Print this usage information.
+
+
+    --reload                        How Monarch should reload stories after file system updates.
+
+          [hot-reload] (default)    Reload stories automatically with hot reload.
+          [hot-restart]             Reload stories automatically with hot restart.
+          [manual]                  Don't reload automatically. Manually reload stories with hot reload ("r") or hot
+                                    restart ("R"). Does not watch the file system for updates.
+
+    --delete-conflicting-outputs    When set, it passes the --delete-conflicting-outputs flag to the build_runner code
+                                    generation.
+    --no-sound-null-safety          When set, Monarch will generate stories that support non-null safe libraries. Use
+                                    this flag if your code has disabled sound null safety.
+```
+
+```text
+-h, --help       Print this usage information.
+-v, --verbose    Generates verbose logs.
+    --version    Reports Monarch version information.
+```
+
+
