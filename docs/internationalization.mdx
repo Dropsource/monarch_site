@@ -12,13 +12,13 @@ needs to know about your locales via the `MonarchLocalizations` annotation.
 1. Add the `package:monarch_annotations` to your dependencies:
 ```yaml
 dependencies:
-  monarch_annotations: ^0.1.0
+  monarch_annotations: ^1.0.0
 ``` 
 
-2. Go to the dart file where you have declared your `LocalizationsDelegate` variable.
+2. Go to the dart file where you have declared your `LocalizationsDelegate`.
 If you have created your localizations delegate in an in-line expressions, then you
-would have to refactor it into a top-level variable. Once you have identified your
-`LocalizationsDelegate` variable, add the `MonarchLocalizations` annotation as shown below:
+would have to refactor it into a getter or const value. Once you have identified your
+`LocalizationsDelegate`, add the `MonarchLocalizations` annotation as shown below:
 
 ```dart
 import 'package:monarch_annotations/monarch_annotations.dart';
@@ -29,6 +29,8 @@ class MyLocalizationsDelegate extends LocalizationsDelegate<MyLocalizations> {..
 @MonarchLocalizations([MonarchLocale('en', 'US'), MonarchLocale('es')])
 const myLocalizationsDelegate = MyLocalizationsDelegate();
 ```
+The `MonarchLocalizations` annotation takes a list of `MonarchLocale` items. Declare 
+a `MonarchLocale` for each locale your application supports.
 
 3. Save your changes. The Monarch app will display your locales in the Locale dropdown.
 When you select a locale, the selected story will render using the selected locale.
