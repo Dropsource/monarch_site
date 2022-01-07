@@ -20,7 +20,7 @@ module.exports = {
       trackingID: 'G-GHR4Z83T6D',
       anonymizeIP: false
     },
-    image: 'assets/monarch-open-graph.png',
+    image: 'assets/monarch-open-graph-booking.png',
     colorMode: {
       disableSwitch: true
     },
