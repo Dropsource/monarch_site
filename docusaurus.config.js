@@ -114,8 +114,8 @@ module.exports = {
               href: 'https://storybook.js.org/'
             },
             {
-              label: 'Developer Quest app (used for samples above)',
-              href: 'https://github.com/2d-inc/developer_quest'
+              label: 'Best Flutter UI Templates (used for the samples above)',
+              href: 'https://github.com/mitesh77/Best-Flutter-UI-Templates'
             }
           ]
         }
