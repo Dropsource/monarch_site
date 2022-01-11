@@ -5,7 +5,7 @@ module.exports = {
   baseUrl: '/',
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
-  favicon: 'img/monarch_favicon.ico',
+  favicon: 'assets/monarch-favicon.ico',
   organizationName: 'Dropsource', // Usually your GitHub org/user name.
   projectName: 'monarch', // Usually your repo name.
   stylesheets: [
@@ -20,7 +20,7 @@ module.exports = {
       trackingID: 'G-GHR4Z83T6D',
       anonymizeIP: false
     },
-    image: 'assets/monarch-open-graph.png',
+    image: 'assets/monarch-open-graph-booking.png',
     colorMode: {
       disableSwitch: true
     },
@@ -28,8 +28,8 @@ module.exports = {
       title: 'Monarch',
       logo: {
         alt: 'Monarch Logo',
-        src: 'img/monarch_m.png',
-        srcDark: 'img/monarch_m.png'
+        src: 'assets/monarch-m.png',
+        srcDark: 'assets/monarch-m.png'
       },
       items: [
         {
@@ -53,7 +53,7 @@ module.exports = {
       style: 'dark',
       logo: {
         alt: 'Monarch Logo',
-        src: 'img/logo_monarch_white.png',
+        src: 'assets/logo-monarch-white.png',
       },
       links: [
         {
@@ -87,7 +87,7 @@ module.exports = {
           items: [
             {
               html: `
-                  <a href="https://docs.google.com/forms/d/e/1FAIpQLSfD9L92rymZnf-z18hWj0gyqrnBFNcc7U3YB3QyiI0_3PMxhQ/viewform?usp=sf_link" target="_blank" aria-label="Join our newsletter">
+                  <a href="http://eepurl.com/hJ-S0L" target="_blank" aria-label="Join our newsletter">
                     <b>Join our newsletter 💌</b>
                   </a>
                 `,
@@ -114,8 +114,8 @@ module.exports = {
               href: 'https://storybook.js.org/'
             },
             {
-              label: 'Developer Quest app (used for samples above)',
-              href: 'https://github.com/2d-inc/developer_quest'
+              label: 'Best Flutter UI Templates (used for the samples above)',
+              href: 'https://github.com/mitesh77/Best-Flutter-UI-Templates'
             }
           ]
         }

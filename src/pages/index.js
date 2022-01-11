@@ -110,10 +110,10 @@ function Home() {
                 'Render widgets without worrying about data, emulators, backends or business logic.',
                 'Define the relevant states of your widgets, we call these relevant states "stories".',
                 'Browse stories to verify your UX is right.',
-                'Ditch the emulator for common tasks.'
+                'Ditch the emulator for common tasks, free up memory and resources.'
               ]}
-              mp4VideoUrl="assets/build-widgets-faster-hevc.mp4"
-              webmVideoUrl="assets/build-widgets-faster-vp9.webm" />
+              mp4VideoUrl="assets/booking-build-hevc.mp4"
+              webmVideoUrl="assets/booking-build-vp9.webm" />
           </div>
         </section>
         <section className={clsx(styles.valuePropSection, styles.valuePropSectionAlt)}>
@@ -125,37 +125,40 @@ function Home() {
                 'From your stories, navigate to your code to find and fix bugs.',
                 'Monarch renders your fixes much faster than an emulator.',
                 'Mock dependencies to render visual states that are hard to reproduce.',
-                'You can also reuse your stories from your widget tests.'
+                'Reuse your stories from your widget tests.'
               ]}
-              mp4VideoUrl="assets/find-fix-bugs-hevc.mp4"
-              webmVideoUrl="assets/find-fix-bugs-vp9.webm" />
+              mp4VideoUrl="assets/booking-fix-hevc.mp4"
+              webmVideoUrl="assets/booking-fix-vp9.webm" />
           </div>
         </section>
         <section className={styles.valuePropSection}>
           <div className="container">
             <ValuePropVideo
-              name="Switch themes, locales, device resolutions and text scale"
+              name="Build responsive UIs easily"
               items={[
-                'See your widgets in different device resolutions.',
+                'See your widgets in different devices and tune them easily with hot reload.',
                 'Switch between dark mode, light mode or your own custom theme.',
-                'See how your widgets render under different locales.',
-                'Play with the text scale factor to see how your widgets will render to different users.',
+                'See your UI under the locales your app supports.',
+                'Make sure your app remains accessible and usable at large text scale factors.',
               ]}
-              mp4VideoUrl="assets/switch-context-hevc.mp4"
-              webmVideoUrl="assets/switch-context-vp9.webm" />
+              mp4VideoUrl="assets/booking-knobs-hevc.mp4"
+              webmVideoUrl="assets/booking-knobs-vp9.webm" />
           </div>
         </section>
-        {/* <section className={clsx(styles.valuePropSection, styles.valuePropSectionAlt)}>
+        <section className={clsx(styles.valuePropSection, styles.valuePropSectionAlt)}>
           <div className="container">
-            <ValueProp
-              name="Create a component library"
+            <ValuePropVideo
+              name="Debug widgets in isolation"
               items={[
-                'Create stories that reflect your component library using real code.',
-                'Easily find widgets to reuse in other screens.'
+                'Fine-tune animations, fix layout issues, align text.',
+                'Find images using too much memory.',
+                'Use DevTools.',
+                'Debug your widgets without running the full app.'
               ]}
-              imageUrl="assets/create_component_library.png" />
+              mp4VideoUrl="assets/booking-debug-hevc.mp4"
+              webmVideoUrl="assets/booking-debug-vp9.webm" />
           </div>
-        </section> */}
+        </section>
         <section className={clsx(styles.valuePropSection, styles.osSection)}>
           <div className="container">
             <div className="row os__buttons">
