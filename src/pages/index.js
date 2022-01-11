@@ -110,7 +110,7 @@ function Home() {
                 'Render widgets without worrying about data, emulators, backends or business logic.',
                 'Define the relevant states of your widgets, we call these relevant states "stories".',
                 'Browse stories to verify your UX is right.',
-                'Ditch the emulator for common tasks.'
+                'Ditch the emulator for common tasks, free up memory and resources.'
               ]}
               mp4VideoUrl="assets/booking-build-hevc.mp4"
               webmVideoUrl="assets/booking-build-vp9.webm" />
@@ -134,12 +134,12 @@ function Home() {
         <section className={styles.valuePropSection}>
           <div className="container">
             <ValuePropVideo
-              name="Switch themes, locales, device resolutions and text scale"
+              name="Build responsive UIs easily"
               items={[
-                'See your widgets in different device resolutions.',
+                'See your widgets in different devices and tune them easily with hot reload.',
                 'Switch between dark mode, light mode or your own custom theme.',
-                'See how your widgets render under different locales.',
-                'Play with the text scale factor to see how your widgets will render to different users.',
+                'See your UI under the locales your app supports.',
+                'Make sure your app remains accessible and usable at large text scale factors.',
               ]}
               mp4VideoUrl="assets/booking-knobs-hevc.mp4"
               webmVideoUrl="assets/booking-knobs-vp9.webm" />
