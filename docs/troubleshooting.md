@@ -1,7 +1,7 @@
 ---
 id: troubleshooting
 title: Troubleshooting
-description: Monarch is a tool for building Flutter widgets in isolation. It makes building beautiful apps a simpler and faster experience.
+description: Monarch is a tool for building Flutter widgets in isolation. It makes it easy to build, test and debug complex UIs.
 ---
 
 ## Reporting issues or asking questions

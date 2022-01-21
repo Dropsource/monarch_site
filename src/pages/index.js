@@ -88,7 +88,7 @@ function Home() {
   // set as the `description` field in every markdown file. The `description` field
   // becomes the <meta name="description" content="..."/> and <meta property="og:description" content="..."/> 
   // in <head>, used by search engines. 
-  const monarchPurpose = "Monarch is a tool for building Flutter widgets in isolation. It makes building beautiful apps a simpler and faster experience.";
+  const monarchPurpose = "Monarch is a tool for building Flutter widgets in isolation. It makes it easy to build, test and debug complex UIs.";
 
   return (
     <Layout
