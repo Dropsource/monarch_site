@@ -8,8 +8,11 @@ module.exports = {
   favicon: 'assets/monarch-favicon.ico',
   organizationName: 'Dropsource', // Usually your GitHub org/user name.
   projectName: 'monarch', // Usually your repo name.
+  scripts: [
+    'https://kit.fontawesome.com/99abf59b20.js'
+  ],
   stylesheets: [
-    'https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap'
+    '/fonts/stylesheet.css'
   ],
   themeConfig: {
     googleAnalytics: {
@@ -28,8 +31,8 @@ module.exports = {
       title: 'Monarch',
       logo: {
         alt: 'Monarch Logo',
-        src: 'assets/monarch-m.png',
-        srcDark: 'assets/monarch-m.png'
+        src: 'assets/logo-primary.png',
+        srcDark: 'assets/logo-primary.png'
       },
       items: [
         {
