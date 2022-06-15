@@ -4,40 +4,36 @@ title: Introduction
 description: Monarch is a tool for building Flutter widgets in isolation. It makes it easy to build, test and debug complex UIs.
 ---
 
-Monarch is a tool for Flutter development. It helps you build high-quality UIs 
-by _isolating widgets_. You isolate widgets through _stories_.
+### The problem: complex user interfaces
+As your Flutter app grows, its user interface becomes complex because your widgets need 
+to support more use cases. You may end up with hundreds of widgets which depend on 
+each other. And then you notice that changes to one widget affect many others.
 
-### What's a story?
-A story captures a rendered state of a Flutter widget. Developers write 
-multiple stories per widget to describe all the relevant states 
-a widget can have.
+On top of all that, you have to make sure your UI works across multiple devices, text 
+scales, languages, and themes. And you also have to worry about logic, data, 
+performance, animations, accessibility, etc.
 
-In code, a story is a function that returns a `Widget`.
+### The solution: isolate your widgets and use Monarch
+Your job, as a Flutter developer, would be easier if you could decouple your widgets 
+from the rest of your app and backend. That is why we built Monarch—to help you build 
+Flutter widgets in isolation.
 
-### Why widget isolation?
-There are many benefits to isolating your widgets:
-- When you build widgets in isolation you can avoid the pain and frustration of developing 
-widgets in the context of an entire app.
-- Most of your UI testing can be done without running your full 
-stack or changing values in a database.
-- Stories help you pinpoint bugs quickly. It’s more efficient than debugging 
-using entire screens.
-- A story is like a visual test. The more stories you have, the more 
-confidence your components work in all possible scenarios.
-- Parallelize development: widget isolation enables multiple team members 
-to work on multiple widgets at the same time.
+To use Monarch, you first write stories. A story is a function which returns a 
+widget in a visual state you care about.
 
-### How do I use Monarch?
-To use Monarch you need to add a dev-dependency and download the Monarch binaries.
-Then, you can start writing stories. The Monarch binaries will render your stories in the 
-Monarch desktop app.
+You can then use Monarch to preview the stories you have written. You can then see your 
+widgets across different devices, text scales, languages, themes, and more. All without 
+an emulator. 
 
-It is very simple to use Monarch. No need to learn how to use special classes, fancy 
+Monarch makes it simple to mock hard-to-reach edge cases, pinpoint bugs, 
+and build responsive UIs. All without running your app or backend.
+
+In the long run, Monarch will help you build complex user interfaces in a 
+sustainable manner, and it will also help your team work better together.
+
+### Other Benefits
+- It is very simple to use Monarch. No need to learn how to use special classes, fancy 
 concepts or modify your production code.
-
-Monarch doesn't affect your production code thus your app bundle size stays the same.
-
-Also, if you decide to stop using Monarch, all your stories are reusable 
-from your widget tests.
-
-Monarch runs natively on your desktop platform. You can use it side-by-side with your IDE.
+- Monarch doesn't affect your production code thus your app bundle size stays the same.
+- If you decide to stop using Monarch, all your stories are reusable from your widget tests.
+- Monarch runs natively on your desktop platform. You can use it side-by-side with your IDE.

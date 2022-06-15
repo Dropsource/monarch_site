@@ -8,7 +8,6 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 import styles from './styles.module.css';
 import NewsletterCta from './newsletter_cta';
 import ExplainerVideo from './explainer_video';
-import IconKeyboard from './font_awesome_icons';
 
 
 function ValueProp({ name, items, imageUrl }) {
@@ -59,7 +58,7 @@ function ValuePropVideo({ name, items, mp4VideoUrl, webmVideoUrl }) {
   );
 }
 
-function ValuePropVideoX({ name, items, mp4VideoUrl, webmVideoUrl }) {
+function ValuePropVideoV2({ name, items, mp4VideoUrl, webmVideoUrl }) {
   const resolvedMp4VideoUrl = useBaseUrl(mp4VideoUrl);
   const resolvedWebmVideoUrl = useBaseUrl(webmVideoUrl);
   return (
@@ -136,7 +135,7 @@ function Home() {
       <main>
         <section className={styles.valuePropSection}>
           <div className="container">
-            <ValuePropVideoX
+            <ValuePropVideoV2
               name="Build widgets faster"
               items={[
                 {
@@ -158,7 +157,7 @@ function Home() {
         </section>
         <section className={clsx(styles.valuePropSection)}>
           <div className="container">
-            <ValuePropVideoX
+            <ValuePropVideoV2
               name="Find and fix bugs with ease"
               items={[
                 {
@@ -186,7 +185,7 @@ function Home() {
         </section>
         <section className={styles.valuePropSection}>
           <div className="container">
-            <ValuePropVideoX
+            <ValuePropVideoV2
               name="Build responsive UIs easily"
               items={[
                 {
@@ -208,7 +207,7 @@ function Home() {
         </section>
         <section className={clsx(styles.valuePropSection)}>
           <div className="container">
-            <ValuePropVideoX
+            <ValuePropVideoV2
               name="Debug widgets in isolation"
               items={[
                 {
