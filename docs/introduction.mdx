@@ -3,20 +3,33 @@ id: introduction
 title: Introduction
 description: Monarch is a tool for building Flutter widgets in isolation. It makes it easy to build, test and debug complex UIs.
 ---
+import boxes_messy from './assets/boxes-mess.png';
+import boxes_neat from './assets/boxes-neat.png';
+import team_ui from './assets/team-ui.png';
 
 ### The problem: complex user interfaces
+
 As your Flutter app grows, its user interface becomes complex because your widgets need 
 to support more use cases. You may end up with hundreds of widgets which depend on 
 each other. And then you notice that changes to one widget affect many others.
+
+<div className="docs-intro">
+    <img alt="Complex User Interface" src={boxes_messy} width="400px"/>
+</div>
 
 On top of all that, you have to make sure your UI works across multiple devices, text 
 scales, languages, and themes. And you also have to worry about logic, data, 
 performance, animations, accessibility, etc.
 
 ### The solution: isolate your widgets and use Monarch
+
 Your job, as a Flutter developer, would be easier if you could decouple your widgets 
 from the rest of your app and backend. That is why we built Monarch—to help you build 
 Flutter widgets in isolation.
+
+<div className="docs-intro">
+    <img alt="Isolated Widgets" src={boxes_neat} width="400px"/>
+</div>
 
 To use Monarch, you first write stories. A story is a function which returns a 
 widget in a visual state you care about.
@@ -30,6 +43,10 @@ and build responsive UIs. All without running your app or backend.
 
 In the long run, Monarch will help you build complex user interfaces in a 
 sustainable manner, and it will also help your team work better together.
+
+<div className="docs-intro">
+    <img alt="Isolated Widgets" src={team_ui} width="400px"/>
+</div>
 
 ### Other Benefits
 - It is very simple to use Monarch. No need to learn how to use special classes, fancy 

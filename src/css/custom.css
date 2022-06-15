@@ -127,6 +127,10 @@
   font-size: 0.9rem;
 }
 
+.docs-intro {
+  text-align: center;
+  margin-bottom: 13px;
+}
 
 .docs-screenshot {
   object-fit: cover;
