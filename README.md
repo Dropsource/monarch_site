@@ -43,7 +43,7 @@ with the settings until you get good compression with decent quality.
 When you are satisfied with the result do Cmd+Shift+S to save the 
 compressed image.
 
-### Images in the build directory 
+### static/assets (not content versioned)
 The command `yarn build` moves `static/assets` to `build/assets`. It does the 
 same thing with `static/gifs` and `static/img`. Moving forward only use the
 `static/assets` directory.
@@ -52,10 +52,23 @@ Images in the `static/assets` directory do not get content versioned. Their cach
 busting is more difficult but they are good to use for content which should be
 heavily cached, like landing page images, or open graph images.
 
+Avoid changing the content of images in the `static/assets` directory. These images 
+are cached and replacing the content may not bust the cache since the file name will 
+be the same. Instead of changing the image content, add a new image and change the 
+reference to that image. After deploying the new image and after verifying the new 
+image is properly deployed, then the old image can be deleted.
+
+### docs/assets and blog/assets (content versioned)
 Images in the `docs/assets` or `blog/assets` are usually referenced via the 
 `import` statement in an mdx or js file. The import statement will content 
 version those images. Unfortunately, after `yarn build`, the import statement moves them to 
 the `build/assets/images` directory, which is confusing. Beware of that.
+
+### Open graph images
+Ideally every blog post and newsletter should have its own open graph image. 
+If you are adding an open graph image, then make sure its dimensions are 
+1.9:1 or 2:1. A width of 1200 or 1500 pixels is ok. Make sure to compress it 
+with the ImageAlpha app.
 
 ## Deployments
 

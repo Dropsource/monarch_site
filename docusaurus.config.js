@@ -5,7 +5,7 @@ module.exports = {
   baseUrl: '/',
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
-  favicon: 'assets/monarch-favicon.ico',
+  favicon: 'assets/monarch-fav.ico',
   organizationName: 'Dropsource', // Usually your GitHub org/user name.
   projectName: 'monarch', // Usually your repo name.
   scripts: [
@@ -23,7 +23,7 @@ module.exports = {
       trackingID: 'G-GHR4Z83T6D',
       anonymizeIP: false
     },
-    image: 'assets/monarch-open-graph-booking.png',
+    image: 'assets/monarch-open-graph-purple.png',
     colorMode: {
       disableSwitch: true
     },
@@ -31,8 +31,8 @@ module.exports = {
       title: 'Monarch',
       logo: {
         alt: 'Monarch Logo',
-        src: 'assets/logo-primary.png',
-        srcDark: 'assets/logo-primary.png'
+        src: 'assets/logo-monarch.png',
+        srcDark: 'assets/logo-monarch.png'
       },
       items: [
         {
@@ -56,7 +56,7 @@ module.exports = {
       style: 'dark',
       logo: {
         alt: 'Monarch Logo',
-        src: 'assets/logo-monarch-white.png',
+        src: 'assets/logomark-monarch-white.png',
       },
       links: [
         {
