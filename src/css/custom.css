@@ -12,32 +12,41 @@
    https://v2.docusaurus.io/docs/styling-layout
 */
 :root {
-  --ifm-color-primary: #00b3b8;
-  --ifm-color-primary-dark: #00a1a6;
-  --ifm-color-primary-darker: #00989c;
-  --ifm-color-primary-darkest: #007d81;
-  --ifm-color-primary-light: #00c5ca;
-  --ifm-color-primary-lighter: #00ced4;
-  --ifm-color-primary-lightest: #00e9ef;
+  --ifm-color-primary: #A969DF;
+  --ifm-color-primary-dark: #9050C6;
+  --ifm-color-primary-darker: #7636AC;
+  --ifm-color-primary-darkest: #5D1D93;
+  --ifm-color-primary-light: #C383F9;
+  --ifm-color-primary-lighter: #DC9CFF;
+  --ifm-color-primary-lightest: #F6B6FF;
   --ifm-code-font-size: 95%;
   --mon-dark-text-color: #f5f6f7;
   --mon-dark-background-color: #2C2C32;
+  --ifm-font-family-base: 'poppinsregular';
+  --ifm-heading-font-family: 'poppinssemibold';
+  --ifm-h1-font-size: 2.1rem;
+  --mon-purple: #A969DF;
+  --mon-blue: #3237BB;
+  --mon-celeste: #55DEF8;
+  --mon-green: #4DF28D;
+  --mon-orange: #FB7448;
+  --mon-yellow: #FBCA44;
 }
 
 .navbar {
-  font-family: 'DM Sans', sans-serif;
+  font-family: 'poppinssemibold';
   font-size: 1.1rem;
   background-color: var(--mon-dark-background-color);
   color: var(--mon-dark-text-color);
 }
 
 .navbar .navbar__logo {
-  width: 48px;
+  width: 32px;
   height: 48px;
 }
 
 .navbar .navbar__title {
-  font-size: 1.3rem;
+  font-size: 1.7rem;
   color: var(--mon-dark-text-color);
 }
 
@@ -67,7 +76,8 @@
 .button__container .button {
   background-color: var(--ifm-color-primary);
   border: none;
-  font-size: 1.6rem;
+  font-size: 1.4rem;
+  padding-top: 11px;
   margin-top: 15px;
   color: var(--mon-dark-text-color);
   /* color: var(--ifm-font-color-base); */
@@ -118,6 +128,10 @@
   font-size: 0.9rem;
 }
 
+.docs-intro {
+  text-align: center;
+  margin-bottom: 13px;
+}
 
 .docs-screenshot {
   object-fit: cover;

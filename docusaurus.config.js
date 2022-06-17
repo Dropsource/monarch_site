@@ -5,11 +5,15 @@ module.exports = {
   baseUrl: '/',
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
-  favicon: 'assets/monarch-favicon.ico',
+  favicon: 'assets/monarch-fav.ico',
   organizationName: 'Dropsource', // Usually your GitHub org/user name.
   projectName: 'monarch', // Usually your repo name.
+  scripts: [
+    // fontawesome script is used for icons on landing page, e.g. "fa-regular fa-keyboard" or "fa-solid fa-bug"
+    'https://kit.fontawesome.com/99abf59b20.js' 
+  ],
   stylesheets: [
-    'https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap'
+    '/fonts/stylesheet.css'
   ],
   themeConfig: {
     googleAnalytics: {
@@ -20,7 +24,7 @@ module.exports = {
       trackingID: 'G-GHR4Z83T6D',
       anonymizeIP: false
     },
-    image: 'assets/monarch-open-graph-booking.png',
+    image: 'assets/monarch-open-graph-purple.png',
     colorMode: {
       disableSwitch: true
     },
@@ -28,8 +32,8 @@ module.exports = {
       title: 'Monarch',
       logo: {
         alt: 'Monarch Logo',
-        src: 'assets/monarch-m.png',
-        srcDark: 'assets/monarch-m.png'
+        src: 'assets/logo-monarch.png',
+        srcDark: 'assets/logo-monarch.png'
       },
       items: [
         {
@@ -53,7 +57,7 @@ module.exports = {
       style: 'dark',
       logo: {
         alt: 'Monarch Logo',
-        src: 'assets/logo-monarch-white.png',
+        src: 'assets/logomark-monarch-white.png',
       },
       links: [
         {

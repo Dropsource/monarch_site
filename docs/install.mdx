@@ -52,8 +52,8 @@ binaries, which include the Monarch CLI and desktop app. </li></ol>
     <CodeBlock language="bash">{commands.pathMac}</CodeBlock>
   </TabItem>
   <TabItem value="win">
-    <ol start="1"><li>Make sure you have <a href="https://visualstudio.microsoft.com/downloads/" target="_blank">Visual Studio 2019</a> (not to be confused with Visual Studio <i>Code</i>) with the “Desktop development with C++” workload installed, 
-including all of its default components</li></ol>
+    <ol start="1"><li>Make sure you have <a href="https://visualstudio.microsoft.com/downloads/" target="_blank">Visual Studio 2022</a> with the “Desktop development with C++” workload installed, 
+including all of its default components. (Note: Visual Studio is different than Visual Studio <i>Code</i>).</li></ol>
     <ol start="2"><li>Download the following bundle to get the latest release of the Monarch
 binaries, which include the Monarch CLI and desktop app. </li></ol>
     <div>
@@ -79,17 +79,16 @@ your existing project’s root directory:
 ```bash
 monarch init
 ```
-The `monarch init` command will set up all the dependencies needed to run monarch. 
-It will also create a few sample stories in your project.
+The `monarch init` command sets up all the dependencies needed to run monarch. 
+It also creates a few sample stories in your project.
 
 2. Run monarch using `monarch run`
 ```bash
 monarch run
 ```
-The `monarch run` command will prepare the stories in your project so they can
-be rendered by the Monarch desktop app. The `monarch run` command will launch
-the Monarch app so you can see your stories. 
-
+The `monarch run` command prepares the stories in your project so they can be 
+used by Monarch. It then launches the Monarch app where you can preview your 
+stories.
 
 ### Update your path
 Follow these instructions to update your path variable permanently, which will 
