@@ -34,7 +34,8 @@
 }
 
 .navbar {
-  font-family: 'poppinsregular';
+  font-family: 'poppinsmedium';
+  font-weight: normal;
   font-size: 1.1rem;
   background-color: var(--mon-dark-background-color);
   color: var(--mon-dark-text-color);
@@ -46,6 +47,7 @@
 
 .navbar .navbar__title {
   font-size: 1.6rem;
+  font-weight: normal;
   color: var(--mon-dark-text-color);
 }
 
