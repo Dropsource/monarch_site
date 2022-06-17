@@ -9,7 +9,8 @@ module.exports = {
   organizationName: 'Dropsource', // Usually your GitHub org/user name.
   projectName: 'monarch', // Usually your repo name.
   scripts: [
-    'https://kit.fontawesome.com/99abf59b20.js'
+    // fontawesome script is used for icons on landing page, e.g. "fa-regular fa-keyboard" or "fa-solid fa-bug"
+    'https://kit.fontawesome.com/99abf59b20.js' 
   ],
   stylesheets: [
     '/fonts/stylesheet.css'
