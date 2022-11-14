@@ -70,6 +70,9 @@ If you are adding an open graph image, then make sure its dimensions are
 1.9:1 or 2:1. A width of 1200 or 1500 pixels is ok. Make sure to compress it 
 with the ImageAlpha app.
 
+You can use the page `/opengraph` to draft your own open graph image. Edit the page
+via opengraph.js
+
 ## Deployments
 
 ## Deployment PROD
