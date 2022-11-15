@@ -1,0 +1,46 @@
+---
+id: install_flutter2x
+title: Install for Flutter 2.x
+description: Monarch is a tool for building Flutter widgets in isolation. It makes it easy to build, test and debug complex UIs.
+---
+
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+import CodeBlock from '@theme/CodeBlock';
+import Link from '@docusaurus/Link';
+import clsx from 'clsx';
+
+import macosVersionInfo from './versions/macos_version_info.json';
+import windowsVersionInfo from './versions/windows_version_info.json';
+
+export const commands = {
+    downloadMac: `curl -O https://d2dpq905ksf9xw.cloudfront.net/macos/monarch_macos_1.7.8.zip `,
+}
+
+
+If you are on Flutter 2.x, then you need to install Monarch 1.x. Below are the installation bundles
+for Monarch 1.7.8.
+
+<Tabs
+  groupId="operating-systems"
+  defaultValue="mac"
+  values={[
+    {label: 'macOS', value: 'mac'},
+    {label: 'Windows', value: 'win'},
+  ]
+}>
+  <TabItem value="mac">
+    <p>If you are on Flutter 2.x, download Monarch 1.7.8.</p>
+    <CodeBlock language="bash">{commands.downloadMac}</CodeBlock>
+    <br/>
+  </TabItem>
+  <TabItem value="win">
+    <p>If you are on Flutter 2.x, download Monarch 1.7.8.</p>
+    <div>
+      <a 
+        className={clsx('button button--outline button--primary button--lg')}
+        href="https://d2dpq905ksf9xw.cloudfront.net/windows/monarch_windows_1.7.8.zip">monarch_windows_1.7.8.zip</a>
+    </div>
+    <br/>
+  </TabItem>
+</Tabs>

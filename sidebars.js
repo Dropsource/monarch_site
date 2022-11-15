@@ -14,7 +14,8 @@ module.exports = {
       'debug-your-story',
       'upgrading',
       'cli-usage',
-      'troubleshooting'
+      'troubleshooting',
+      'install_flutter2x'
     ],
   },
 };
