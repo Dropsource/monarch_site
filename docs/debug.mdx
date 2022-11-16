@@ -5,8 +5,7 @@ description: Monarch is a tool for building Flutter widgets in isolation. It mak
 ---
 
 import debug_controls from '/docs/assets/monarch-debug.png';
-import select_widget_mode from '/docs/assets/select-widget-mode.png';
-import details_tree from '/docs/assets/details-tree.png';
+import devtools_widget_tree from '/docs/assets/devtools-widget-tree.png';
 import breakpoint from '/docs/assets/devtools-breakpoint-hit.png';
 
 <img className="docs-screenshot macos" alt="Debug Controls" src={debug_controls} />
@@ -28,21 +27,17 @@ You can launch DevTools from Monarch so you can further inspect, diagnose and de
 your stories and widgets.
 
 DevTools has many features you can explore to see how they affect your stories. The 
-ones you may find most useful are "Select Widget Mode" and the "Details Tree".
-
-_DevTools will not show your widgets under its Widget tree on the left side or under 
-the Layout Explorer tab. Monarch renders 
-your stories and widgets dynamically so DevTools doesn't have enough diagnostics 
-information to generate the widget tree. To see your widgets in DevTools use 
-"Select Widget Mode" as described below._
+ones you may find most useful are "Select Widget Mode", "Widget Tree", "Layout Explorer" 
+and the "Widget Details Tree".
 
 After you click "Select Widget Mode", you can go to Monarch and select a widget on your 
-story. You can then go to the "Details Tree" to see useful information 
+story. You can then go to the "Widget Details Tree" to see useful information 
 about the selected widget’s properties, render object, and children.
 
-<img className="docs-screenshot macos" alt="Select Widget Mode" src={select_widget_mode} />
-<br/>
-<img className="docs-screenshot macos" alt="Details Tree" src={details_tree} />
+When you switch stories on Monarch, you have to hit the refresh icon on the Widget Tree 
+to update the tree with the new story widgets.
+
+<img className="docs-screenshot macos" alt="Widget Tree" src={devtools_widget_tree} />
 
 ## Debug your widgets source code
 With Monarch and DevTools you can debug your widgets source code in isolation, 

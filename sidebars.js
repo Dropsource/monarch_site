@@ -15,6 +15,7 @@ module.exports = {
       'upgrading',
       'cli-usage',
       'troubleshooting',
+      'contributing',
       'install_flutter2x'
     ],
   },
