@@ -5,6 +5,7 @@ module.exports = {
   tagline: 'Build high-quality UIs with ease',
   url: 'https://monarchapp.io',
   baseUrl: '/',
+  trailingSlash: false,
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
   favicon: 'assets/monarch-fav.ico',
@@ -162,7 +163,6 @@ module.exports = {
         sitemap: {
           changefreq: 'weekly',
           priority: 0.5,
-          trailingSlash: false,
         },
       },
     ],
