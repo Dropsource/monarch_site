@@ -68,7 +68,7 @@ function ValuePropVideoV2({ name, items, mp4VideoUrl, webmVideoUrl }) {
         {
           items.map(item => 
             <div key={item.h3}>
-              <i class={item.icon} style={{color: item.color}}></i>
+              <i className={item.icon} style={{color: item.color}}></i>
               <h3>{item.h3}</h3>
               <p>{item.p}</p>
             </div>)

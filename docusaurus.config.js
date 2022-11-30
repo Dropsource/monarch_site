@@ -1,3 +1,5 @@
+const isProductionDeployment = process.env.DEPLOYMENT === 'production';
+
 module.exports = {
   title: 'Monarch',
   tagline: 'Build high-quality UIs with ease',
@@ -16,14 +18,6 @@ module.exports = {
     '/fonts/stylesheet.css'
   ],
   themeConfig: {
-    googleAnalytics: {
-      trackingID: 'G-GHR4Z83T6D',
-      anonymizeIP: false
-    },
-    gtag: {
-      trackingID: 'G-GHR4Z83T6D',
-      anonymizeIP: false
-    },
     image: 'assets/monarch-open-graph-purple.png',
     colorMode: {
       disableSwitch: true
@@ -159,6 +153,12 @@ module.exports = {
         theme: {
           customCss: require.resolve('./src/css/custom.css'),
         },
+        gtag: isProductionDeployment
+          ? {
+              trackingID: 'G-W8V27Q03X3',
+              anonymizeIP: false,
+            }
+          : undefined,
         sitemap: {
           changefreq: 'weekly',
           priority: 0.5,
