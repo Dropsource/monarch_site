@@ -8,9 +8,21 @@ import debug_controls from '/docs/assets/monarch-debug.png';
 import devtools_widget_tree from '/docs/assets/devtools-widget-tree.png';
 import breakpoint from '/docs/assets/devtools-breakpoint-hit.png';
 
-<img className="docs-screenshot macos" alt="Debug Controls" src={debug_controls} />
+## Print to the console
+To print messages to the console use the `debugPrint` function which is part of 
+the Flutter SDK.
+```dart
+Widget myStory() {
+   debugPrint('FOO');
+   return MyWidget();
+}
+```
+Your messages will appear on the terminal where you executed `monarch run` from.
 
 ## Visual debugging
+
+<img className="docs-screenshot macos" alt="Debug Controls" src={debug_controls} />
+
 From Monarch you can enable several options to visually debug your stories:
 
 1. **Slow animations**: Run animations 5 times slower to help fine-tune them.
@@ -22,6 +34,9 @@ From Monarch you can enable several options to visually debug your stories:
 For more information, see Flutter's [Visual Debugging](https://flutter.dev/docs/development/tools/devtools/inspector#visual-debugging) documentation.
 
 ## Launch DevTools
+
+<img className="docs-screenshot macos" alt="Widget Tree" src={devtools_widget_tree} />
+
 DevTools is a suite of performance and debugging tools provided by the Flutter team.
 You can launch DevTools from Monarch so you can further inspect, diagnose and debug 
 your stories and widgets.
@@ -37,7 +52,6 @@ about the selected widget’s properties, render object, and children.
 When you switch stories on Monarch, you have to hit the refresh icon on the Widget Tree 
 to update the tree with the new story widgets.
 
-<img className="docs-screenshot macos" alt="Widget Tree" src={devtools_widget_tree} />
 
 ## Debug your widgets source code
 With Monarch and DevTools you can debug your widgets source code in isolation, 
