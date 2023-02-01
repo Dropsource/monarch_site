@@ -7,7 +7,6 @@ import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
 import my_project_macos_sample_stories from './assets/my_project_macos_sample_stories.png';
-import my_project_windows_sample_stories from './assets/my_project_windows_sample_stories.png';
 
 Monarch is inspired by [Storybook](https://storybook.js.org/). Conceptually, 
 Monarch stories are the same as Storybook stories. If you are familiar with 
@@ -38,21 +37,9 @@ can open that file to see how those stories are written. After you run
 
 You should see something like this:
 
-<Tabs
-  groupId="operating-systems"
-  defaultValue="mac"
-  values={[
-    {label: 'macOS', value: 'mac'},
-    {label: 'Windows', value: 'win'},
-  ]
-}>
-  <TabItem value="mac">
-    <img className="docs-screenshot macos" alt="my_project macOS sample stories" src={my_project_macos_sample_stories}/>
-  </TabItem>
-  <TabItem value="win">
-    <img className="docs-screenshot windows" alt="my_project Windows sample stories" src={my_project_windows_sample_stories}/>
-  </TabItem>
-</Tabs>
+<div className="docs-intro">
+  <img className="docs-screenshot macos" alt="my_project macOS sample stories" src={my_project_macos_sample_stories}/>
+</div>
 
 Feel free to edit those stories to see their visual state change. Monarch will 
 automatically reload your changes.

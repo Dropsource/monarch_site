@@ -240,9 +240,7 @@ function Home() {
               </div>
               <div className="col col--4">
                 <OsLogo className={styles.linux} />
-                <div className="button__container">
-                  <p className="coming__soon">Coming soon on Linux</p>
-                </div>
+                <CtaButton text="Get Started on Linux" />
               </div>
             </div>
           </div>
