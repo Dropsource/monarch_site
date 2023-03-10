@@ -34,14 +34,9 @@ using any static contents hosting service.
 ## Image Processing
 
 ### Image Compression
-Compress the images before publishing them. A good application to use is 
-[ImageAlpha.app](https://pngmini.com/), which can be automated with 
-[ImageOptim-CLI](https://jamiemason.github.io/ImageOptim-CLI/).
-
-To compress an image open ImageAlpha, then drag and drop the original image and play 
-with the settings until you get good compression with decent quality. 
-When you are satisfied with the result do Cmd+Shift+S to save the 
-compressed image.
+Compress the images before publishing them. There are website, like [Compress PNG](https://compresspng.com/) 
+which can compress a png. However, we seem to get better results with compression 
+apps like "mini PNG Lite" which you can get from the macOS App Store.
 
 ### static/assets (not content versioned)
 The command `yarn build` moves `static/assets` to `build/assets`. It does the 
