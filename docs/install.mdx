@@ -26,7 +26,7 @@ curl -O ` + linuxVersionInfo.installation_bundle_url
     extractWindows:`cd development
 tar -x -f ` + windowsVersionInfo.installation_bundle_file
     ,
-    extractLinux: `tar xf ` + macosVersionInfo.installation_bundle_file
+    extractLinux: `tar xf ` + linuxVersionInfo.installation_bundle_file
     ,
     pathMac: 'export PATH="$PATH:`pwd`/monarch/bin"',
     pathWindows: 'set PATH=%PATH%;C:\\path\\to\\monarch\\bin',
