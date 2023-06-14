@@ -26,7 +26,7 @@ curl -O ` + linuxVersionInfo.installation_bundle_url
     extractWindows:`cd development
 tar -x -f ` + windowsVersionInfo.installation_bundle_file
     ,
-    extractLinux: `tar xf ` + linuxVersionInfo.installation_bundle_file
+    extractLinux: `tar -xf ` + linuxVersionInfo.installation_bundle_file
     ,
     pathMac: 'export PATH="$PATH:`pwd`/monarch/bin"',
     pathWindows: 'set PATH=%PATH%;C:\\path\\to\\monarch\\bin',
@@ -87,12 +87,8 @@ tar -x -f ` + windowsVersionInfo.installation_bundle_file
     <ol start="3">
       <li><p>Extract the file in the desired location, for example:</p></li>
       <CodeBlock language="bash">{commands.extractWindows}</CodeBlock>
-    </ol>
-    <ol start="4">
-      <li><p>Add the monarch binaries to your path:</p></li>
-      <CodeBlock language="bash">{commands.pathWindows}</CodeBlock>
       <p>
-        This command sets your PATH variable for the current terminal window only. To 
+        You can now run Monarch using the monarch.exe located in the monarch\bin directory. To 
         permanently add Monarch to your path, see <a href="#update-your-path">Update your path</a>.
       </p>
     </ol>
