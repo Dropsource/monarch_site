@@ -49,6 +49,21 @@ export default function Opengraph() {
           <p className="hero__subtitle" style={{ marginTop: 0, marginBottom: 80, fontSize: 60 }}>Now fully open source</p>
         </div>
       </header>
+
+      <header className={clsx('hero hero--primary', styles.heroBanner)}>
+        
+      </header>
+
+      <header className={clsx('hero hero--primary', styles.heroBanner)} style={{ backgroundColor: 'var(--mon-celeste)' }}>
+        <div className="container" style={{ width: 750 }}>
+          <div><img src="assets/icon-monarch-white.png" style={{ width: 100, marginBottom: 0, marginTop: 80 }} /></div>
+          <p className="hero__subtitle" style={{ marginTop: 0, marginBottom: 0, fontSize: 60, fontWeight: 400 }}>Monarch is growing</p>
+          <p className="hero__subtitle" style={{ marginTop: 0, marginBottom: 0}}>
+            <span style={{ fontSize: 60 }}>🐛</span>
+            <span style={{ fontSize: 120, verticalAlign: 'middle', }}>🦋</span>
+          </p>
+        </div>
+      </header>
     </Layout>
   );
 }
