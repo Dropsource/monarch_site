@@ -34,9 +34,16 @@ using any static contents hosting service.
 ## Image Processing
 
 ### Image Compression
-Compress the images before publishing them. There are website, like [Compress PNG](https://compresspng.com/) 
-which can compress a png. However, we seem to get better results with compression 
-apps like "mini PNG Lite" which you can get from the macOS App Store.
+Compress the images before you add them to this repo. Here is a few options to compress images:
+
+- Use a website, like [Compress PNG](https://compresspng.com/) 
+- We seem to get better results with with compression apps like "mini PNG Lite" which you can get from the macOS App Store.
+- Use a cli tool like [pngquant](https://pngquant.org/)
+
+If you use `pngquant`, this command is usually enough:
+```
+pngquant *.png
+```
 
 ### static/assets (not content versioned)
 The command `yarn build` moves `static/assets` to `build/assets`. It does the 
@@ -56,17 +63,13 @@ image is properly deployed, then the old image can be deleted.
 ### docs/assets and blog/assets (content versioned)
 Images in the `docs/assets` or `blog/assets` are usually referenced via the 
 `import` statement in an mdx or js file. The import statement will content 
-version those images. Unfortunately, after `yarn build`, the import statement moves them to 
-the `build/assets/images` directory, which is confusing. Beware of that.
+version those images. Unfortunately, after `yarn build`, the import statement moves 
+them to the `build/assets/images` directory, which is confusing. Beware of that.
 
 ### Open graph images
 Ideally every blog post and newsletter should have its own open graph image. 
 If you are adding an open graph image, then make sure its dimensions are 
-1.9:1 or 2:1. A width of 1200 or 1500 pixels is ok. Make sure to compress it
-
-```
-pngquant *.png
-```
+1.9:1 or 2:1. A width of 1200 or 1500 pixels is ok. Make sure to compress it, see [[#Image Compression]].
 
 You can use the page `/opengraph` to draft your own open graph image. Edit the page
 via opengraph.js
@@ -76,8 +79,9 @@ via opengraph.js
 ## Deployment PROD
 
 We use render.com to host the production monarch_site. The production site 
-deploys the contents of the `master` branch in Github. Ask someone in the 
-team for the contents of the `.deploy_hook` file. Then run:
+deploys the contents of the `master` branch in Github. The monarch automation edits the master branch when it generates a new monarch version.
+
+Ask someone in the team for the contents of the `.deploy_hook` file. Then run:
 ```
 sh deploy.sh
 ```
@@ -89,8 +93,9 @@ Then go to:
 ## Deployment DEV
 
 We also have a dev site on render.com which deploys from the `dev` branch 
-in Github. Make sure you are using the deploy hook for the site you want 
-to deploy to.
+in Github. The monarch automation edits the dev branch when it runs dev builds.
+
+Make sure you are using the deploy hook for the site you want to deploy to.
 ```
 sh deploy_dev.sh
 ```
@@ -98,12 +103,11 @@ Then go to:
 - https://monarch-site-dev.onrender.com/
 
 ## Staging Site
-There is also a staging site, which we can use to collaborate with non-devs. The master and
-dev branch have protection rules in Github which only allows developers to modify those 
-branches. Other collaborator could submit changes to the staging branch which will then 
-need to be merged to dev or master.
+There is also a staging site, which we can use to collaborate on content. The master and
+dev branch have protection rules in Github. Content collaborators could submit changes 
+to the staging branch which will then need to be merged to dev or master.
 
-The stating deploys from the `staging` branch. The staging site is 
+The staging site deploys from the `staging` branch. The staging site is 
 set up under a shared account in render.com. 
 
 - The shared login is ftrigoso+marketing@dropsource.com.
