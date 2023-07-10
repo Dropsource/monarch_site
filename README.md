@@ -66,6 +66,9 @@ Images in the `docs/assets` or `blog/assets` are usually referenced via the
 version those images. Unfortunately, after `yarn build`, the import statement moves 
 them to the `build/assets/images` directory, which is confusing. Beware of that.
 
+Prefer to place images in a sub-directory so you can more easily reference them. 
+See directory blog/2023-06-29-isolation.
+
 ### Open graph images
 Ideally every blog post and newsletter should have its own open graph image. 
 If you are adding an open graph image, then make sure its dimensions are 
