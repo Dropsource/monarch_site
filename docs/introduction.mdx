@@ -7,7 +7,7 @@ import boxes_messy from './assets/boxes-mess.png';
 import boxes_neat from './assets/boxes-neat.png';
 import team_ui from './assets/team-ui.png';
 
-### The problem: complex user interfaces
+### Your job is hard
 
 As your Flutter app grows, its user interface becomes complex because your widgets need 
 to support more use cases. You may end up with hundreds of widgets which depend on 
@@ -21,18 +21,30 @@ On top of all that, you have to make sure your UI works across multiple devices,
 scales, languages, and themes. And you also have to worry about logic, data, 
 performance, animations, accessibility, etc.
 
-### The solution: isolate your widgets and use Monarch
+Building complex user interfaces is hard. 
 
-Your job, as a Flutter developer, would be easier if you could decouple your widgets 
-from the rest of your app and backend. That is why we built Monarch—to help you build 
-Flutter widgets in isolation.
+### Isolating your UI will help
+
+If you could build your UI in isolation you could reduce the complexity of your job.
+When you isolate your UI, you can run it without running your app or your backend, 
+which means that you can easily build, test, and debug complex UIs.
+
+However, it is not enough to isolate your UI. You also need a tool that can preview
+your UI in isolation.
+
+This is why we built Monarch—to help you build Flutter widgets in isolation.
 
 <div className="docs-intro">
     <img alt="Isolated Widgets" src={boxes_neat} width="400px"/>
 </div>
 
+### Monarch will help
+
+Monarch proposes a simple way to isolate your UI and then it previews your 
+UI in the most isolated way possible.
+
 To use Monarch, you first write stories. A story is a function which returns a 
-widget in a visual state you care about.
+widget in a visual state you care about. Your stories represent your isolated UI.
 
 You can then use Monarch to preview the stories you have written. You can then see your 
 widgets across different devices, text scales, languages, themes, and more. All without 
@@ -54,5 +66,5 @@ concepts or modify your production code.
 - Monarch stories are very similar to [Storybook](https://storybook.js.org/) stories. 
   If you are familiar with Storybook, then Monarch will feel very familiar.
 - Monarch doesn't affect your production code thus your app bundle size stays the same.
-- If you decide to stop using Monarch, all your stories are reusable from your widget tests.
+- All your stories are reusable from your widget tests. Our users love this.
 - Monarch runs natively on your desktop platform. You can use it side-by-side with your IDE.

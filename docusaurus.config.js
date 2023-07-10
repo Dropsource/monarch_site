@@ -39,7 +39,7 @@ module.exports = {
         },
         {
           to: 'blog',
-          label: 'Releases', 
+          label: 'Blog', 
           position: 'right'},
         {
           href: 'https://github.com/Dropsource/monarch',
@@ -72,7 +72,7 @@ module.exports = {
           title: 'More',
           items: [
             {
-              label: 'Releases',
+              label: 'Blog',
               to: 'blog',
             },
             {
@@ -122,7 +122,7 @@ module.exports = {
         //   title: 'More',
         //   items: [
         //     {
-        //       label: 'Releases',
+        //       label: 'Blog',
         //       to: 'blog',
         //     },
         //     {

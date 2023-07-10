@@ -21,3 +21,5 @@ yarn-error.log*
 
 .deploy_hook
 .deploy_hook_dev
+
+.obsidian/
