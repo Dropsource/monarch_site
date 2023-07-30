@@ -4,6 +4,7 @@ module.exports = {
       'introduction',
       'install',
       'write-first-story',
+      'isolate_interactions',
       'examples',
       'community',
       'learn-more'
