@@ -1,56 +1,52 @@
 ---
 id: isolate_interactions
-title: Isolate your page transitions and animations
+title: Play with your page transition animations
 description: TBD
 ---
-import bottom_up_slide from './assets/bottom_up_slide.gif';
-import bottom_up_slide_bounce from './assets/bottom_up_slide_bounce.gif';
-import rotation from './assets/rotation.gif';
-import rotation_slow from './assets/rotation_slow.gif';
 import interactions_app from './assets/interactions_app.gif';
 
 <div className="docs-intro">
     <img className="docs-screenshot macos" alt="Bottom up slide transition" src={interactions_app} width="260px"/>
 </div>
+<br/>
 
-### Introduction
+When building apps with multiple screens, it is essential to make the transitions between them appear seamless rather than
+ abrupt. To achieve that, standard practice is to use transition animations(e.g., fade in, slide in, etc.) when navigating 
+ between screens. However, testing and tweaking these interactions within your full app is time consuming. Let's explore why
+  isolating these transitions is good for you.
 
-When building apps with multiple screens, it is essential to make the transitions between them appear seamless 
-rather than abrupt. To achieve that, standard practice is to use transition animations(e.g., fade in, slide in, etc.) 
-when navigating between screens. However, testing and trying out these interactions in a simple yet scalable manner 
-can be tricky, and that's where the need to isolate them comes in.
+### Why you should isolate your page transitions
 
-### Isolating interactions
+By isolating your interactions, you can easily play around with different animated transitions by changing their durations, 
+behavior, and patterns until you find the one that works best for your app without changing your main codebase. A great 
+custom transition can make your app stand out and more unique.
 
-By isolating your interactions, you can easily play around with different animated transitions by changing their 
-durations, behaviour, and patterns until you find the one that works best for your app without changing your main 
-codebase. A great custom transition can make your app stand out and more unique.
-
-More importantly, isolating interactions enables you to test them independently without relying on the rest of your 
-app or backend data. Like in most apps, the screens in your app often depend on preceding states or backend data. As
- a result, it necessitates navigating through multiple screens each time you want to test an interaction, making the
-  process such a hassle and time-consuming. By isolating interactions, you can directly access and play around with 
-  your interactions without having to navigate through numerous screens or fulfil business logic every time.
+More importantly, isolating interactions enables you to test them independently without relying on the rest of your app or 
+backend data. Like in most apps, the screens in your app often depend on preceding states or backend data. As a result, it 
+necessitates navigating through multiple screens each time you want to test an interaction, making the process such a hassle
+ and time-consuming. By isolating interactions, you can directly access and play around with your interactions without having
+  to navigate through numerous screens or fulfill business logic every time.
 
 
 ### Writing stories for interactions
 
-To demonstrate how isolation makes your work as a developer easier, let's write some [stories](/docs/write-first-story) for 
-the `ExpenseListScreen` shown at the top of the page that transitions into a `DetailsScreen`. Using these stories and
- Monarch Preview, we will play around with our interaction by changing some variables to find an animation we like.
+To demonstrate how isolation makes your work as a developer easier, let's write some stories for the `ExpenseListWidget` shown
+ at the top of the page that transitions into a Details Screen. Using the stories and Monarch, we will play around with our 
+ interaction by changing some variables to find an animation we like.
 
-First, let's set up the `ExpenseListWidget`. The widget has three key variables that we'll use to play around with our
- interaction: a `TransitionType`(e.g., slide, rotate, scale), a `Curve` value that defines how the transition will move,
-  and a `Duration`.
+First, let's set up the `ExpenseListWidget` . The widget exposes a `transitionBuilder` callback whose return value we can change
+ to get different animations. Within the `ExpenseListWidget`, the `transitionBuilder` is passed to the `PageRouteBuilder`, which
+  is then consumed by the navigation handler.
+
 ```dart
 class ExpenseListWidget extends StatelessWidget {
   final List<Expense> expenses;
-  final TransitionType? transition;
-  final Curve? curve;
-  final Duration? duration;
+  final RouteTransitionsBuilder transitionBuilder;
 
-  const ExpenseListWidget({ super.key, required this.expenses,
-    this.transition, this.curve, this.duration,
+  const ExpenseListWidget({
+    super.key,
+    required this.expenses,
+    required this.transitionBuilder,
   });
 
   @override
@@ -64,12 +60,13 @@ class ExpenseListWidget extends StatelessWidget {
               expense: expense,
             ),
             onTap: () {
+              PageRouteBuilder pageRoute = PageRouteBuilder(
+                pageBuilder: (context, animation, secondaryAnimation) =>
+                    DetailsScreen(expense: expense),
+                transitionsBuilder: transitionBuilder,
+              );
               Navigator.of(context).push(
-                createAnimatedRoute(
-                    screen: DetailsScreen(expense: expense),
-                    transition: transition,
-                    curve: curve,
-                    duration: duration),
+                pageRoute,
               );
             },
           );
@@ -77,71 +74,74 @@ class ExpenseListWidget extends StatelessWidget {
   }
 }
 ```
-### BottomUp Slide Transition
+### No Transition
 
-We’ll start off with a basic transition that slides in from the bottom to the top of the screen. To do that we pass 
-`TransitionType.slide` and `Curves.ease` to the expense list widget. 
+Our first story will test what the interaction is like without an animated transition. To do that, our story will pass to the 
+`ExpenseListWidget` a `TransitionBuilder` callback that simply returns the child parameter without any animations applied to it. 
+
+```dart
+Widget noTransition() => ExpenseListWidget(
+    expenses: expenses,
+    transitionBuilder: (context, animation, secondaryAnimation, child) {
+      return child;
+    });
+```
+
+### Right-to-Left Slide Transition
+
+Next, let's try a transition that slides the next page in from right-to-left. To do that, we'll change the `TransitionBuilder`
+ callback to return a `SlideTransition` animated widget that takes the child parameter and an offset animation with begin and
+  end offsets set to `Offset(1.0, 0.0)` and `Offset.zero`, respectively, like below:
 
 ```dart
 Widget bottomUpTransition() => ExpenseListWidget(
-    expenses: expenses,
-    transition: TransitionType.slide,
-    curve: Curves.ease);
-```
-
-After running the `monarch run` command in the terminal, we can now try out the animation using Monarch Preview like below.
-
-<div className="docs-intro">
-    <img className="docs-screenshot macos" alt="Bottom up slide transition" src={bottom_up_slide} width="1000px"/>
-</div>
-
-### BottomUp Slide Transition with Bounce
-
-We can try out another a variation of the bottom-up slide that bounces on completion by simply duplicating the previous
- story but changing the curve value to `Curves.bounceOut` .
-
-```dart
-Widget bottomUpTransitionWithBounce() => ExpenseListWidget(
-    expenses: expenses,
-    transition: TransitionType.slide,
-    curve: Curves.bounceOut);
-```
-
-And then we can similarly interact with it on the preview like below:
-
-<div className="docs-intro">
-    <img className="docs-screenshot macos" alt="Bottom up slide transition with bounce" src={bottom_up_slide_bounce} width="1000px"/>
-</div>
-
-### Rotation Transition
-
-To try out the rotation transition we simply write a story that sets transition to  `TransitionType.rotate` and curve to 
-`Curve.ease`  and to make it more noticeable, set the duration to 800 milliseconds.
-
-```dart
-Widget rotationTransition() => ExpenseListWidget(
       expenses: expenses,
-      transition: TransitionType.rotate,
-      curve: Curves.ease,
-      duration: const Duration(milliseconds: 800),
+      transitionBuilder: (context, animation, secondaryAnimation, child) {
+        final tween = Tween(begin: const Offset(1.0, 0.0), end: Offset.zero);
+        Animation<Offset> offsetAnimation = animation.drive(tween);
+
+        return SlideTransition(position: offsetAnimation, child: child);
+      },
     );
 ```
 
-And the we have:
-<div className="docs-intro">
-    <img className="docs-screenshot macos" alt="Rotation transition" src={rotation} width="1000px"/>
+### Bottom-Up Slide Transition
+
+Finally, to try out a bottom-up slide transition, we’ll have a callback similar to the previous one, except in this, the begin
+ offset value in the `Tween` is set to `Offset(0.0, 1.0)` like below: 
+
+```dart
+Widget rightToLeftTransition() => ExpenseListWidget(
+      expenses: expenses,
+      transitionBuilder: (context, animation, secondaryAnimation, child) {
+        final tween = Tween(begin: const Offset(0.0, 1.0), end: Offset.zero);
+        Animation<Offset> offsetAnimation = animation.drive(tween);
+
+        return SlideTransition(position: offsetAnimation, child: child);
+      },
+    );
+```
+
+After executing monarch run in the terminal, we can now click through each story to see each transition behaves and pick the one we like as below:
+
+<div className='text--center'>
+  <video playing playsinline controls autoPlay height="580px" src='/assets/monarch_interactions.webm' type='video/webm'/>
 </div>
+<br/>
 
-### Slow Rotation Transition
+Breaking down your transitions into stories opens up the opportunity to do more with your transitions beyond what's been demonstrated
+ in the stories above. For instance, you can also play around with the animation
+[curve](https://api.flutter.dev/flutter/animation/Curves-class.html), which alters how transitions roll in and/or out. Among other 
+ Curves, you can play around with `Curves.ease`, `Curves.easeIn` or `Curves.easeInOut`, and find what works best for your app.
 
-We can also try to make the rotation transition slow by just changing the duration to 4 seconds like below.
-<div className="docs-intro">
-    <img className="docs-screenshot macos" alt="Rotation transition" src={rotation_slow} width="1000px"/>
-</div>
+### Why Monarch
 
-### Leveraging Monarch in your project
+- Monarch lets you easily play with your transitions, and with all of your UI, which makes you more productive.
+- Directly reach the widgets and interactions you want to test without having to navigate through multiple screens.
+- With monarch, you can visually debug your page transitions via the “slow animations” flag
+- Monarch gives your UI the best isolation possible which enables to test full screen interactions like page transitions. Other tools
+ can’t do this.
 
-With all of your app's interaction stories laid out in the Monarch Preview, you can directly
-  reach the widgets and interactions you want to test or debug without having to navigate through multiple screens first. By 
-  isolating the preview of your app to a separate window, Monarch has the ability to let you play around with and test out route
-   transitions in your app, a feature other alternative tools don’t currently have. 
+Your job as a Flutter developer is hard. Isolate your UI and use Monarch to make your job easier. Use Monarch to prototype, build, 
+and test your UI. Use Monarch to play with your UI, to feel productive, creative, and satisfied. This is what we like to call 
+The Monarch Way.
