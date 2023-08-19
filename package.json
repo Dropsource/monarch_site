@@ -12,6 +12,7 @@
     "clear": "docusaurus clear"
   },
   "dependencies": {
+    "@babel/helper-get-function-arity": "^7.16.7",
     "@docusaurus/core": "^2.0.0",
     "@docusaurus/preset-classic": "^2.0.0",
     "clsx": "^1.2.1",

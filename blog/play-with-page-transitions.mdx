@@ -1,5 +1,5 @@
 ---
-id: isolate_interactions
+slug: play-with-page-transitions
 title: Play with your page transition animations
 description: TBD
 ---
@@ -30,13 +30,12 @@ necessitates navigating through multiple screens each time you want to test an i
 
 ### Writing stories for interactions
 
-To demonstrate how isolation makes your work as a developer easier, let's write some stories for the `ExpenseListWidget` shown
+To demonstrate how isolation makes your work as a developer easier, let's write some [stories](/docs/write-first-story) for the `ExpenseListWidget` shown
  at the top of the page that transitions into a Details Screen. Using the stories and Monarch, we will play around with our 
  interaction by changing some variables to find an animation we like.
 
-First, let's set up the `ExpenseListWidget` . The widget exposes a `transitionBuilder` callback whose return value we can change
- to get different animations. Within the `ExpenseListWidget`, the `transitionBuilder` is passed to the `PageRouteBuilder`, which
-  is then consumed by the navigation handler.
+First, let's set up the `ExpenseListWidget`. It exposes a `transitionBuilder` callback whose return value we can change around to
+ get various animations.
 
 ```dart
 class ExpenseListWidget extends StatelessWidget {
@@ -87,14 +86,31 @@ Widget noTransition() => ExpenseListWidget(
     });
 ```
 
-### Right-to-Left Slide Transition
+### Bottom-Up Slide Transition
 
-Next, let's try a transition that slides the next page in from right-to-left. To do that, we'll change the `TransitionBuilder`
- callback to return a `SlideTransition` animated widget that takes the child parameter and an offset animation with begin and
-  end offsets set to `Offset(1.0, 0.0)` and `Offset.zero`, respectively, like below:
+Next, let's try a transition that slides in the next page from the bottom. To do that, we'll change the `TransitionBuilder` 
+callback to return a `SlideTransition` animated widget that takes the child parameter and an offset animation with begin and end 
+offsets set to `Offset(0.0, 1.0)` and `Offset.zero`, respectively, like below:
 
 ```dart
 Widget bottomUpTransition() => ExpenseListWidget(
+      expenses: expenses,
+      transitionBuilder: (context, animation, secondaryAnimation, child) {
+        final tween = Tween(begin: const Offset(0.0, 1.0), end: Offset.zero);
+        Animation<Offset> offsetAnimation = animation.drive(tween);
+
+        return SlideTransition(position: offsetAnimation, child: child);
+      },
+    );
+```
+
+### Right-to-Left Slide Transition
+
+Finally, to try out a right-to-left slide transition, we’ll have a callback similar to the previous one, except in this, the begin
+ offset value in the `Tween` is set to `Offset(1.0,0.0)` like below: 
+
+```dart
+Widget rightToLeftTransition() => ExpenseListWidget(
       expenses: expenses,
       transitionBuilder: (context, animation, secondaryAnimation, child) {
         final tween = Tween(begin: const Offset(1.0, 0.0), end: Offset.zero);
@@ -105,22 +121,9 @@ Widget bottomUpTransition() => ExpenseListWidget(
     );
 ```
 
-### Bottom-Up Slide Transition
+##
 
-Finally, to try out a bottom-up slide transition, we’ll have a callback similar to the previous one, except in this, the begin
- offset value in the `Tween` is set to `Offset(0.0, 1.0)` like below: 
-
-```dart
-Widget rightToLeftTransition() => ExpenseListWidget(
-      expenses: expenses,
-      transitionBuilder: (context, animation, secondaryAnimation, child) {
-        final tween = Tween(begin: const Offset(0.0, 1.0), end: Offset.zero);
-        Animation<Offset> offsetAnimation = animation.drive(tween);
-
-        return SlideTransition(position: offsetAnimation, child: child);
-      },
-    );
-```
+### Preview your stories in Monarch
 
 After executing monarch run in the terminal, we can now click through each story to see each transition behaves and pick the one we like as below:
 
@@ -145,3 +148,7 @@ Breaking down your transitions into stories opens up the opportunity to do more 
 Your job as a Flutter developer is hard. Isolate your UI and use Monarch to make your job easier. Use Monarch to prototype, build, 
 and test your UI. Use Monarch to play with your UI, to feel productive, creative, and satisfied. This is what we like to call 
 The Monarch Way.
+
+--
+
+The complete code is available [here](https://github.com/Dropsource/monarch_samples).
