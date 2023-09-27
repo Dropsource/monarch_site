@@ -1,0 +1,74 @@
+---
+slug: hard-use-cases
+title: Hard To Reach Use Cases
+description: Hard to reach use cases
+---
+
+import hard_case_screen from "./assets/hard-use-cases-screen.jpg";
+
+### Introduction
+
+Building UIs is fun; as a developer, you get to piece together widgets and craft them into screens that make up your app's UI flows. However, you may find yourself in situations where accessing a particular screen requires multiple steps or depends on some backend data; hence, getting to that screen can be pretty complicated. In this article, we'll delve into how debugging hard-to-reach-use-cases can be frustrating and painful and how we can fix that.
+
+Let's paint a familiar picture: Say we have a five-step onboarding flow, and there's a bug on the fifth step of the flow– some text is overflowing into an image widget. To address this, we would typically follow this rather cumbersome process:
+
+1. Launch the simulator.
+2. Launch the app and wait for it to load.
+3. Realise we're already logged in.
+4. Uninstall the app.
+5. Reinstall it.
+6. Launch the app once again.
+7. Tap through the first, second, third, and fourth onboarding screens.
+8. Arrive at the fifth screen where the issue is.
+9. Finally make the changes.
+10. Repeat this entire process for each subsequent change.
+
+This process is not only inefficient but also incredibly frustrating. It consumes valuable time and effort and is a significant drain on productivity. The annoyance of having to repeat these steps over and over again can lead to subpar app quality as developers naturally seek to avoid such tasks.
+
+### What if
+
+What if we didn't have to go through this pain? What if there was a more efficient approach? What if you could make hard-to-reach use cases more accessible and straightforward to debug?
+
+### The Monarch way
+
+That's where Monarch's magic comes into play. Instead of running your entire app or navigating through countless screens to access the desired UI element, you can use Monarch to preview these UI elements. To do this, all you have to do is isolate your widgets and write stories for them. Stories act as shortcuts, making the once hard to reach use cases just one click away.
+
+With that in mind, let's revisit our onboarding example and see it in action, this time streamlined using stories:
+
+```dart
+Widget full_onboarding() => IntroductionAnimationScreen();
+
+Widget onboarding_1_splash() =>
+    IntroductionAnimationScreen(initial: 0.0, target: 0.0);
+
+Widget onboarding_2_relax() =>
+    IntroductionAnimationScreen(initial: 0.0, target: 0.2);
+
+Widget onboarding_3_care() =>
+    IntroductionAnimationScreen(initial: 0.2, target: 0.4);
+
+Widget onboarding_4_mood() =>
+    IntroductionAnimationScreen(initial: 0.4, target: 0.6);
+
+Widget onboarding_5_welcome() =>
+    IntroductionAnimationScreen(initial: 0.6, target: 0.8);
+```
+
+Using the stories we’ve written above, we can now directly access any step of the onboarding flow:
+
+<div className="docs-screenshot macos">
+  <img
+    alt="Monarch preview screenshot of hard to reach usecase"
+    src={hard_case_screen}
+    width="740px"
+  />
+</div>
+
+### Benefits of using Monarch
+
+- **Efficiency**: Say goodbye to time-consuming setups and repetitive actions. Monarch streamlines your workflow, making UI development more efficient.
+- **Productivity**: With Monarch, you can work at a faster pace, iterate more swiftly, and resolve UI issues with ease.
+- **Creativity**: Monarch encourages a playful and creative approach to UI development, empowering you to experiment and innovate.
+- **Improved Quality:** The ability to test, debug, and tweak the UI in isolation ensures a higher quality of the final product, leading to a better user experience.
+
+The pain of navigating complex UI flows, and hard-to-reach use cases is alleviated with Monarch. Monarch empowers developers to embrace a state of play where creativity thrives and good work flourishes. You can prototype, build, tweak, debug, and test your UI easily and responsibly. With Monarch, your entire UI is just one click away.
