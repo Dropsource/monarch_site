@@ -5,10 +5,13 @@ description: Hard to reach use cases
 ---
 
 import hard_case_screen from "./assets/hard-use-cases-screen.jpg";
+import onboarding from "./assets/onboarding.jpg";
 
-### Introduction
+<img alt="onboarding screens" src={onboarding} />
 
 Building UIs is fun; as a developer, you get to piece together widgets and craft them into screens that make up your app's UI flows. However, you may find yourself in situations where accessing a particular screen requires multiple steps or depends on some backend data; hence, getting to that screen can be pretty complicated. In this article, we'll delve into how debugging hard-to-reach-use-cases can be frustrating and painful and how we can fix that.
+
+### Scenario
 
 Let's paint a familiar picture: Say we have a five-step onboarding flow, and there's a bug on the fifth step of the flow– some text is overflowing into an image widget. To address this, we would typically follow this rather cumbersome process:
 
@@ -56,8 +59,9 @@ Widget onboarding_5_welcome() =>
 
 Using the stories we’ve written above, we can now directly access any step of the onboarding flow:
 
-<div className="docs-screenshot macos">
+<div className="docs-into">
   <img
+    className="docs-screenshot macos"
     alt="Monarch preview screenshot of hard to reach usecase"
     src={hard_case_screen}
     width="740px"
