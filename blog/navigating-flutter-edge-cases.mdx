@@ -1,25 +1,26 @@
 ---
 slug: navigating-flutter-edge-cases
 title: Navigating Flutter Edge Cases
-description: How to find bugs using Monarch and edge cases 
+description: How to find bugs using Monarch and edge cases
 ---
 
-import edge_case_screen from './assets/edge_case_screen.png';
-import edge_case from './assets/edge_case.webm';
+import edge_case_screen from "./assets/edge_case_screen.png";
+import edge_case from "./assets/edge_case.webm";
 
 ### Intro
+
 `RenderFlex overflowed`. As a Flutter developer you have probably seen this error a
 million times. You put together some widgets to make a beautiful UI and it works
 perfectly. Until someone runs it on a different device, with a different screen
 or font size now your text is overflowing, widgets are overlapping and that
-beautiful UI is gone. 
+beautiful UI is gone.
 
 Often times we build UIs that work for ideal situations, however, the apps we
 make run in the most unexpected conditions and we must be able to take those
 situations into account. Our app UIs must be built to withstand as many edge
 cases as possible, the different screen and font sizes, languages and even
 orientations. However, catching these edge cases is hard, especially for UIs,
-not withstanding the fact that edge case testing can be time consuming. 
+not withstanding the fact that edge case testing can be time consuming.
 
 To find edge cases, you need to spend time and play around with your app. It is
 through playing that we learn the most about whats possible, impossible and
@@ -33,9 +34,14 @@ shows a set of filtering options, let's play around with the device and text
 sizes and try to catch some bugs in the related edge cases.
 
 <div className="docs-intro">
-    <img className="docs-screenshot macos" alt="Bottom up slide transition" src={edge_case_screen} width="260px"/>
+  <img
+    className="docs-screenshot macos"
+    alt="Bottom up slide transition"
+    src={edge_case_screen}
+    width="260px"
+  />
 </div>
-<br/>
+<br />
 
 #### 1. Preview on the Smallest Device
 
@@ -61,9 +67,19 @@ text, or misaligned elements may surface.
 
 Here's a video showing the edge case test with Monarch in action
 
-<div className='text-- '>
-  <video playing playsinline controls autoPlay height="580px" src={edge_case} type='video/webm'/>
+<div className="blog-video video">
+  <div className="text--center">
+    <video
+      playing
+      playsinline
+      controls
+      autoPlay
+      src={edge_case}
+      type="video/webm"
+    />
+  </div>
 </div>
+<br></br>
 
 ### Why you should isolate your widgets
 
