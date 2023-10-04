@@ -1,4 +1,5 @@
 ---
+authors: ftrigoso
 slug: isolation-is-the-way
 title: Isolation Is The Way
 description: When it comes to building a UI, you want a tool that gives you the best isolation possible. Monarch is that tool.
