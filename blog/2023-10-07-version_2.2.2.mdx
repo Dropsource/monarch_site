@@ -1,0 +1,27 @@
+---
+slug: version-2.2.2
+title: Version 2.2.2
+description: Show Performance Overlay and fixes.
+---
+
+import performance_overlay from '/blog/assets/show-performance-overlay.png';
+
+### Fix on macOS
+This release fixes the macOS error "Could not create the embedder backing 
+store". This error is hard to reproduce consistently but we think we have a 
+good fix for it. However, if you see it again, please let us know by 
+creating an issue in the monarch Github repo.
+
+
+### Performance Overlay
+This release adds a new visual debugging flag, called Show Performance Overlay.
+This flag is part of the Flutter tools and now you can access it directly from 
+Monarch. For more details on how to use this flag, see the Flutter docs on 
+[The performance overlay](https://docs.flutter.dev/perf/ui-performance#the-performance-overlay).
+
+Also, to use this new flag you need to upgrade the monarch package in your 
+pubspec.yaml: 
+- If you are using Flutter 3.8 or later, then please upgrade to monarch package `^3.6.0`. 
+- Or, if you are using Flutter 3.7 or earlier, then please upgrade to monarch `^3.1.1`.
+
+<img alt="Show Performance Overlay Flag" src={performance_overlay} />
