@@ -43,6 +43,10 @@
   }
 }
 
+.container {
+  font-family: 'poppinsregular';
+}
+
 .valuePropSection {
   /* border-bottom: 1px solid rgba(0, 0, 0, 0.1); */
   padding: 7rem 2rem;
@@ -112,7 +116,7 @@
   height: 100px;
   width: 100px;
   background-size: contain !important;
-  margin: 0 auto;
+  margin: 0 auto 1rem auto;
   -ms-high-contrast-adjust: none;
 }
 
@@ -126,18 +130,4 @@
 
 .osLogo.apple {
   background: url(/assets/apple-logo.svg) center center no-repeat;
-}
-
-.osSection {
-  padding-bottom: 0;
-  /* background-color: #f5f5f5; */
-}
-
-.newsletterSection {
-  text-align: center;
-  background-color: #f5f5f5;
-}
-
-.newsletterSection p {
-  font-size: 1.1rem;
 }

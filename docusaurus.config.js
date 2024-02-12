@@ -2,7 +2,7 @@ const isProductionDeployment = process.env.DEPLOYMENT === 'production';
 
 module.exports = {
   title: 'Monarch',
-  tagline: 'Build high-quality UIs with ease',
+  tagline: 'Focus on writing code',
   url: 'https://monarchapp.io',
   baseUrl: '/',
   trailingSlash: false,
@@ -105,19 +105,6 @@ module.exports = {
             }
           ],
         },
-        {
-          title: 'Credits',
-          items: [
-            {
-              label: 'Storybook (inspiration for Monarch)',
-              href: 'https://storybook.js.org/'
-            },
-            {
-              label: 'Best Flutter UI Templates (used for the samples above)',
-              href: 'https://github.com/mitesh77/Best-Flutter-UI-Templates'
-            }
-          ]
-        }
         // {
         //   title: 'More',
         //   items: [

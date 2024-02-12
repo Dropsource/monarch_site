@@ -20,11 +20,23 @@
   --ifm-color-primary-lighter: #DC9CFF;
   --ifm-color-primary-lightest: #F6B6FF;
   --ifm-code-font-size: 95%;
+  --ifm-pre-background: #2C2C32;
+
   --mon-dark-text-color: #f5f6f7;
   --mon-dark-background-color: #2C2C32;
   --ifm-font-family-base: 'poppinsregular';
   --ifm-heading-font-family: 'poppinssemibold';
-  --ifm-h1-font-size: 2.1rem;
+  --ifm-heading-margin-top: 0;
+  --ifm-font-size-base: 150%;
+  --ifm-line-height-base: 1.75;
+  --ifm-leading-desktop: 1.55; /* increases paragraph margin bottom */
+  --ifm-link-color: var(--mon-dark-text-color);
+
+  --ifm-blockquote-color: var(--mon-dark-text-color);
+  --ifm-blockquote-font-size: 75%;
+
+  /* --ifm-h1-font-size: 2.1rem;
+  --ifm-h2-font-size: 1.9rem; */
   --mon-purple: #A969DF;
   --mon-blue: #3237BB;
   --mon-celeste: #55DEF8;
@@ -69,12 +81,70 @@
   color: var(--mon-dark-text-color);
 }
 
-.hero .hero__title {
+/* .hero .hero__title {
   font-size: 3.3rem;
 }
 
 .hero .hero__subtitle {
   font-size: 1.8rem;
+} */
+
+.main {
+  background-color: var(--mon-dark-background-color);
+  color: var(--mon-dark-text-color);
+}
+
+.container {
+  padding-top: 4rem;
+  padding-bottom: 3rem;
+}
+
+/* mobile */
+@media screen and (max-width: 996px) {
+  :root {
+    --ifm-code-font-size: 95%;
+    --ifm-font-size-base: 125%;
+    /* --ifm-h1-font-size: 2.6rem;
+    --ifm-h2-font-size: 1.5rem; */
+  }
+
+  /* .hero .hero__title {
+    font-size: 2.6rem;
+  }
+
+  .hero .hero__subtitle {
+    font-size: 1.4rem;
+  } */
+
+}
+
+.text-pop {
+  color: var(--ifm-color-primary-lighter)
+}
+
+.mono {
+  font-family: var(--ifm-font-family-monospace);
+}
+
+.team-pic {
+  margin: 2rem 0;
+}
+
+.team-pic img {
+  border-radius: 50% !important;
+  margin-bottom: 1rem;
+}
+
+.team-pic h3 {
+  margin-bottom: 0;
+}
+
+.underline-links a {
+  text-decoration: underline;
+}
+
+blockquote {
+  margin-bottom: 3rem;
 }
 
 .button__container {
@@ -87,7 +157,7 @@
   background-color: var(--ifm-color-primary);
   border: none;
   font-size: 1.4rem;
-  padding-top: 11px;
+  padding-top: 17px;
   margin-top: 15px;
   color: var(--mon-dark-text-color);
   /* color: var(--ifm-font-color-base); */
@@ -108,18 +178,10 @@
 }
 
 .os__buttons .col {
-  padding-bottom: 6rem;
+  padding: 3rem 0;
 }
 
-@media screen and (max-width: 966px) {
-  .hero .hero__title {
-    font-size: 2.6rem;
-  }
 
-  .hero .hero__subtitle {
-    font-size: 1.4rem;
-  }
-}
 
 .footer {
   background-color: var(--mon-dark-background-color);
