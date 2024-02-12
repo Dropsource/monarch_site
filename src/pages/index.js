@@ -231,10 +231,11 @@ function Home() {
         </section>
 
         <section>
-          <div className="container underline-links">
+          <div className="container">
+            <h2>Learn more links</h2>
             <div className="row">
               <div className="col col--6">
-                <p>Learn more:</p>
+                <p>From above:</p>
                 <ul>
                   <li><a href="">Hard-to-reach use cases are painful</a></li>
                   <li><a href="">Data sources generate friction</a></li>
