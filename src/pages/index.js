@@ -149,7 +149,7 @@ function CtaButton({ text }) {
         className={clsx(
           'button button--outline button--primary button--lg',
         )}
-        to={useBaseUrl('docs/introduction')}>
+        to={useBaseUrl('docs/install')}>
         {text}
       </Link>
     </div>
@@ -195,6 +195,7 @@ function Home() {
                 <p>Monarch will then preview your stories. Now you can jump straight to the last step or to any step you like.</p>
                 <p>
                   <video autoPlay={true} muted={true} loop={true} playsInline={true}>
+                    <source src="assets/animation-onboarding.webm" type="video/webm" />
                     <source src="assets/animation-onboarding.mp4" type="video/mp4" />
                   </video>
                 </p>
@@ -229,10 +230,42 @@ function Home() {
                 <p>With Monarch, you can easily test on any device and on any text scale factor. </p>
                 <p>
                   <video autoPlay={true} muted={true} loop={true} playsInline={true}>
+                    <source src="assets/animation-edges.webm" type="video/webm" />
                     <source src="assets/animation-edges.mp4" type="video/mp4" />
                   </video>
                 </p>
                 <p className="text-pop">That was easy.</p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section>
+          <div className="container">
+            <div className="row">
+              <div className="col col--6">
+                <h2>How to get started</h2>
+                <ol>
+                  <li>Download Monarch</li>
+                  <li>Run: &nbsp;<span className="mono">monarch init</span></li>
+                  <li>Run: &nbsp;<span className="mono">monarch run</span> </li>
+                  <li>Write your own stories</li>
+                  <li>Enjoy!</li>
+                </ol>
+              </div>
+              <div className="col col--3 get-started-center">
+                  <CtaButton text="Get Started" />
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section style={{ backgroundColor: 'var(--ifm-color-primary-darker)' }}>
+          <div className="container">
+            <div className="row">
+              <div className="col">
+                <h2>We feel your pain</h2>
+                <p>You want to write code but front-end development is very difficult. We understand the frustration so we built Monarch as a guide to make things easier. With an isolated UI and Monarch you will feel less stress, you will work faster, and you can enjoy writing code again.</p>
               </div>
             </div>
           </div>
@@ -267,35 +300,7 @@ function Home() {
           </div>
         </section>
 
-        <section style={{ backgroundColor: 'var(--ifm-color-primary-darker)' }}>
-          <div className="container">
-            <div className="row">
-              <div className="col">
-                <h2>We feel your pain</h2>
-                <p>You want to write code but front-end development is very difficult. We understand the frustration so we built Monarch as a guide to make things easier. With an isolated UI and Monarch you will feel less stress, you will work faster, and you can enjoy writing code again.</p>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        <section>
-          <div className="container">
-            <div className="row">
-              <div className="col">
-                <h2>How to get started</h2>
-                <ol>
-                  <li>Download the Monarch binaries</li>
-                  <li>Run: &nbsp;<span className="mono">monarch init</span></li>
-                  <li>Run: &nbsp;<span className="mono">monarch run</span> </li>
-                  <li>Write your own stories</li>
-                  <li>Enjoy!</li>
-                </ol>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        <section>
+        {/* <section>
           <div className="container">
             <h2>Download the Monarch binaries</h2>
             <div className="row os__buttons">
@@ -313,7 +318,7 @@ function Home() {
               </div>
             </div>
           </div>
-        </section>
+        </section> */}
 
         <section style={{ backgroundColor: 'var(--mon-blue)' }}>
           <div className="container">

@@ -21,10 +21,12 @@ module.exports = {
   themeConfig: {
     image: 'assets/monarch-open-graph-purple.png',
     colorMode: {
-      disableSwitch: true
+      disableSwitch: true,
+      defaultMode: 'dark',
     },
     navbar: {
       title: 'Monarch',
+      style: 'dark',
       logo: {
         alt: 'Monarch Logo',
         src: 'assets/logo-monarch.png',
@@ -40,11 +42,13 @@ module.exports = {
         {
           to: 'blog',
           label: 'Releases', 
-          position: 'right'},
+          position: 'right'
+        },
         {
           href: 'https://github.com/Dropsource/monarch',
-          label: 'GitHub',
           position: 'right',
+          className: 'header-github-link',
+          'aria-label': 'GitHub repository',
         },
       ],
     },
