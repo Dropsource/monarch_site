@@ -99,6 +99,11 @@
   padding-bottom: 3rem;
 }
 
+video {
+  max-width: 100%;
+  border-radius: 10px;
+}
+
 /* mobile */
 @media screen and (max-width: 996px) {
   :root {

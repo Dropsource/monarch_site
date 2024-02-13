@@ -193,7 +193,11 @@ function Home() {
                 <p>With Monarch you can write stories for each piece of the onboarding flow you want to isolate.</p>
                 <OnboardingStories />
                 <p>Monarch will then preview your stories. Now you can jump straight to the last step or to any step you like.</p>
-                <p><img src="assets/onboarding-step-5.png" /></p>
+                <p>
+                  <video autoPlay={true} muted={true} loop={true} playsInline={true}>
+                    <source src="assets/animation-onboarding.mp4" type="video/mp4" />
+                  </video>
+                </p>
                 <p className="text-pop">All your screens are just one click away. That's nice.</p>
               </div>
             </div>
@@ -223,7 +227,11 @@ function Home() {
                 <p>Testing an edge case like testing on the smallest device with the largest text will reveal bugs. However, running those tests is hard.</p>
                 <p className="text-pop">What if you could test edge cases easily?</p>
                 <p>With Monarch, you can easily test on any device and on any text scale factor. </p>
-                <p><img src="assets/test-edge-case.png" /></p>
+                <p>
+                  <video autoPlay={true} muted={true} loop={true} playsInline={true}>
+                    <source src="assets/animation-edges.mp4" type="video/mp4" />
+                  </video>
+                </p>
                 <p className="text-pop">That was easy.</p>
               </div>
             </div>
