@@ -380,7 +380,7 @@ function Home() {
           </div>
         </section>
 
-        <section style={{ backgroundColor: 'var(--ifm-color-gray-900)' }}>
+        <section style={{ backgroundColor: 'var(--ifm-navbar-background-color)' }}>
           <div className="container">
             <h2>The Monarch Team</h2>
             <p>We have been working on developer tools since 2014 and working with Flutter since 2018.</p>

@@ -14,6 +14,8 @@ import macosVersionInfo from './versions/macos_version_info.json';
 import windowsVersionInfo from './versions/windows_version_info.json';
 import linuxVersionInfo from './versions/linux_version_info.json';
 
+import my_project_macos_sample_stories from './assets/my_project_macos_sample_stories.png';
+
 export const commands = {
     downloadMac: `cd ~/development
 curl -O ` + macosVersionInfo.installation_bundle_url 
@@ -33,7 +35,7 @@ tar -x -f ` + windowsVersionInfo.installation_bundle_file
     pathLinux: 'export PATH="$PATH:`pwd`/monarch/bin"'
 }
 
-### Download the Monarch binaries
+### Download Monarch
 
 <Tabs
   groupId="operating-systems"
@@ -136,29 +138,101 @@ tar -x -f ` + windowsVersionInfo.installation_bundle_file
   </TabItem>
 </Tabs>
 
-### Run Monarch
-1. Go to one of your Flutter projects and then run `monarch init`. Run it inside
-  your existing project’s root directory:
-  ```bash
-  monarch init
-  ```
-  The `monarch init` command sets up all the dependencies needed to run monarch. 
+### Run: `monarch init`
+
+Go to one of your Flutter projects. Then, inside your project’s root directory run:
+```bash
+monarch init
+```
+The `monarch init` command sets up the dependencies needed to run monarch. 
 It also creates a few sample stories in your project.
 
-2. Run monarch using `monarch run`:
-  ```bash
-  monarch run
-  ```
-  The `monarch run` command prepares the stories in your project so they can be 
-  used by Monarch. It then launches the Monarch app where you can preview your 
-  stories.
+### Run: `monarch run`
+Inside your project’s root directory run:
+```bash
+monarch run
+```
+The `monarch run` command prepares the stories in your project so they can be 
+used by Monarch. It then launches the Monarch app where you can preview your 
+stories.
 
-### Building from source
+### Write your own stories
+You can write stories for the pieces of the user interface you want to isolate. Here is a simple story:
+```dart title="my_stories.dart"
+Widget foo() => MyWidget(...);
+```
+In Monarch, a story is a function which returns a `Widget` and which is inside a file that ends in `_stories.dart`. 
+It's that simple. Monarch will then preview the stories you have written.
+
+The `monarch init` command generates the 3 samples stories below.
+```dart title="stories/sample_button_stories.dart"
+Widget primary() => const Button('...', ButtonStyles.primary);
+
+Widget secondary() => const Button('...', ButtonStyles.secondary);
+
+Widget disabled() => const Button('...', ButtonStyles.disabled);
+```
+Each story returns a button, which is a Widget, in a specific visual state. There is the primary, secondary and 
+disabled states of the Button widget. When you run monarch you will preview these stories.
+
+<div className="docs-intro">
+  <img className="docs-screenshot macos" alt="my_project macOS sample stories" src={my_project_macos_sample_stories}/>
+</div>
+
+When you select a story on the left window, Monarch will render that story inside the Preview window on the right.
+
+#### Where to put stories
+Monarch will look for stories in dart files that end with `*_stories.dart`.
+
+You can place stories inside the `stories` directory or, if you prefer, you can 
+place them inside your `lib` directory. The only requirement is that story files 
+should end in `*_stories.dart`.
+
+#### Stories for your own widgets
+Let's say your project has a couple of widgets files. One is inside `lib`
+and one inside `lib\src`.
+
+```
+- my_project
+    - lib
+        - my_fancy_button.dart
+        - src
+            - my_fancy_card.dart
+```
+
+To write stories for those widgets, you just need to import them into a 
+`*_stories.dart` file, then you can write stories for those widgets.
+```dart title="stories/my_stories.dart"
+import 'package:my_project/my_fancy_button.dart';
+import 'package:my_project/src/my_fancy_card.dart';
+
+Widget someButton => MyFancyButton(...);
+Widget anotherButton => MyFancyButton(...);
+
+Widget someCard => MyFancyCard(...);
+Widget anotherCard => MyFancyCard(...);
+```
+As you make changes Monarch will reload your stories so you can quickly see them in the Preview window.
+
+#### Stories for prototypes
+You can write stories that use the Flutter widgets directly. It is a good way to prototype new views.
+For example, in a file that ends in `*_stories.dart`, you can add these stories:
+
+```dart
+Widget foo() => Text('foo', style: TextStyle(fontSize: 50));
+Widget bar() => Icon(Icons.pets, size: 50);
+Widget foobar() => Center(child: Column(children: [foo(), bar()]));
+```
+
+
+### More
+
+#### Building from source
 If you prefer to build Monarch from source, you can follow 
 [this guide](https://github.com/Dropsource/monarch/wiki/Setting-up-your-local-development-environment) 
 which will help you set up your local and build the Monarch source code.
 
-### Update your path
+#### Update your path
 Follow these instructions to update your path variable permanently, which will 
 let you run `monarch` from any terminal window.
 

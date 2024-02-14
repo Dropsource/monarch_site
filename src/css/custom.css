@@ -54,10 +54,6 @@
 
 }
 
-.navbar .navbar__logo {
-  height: 58px;
-}
-
 .navbar .navbar__title {
   font-size: 1.5rem;
 }
@@ -95,19 +91,32 @@ video {
   border-radius: 10px;
 }
 
+html.docs-wrapper, html.blog-wrapper {
+  --ifm-font-size-base: 125%;
+}
+
 .get-started-center {
   margin-top: 3.5rem;
+}
+
+.theme-code-block div {
+  --prism-background-color: var(--ifm-navbar-background-color);
+  background-color: var(--ifm-navbar-background-color);
 }
 
 /* mobile */
 @media screen and (max-width: 996px) {
   :root {
     --ifm-code-font-size: 95%;
-    --ifm-font-size-base: 125%;
+    --ifm-font-size-base: 110%;
   }
 
   .get-started-center {
     margin-top: 0;
+  }
+
+  html.docs-wrapper, html.blog-wrapper {
+    --ifm-font-size-base: 100%;
   }
 }
 
@@ -166,18 +175,6 @@ blockquote {
 
 .footer {
   padding-top: 5rem;
-}
-
-
-.docusaurus-highlight-code-line {
-  background-color: rgb(72, 77, 91);
-  display: block;
-  margin: 0 calc(-1 * var(--ifm-pre-padding));
-  padding: 0 var(--ifm-pre-padding);
-}
-
-[class^="docMainContainer"] .prism-code {
-  font-size: 0.9rem;
 }
 
 .docs-intro {

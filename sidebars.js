@@ -3,7 +3,6 @@ module.exports = {
     'Get Started': [
       'introduction',
       'install',
-      'write-first-story',
       'examples',
       'community',
       'learn-more'
