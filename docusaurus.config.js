@@ -27,6 +27,7 @@ module.exports = {
     navbar: {
       title: 'Monarch',
       style: 'dark',
+      hideOnScroll: true,
       logo: {
         alt: 'Monarch Logo',
         src: 'assets/logo-monarch.png',

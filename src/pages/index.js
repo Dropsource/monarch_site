@@ -144,7 +144,7 @@ function OsLogo({ className }) {
 
 function CtaButton({ text }) {
   return (
-    <div className="button__container">
+    <div className="button__container get-started-button">
       <Link
         className={clsx(
           'button button--outline button--primary button--lg',
@@ -204,6 +204,7 @@ function Home() {
             </div>
           </div>
         </section>
+        <hr/>
         <section>
           <div className="container">
             <div className="row">
@@ -220,6 +221,7 @@ function Home() {
             </div>
           </div>
         </section>
+        <hr/>
         <section>
           <div className="container">
             <div className="row">
@@ -239,6 +241,7 @@ function Home() {
             </div>
           </div>
         </section>
+        <hr/>
 
         <section>
           <div className="container">
