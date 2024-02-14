@@ -1,0 +1,88 @@
+---
+id: monarch-preview
+title: The Monarch Preview
+description: Monarch is a tool for building Flutter widgets in isolation. It makes it easy to build, test and debug complex UIs.
+---
+
+import breakpoint from '/docs/assets/devtools-breakpoint-hit.png';
+
+Monarch uses two windows which we call the Controller and the Preview. A lot of the value of Monarch comes from its Preview window. 
+
+![](/assets/preview/controller-and-preview.png)  
+_The Controller on the left. The Preview on the right._
+
+The Controller window has all the controls and list of stories that you can use to control the preview of your stories in the Preview window.
+
+The Preview window is the area where your stories are rendered. As you can see, in Monarch, the Preview is its own dedicated window. This is very meaningful.
+
+Back when we started designing Monarch, we wanted the preview of stories to be very well isolated because Monarch promotes the principle of building in isolation, thus its Preview needed to embody that principle.
+
+Some characteristics of the Monarch Preview:
+- Runs on a separate process from the Monarch controls
+- Runs on its own dedicated window
+- Least number of dependencies possible
+- Runs its own Flutter process
+
+What does this mean for your code? What does it mean for the stories you write?
+- Your code is executed in isolation, by itself
+- All you see in the Monarch Preview are your widgets, nothing else
+- The preview of your stories has clear and hard boundaries enforced by the platform you are running on
+- There is no leak between Monarch and your code
+- You can be confident that when you need to work the tool will get out of your way
+
+However, implementing the Preview isolation was hard. It meant a lot of hard work for us.
+- **Monarch has to manage native windows** on every platform it runs, which means maintaining native code on every platform
+- Since the Preview and Controller windows are separate process, their **communication** **is non-trivial**.
+- Which means that the Monarch **build process is also non-trivial.**
+
+Again, Monarch was hard work for us, and we are so happy we chose this path: your previews are very well isolated which means you can do more and, we can do more for you.
+
+Other tools, like Storybook or Widgetbook, don't isolate the preview.
+
+![](/assets/preview/storybook.png)  
+_Storybook_
+
+![](/assets/preview/widgetbook.png)  
+_Widgetbook_
+
+They preview stories inside of a larger window wrapped by many controls. Thus, your preview is surrounded by code, and inside of widgets, that are not yours. This approach is fundamentally problematic.
+
+### Things you can only do with Monarch
+Here is a list of things you can only do with Monarch that you can’t do, or would be hard to do, with other tools:
+
+- You can have stories that launch dialogs, modals, etc.
+![](/assets/preview/monarch-dialog.png)
+
+- You can write stories that do navigation and routing.
+<video autoPlay={true} muted={true} loop={true} playsInline={true}>
+    <source src="/assets/preview/monarch-navigation.mp4" type="video/mp4" />
+</video>
+
+- You can see guidelines and baselines.
+![](/assets/preview/monarch-guidelines.png)
+
+- You can slow down your animations.
+<video autoPlay={true} muted={true} loop={true} playsInline={true}>
+    <source src="/assets/preview/monarch-slow-animations.mp4" type="video/mp4" />
+</video>
+
+- You can debug the source code of your stories.
+<img className="docs-screenshot macos" alt="Details Tree" src={breakpoint} />
+
+- You can reuse your stories from your widget tests.
+```dart
+testWidgets('Has Favorite button', (WidgetTester tester) async {
+
+  Widget screen = details_active(); // details_active is a story
+
+  await tester.pumpWidget(screen);
+
+  expect(find.byIcon(Icons.favorite), findsOneWidget);
+
+});
+```
+
+And, as we add more features to Monarch, you will be able to do more things that
+other tools won't be able to do. 
+
+As you can see, the Monarch Preview is fundamental to your experience.

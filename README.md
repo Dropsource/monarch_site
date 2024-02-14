@@ -47,8 +47,9 @@ pngquant *.png
 
 ### static/assets (not content versioned)
 The command `yarn build` moves `static/assets` to `build/assets`. It does the 
-same thing with `static/gifs` and `static/img`. Moving forward only use the
-`static/assets` directory.
+same thing with `static/gifs` and `static/img`. 
+
+Moving forward only use the `static/assets` directory.
 
 Images in the `static/assets` directory do not get content versioned. Their cache 
 busting is more difficult but they are good to use for content which should be

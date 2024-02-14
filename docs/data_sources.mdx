@@ -1,0 +1,97 @@
+---
+id: data-sources-friction
+title: Data sources generate friction
+description: Monarch is a tool for building Flutter widgets in isolation. It makes it easy to build, test and debug complex UIs.
+---
+
+A data source is a place where data that the user interface uses originates from. Data sources are major sources of pain because most user interfaces depend heavily on data from multiple data sources. Here are some examples of data sources.
+
+- back-end APIs
+- third-party APIs (firebase, analytics, etc.)
+- databases
+- files
+- device settings
+- local storage
+
+Many times data from these data sources is not available when you need it or it can be tedious to set up.
+
+Let's use the back-end data source as an example to illustrate this point.
+
+### Developing with a back-end
+To work on your front-end, you need an instance of the backend running. Which means you either build and run the backend in your local, which may also mean you need to run and maintain a local database.
+
+Or, it means you need to use a backend deployed in a remote server, which means you now have a dependency with the network.
+
+Also, new requirements may introduce new fields and objects to the domain model of your system. So now you need to wait on the back-end developers to implement those new fields in the API your front-end uses.
+
+
+### Courses app
+Here we have a sample app which manages courses. 
+![](/assets/design-course-screens.png)
+
+It has a list-details pattern. This first page has a list of courses. The second page has details for a selected course.
+
+Let's say we get a new set of requirements:
+
+- courses can now have an active or inactive status,
+- and active courses should show a Favorite button on the details screen.
+
+So here is a sequence of events we may have follow to implement those requirements:
+
+- While we wait for back-end developers to add new fields to the API we change our app state to include this new status.
+- We then change the UI code to show the favorite button only for active courses.
+- Then we realize we can't go any further, we are blocked, we would like to test this new code but we can't until the back-end is ready.
+- So we wait a bit more time.
+- Some time passes and now the back-end is ready with the new changes.
+- So we fetch thew new code, we merge it and we build the new back-end.
+- We run the new back-end changes, we are happy that the new changes work, we are happy about it because it doesn't always work so we expect it to fail sometimes.
+- However, we realize the data is not in the right state, we can't test the Favorite button yet because all courses seem to be inactive, the back-end made all existing courses in the test database inactive by default.
+- This is frustrating, now we have to ask a back-end developer to set up an active course for us, or we have to make the change ourselves in the test database.
+
+**This is painful.**
+
+We all know this story. It's littered with hurdles. Anything could have gone wrong.
+
+As you try to do your job you end up chasing other problems which cause friction. These problems add to your emotional and cognitive load. It is frustrating, overwhelming, stressful. This type of experience is common in front-end development because user interfaces depend heavily on data sources.
+
+What if we didn't depend on data sources? What if we could build and test our UI in isolation?
+
+That is the power Monarch gives you.
+
+With Monarch you can write stories to isolate this UI. Here we have a story for the home page and stories for the details screen in the active and inactive state. You can stub the data you need and feed that data to your details screen widget, then return that in stories functions.
+
+```dart
+Widget home_loaded() => CourseHomeScreen(appState: mockAppState);
+
+Widget details_active() => CourseDetailsScreen(
+      course: Course(
+        imagePath: 'assets/design_course/team.png',
+        title: 'Flutter Programming',
+        lessonCount: 12,
+        money: 250,
+        rating: 4.8,
+        isActive: true,
+        categoryType: CategoryType.coding,
+      ),
+      onBack: (p0) => null,
+    );
+
+Widget details_inactive() => CourseDetailsScreen(
+      ...
+    );
+```
+
+Then you can use Monarch to preview your changes. Below you can see the home page story, the inactive story with an inactive visual state, and the active story which renders the code of the details screen with the new Favorite button already added.
+
+<video autoPlay={true} muted={true} loop={true} playsInline={true}>
+    <source src="/assets/animation-data-sources.mp4" type="video/mp4" />
+    <source src="/assets/animation-data-sources.webm" type="video/webm" />
+</video>
+
+You use Monarch to build your UI in isolation because you can code changes and test them in the Monarch preview. Which means that you can build new features without depending on data sources.
+
+And when the data source you need is ready, then you still want to do integration testing or end-to-end testing; but, with Monarch, you can feel confident that your UI is already working.
+
+When you use Monarch you don't need any of the steps you used to have to take when your user interface depended on data sources: you don't have to wait for the back-end, you don't depend on new builds, or on data being in the right state.
+
+**With Monarch all of this friction is gone.**

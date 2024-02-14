@@ -1,0 +1,64 @@
+---
+id: hard-to-reach
+title: Hard-to-reach use cases are painful
+description: Monarch is a tool for building Flutter widgets in isolation. It makes it easy to build, test and debug complex UIs.
+---
+
+
+
+A use case in an app is hard to reach when you have to take many steps to get to it, or when you have to 
+spend energy setting things up so you can reach it. 
+An example of a hard to reach use cases is the last step of an onboarding screen or an onboarding workflow.
+
+![](/assets/hard-to-reach-arrows.png)
+
+To reach that last step we need to follow all these steps:
+
+1. Launch the Simulator
+1. Launch the app, wait while that loads
+1. Realize you are already logged in
+1. Uninstall the app
+1. Install it again
+1. Launch the app
+1. Tap on 1st onboarding screen
+1. Tap on 2nd onboarding screen
+1. Tap on 3rd, 4th, 5th onboarding screen
+1. Now you can start your work
+1. Do it again for your next change
+
+**This is frustrating and painful.**
+
+What if we didn't have to go through this pain? How can we remove all these impediments? 
+How can we make this use case easy to reach?
+
+That's where Monarch comes in.
+
+With Monarch we can write stories for each piece of the onboarding flow we want to isolate. 
+This way we don't have to run the app or go through the onboarding flow. Here you can see a 
+couple of the stories we could write for this app:
+
+```dart
+...
+Widget onboarding_2_relax() =>
+    IntroductionAnimationScreen(initial: 1, target: 2);
+...
+Widget onboarding_5_welcome() =>
+    IntroductionAnimationScreen(initial: 4, target: 5);
+```
+
+And here you see those stories in Monarch. We can now go to the first onboarding step, then the second,
+and from there we can go straight to the last step. The last step, which was so hard to reach before, 
+is now just one click away. 
+
+<video autoPlay={true} muted={true} loop={true} playsInline={true}>
+    <source src="/assets/animation-onboarding.mp4" type="video/mp4" />
+    <source src="/assets/animation-onboarding.webm" type="video/webm" />
+</video>
+
+From here we can change the code and Monarch will reflect those changes immediately. 
+
+As you can see, we don't need any of the steps we used to have to take to reach this use case. 
+We don't need to run simulator, we don't need to uninstall and install the app, we don't have 
+to tap multiple times.
+
+**With Monarch your entire UI is just one click away.**

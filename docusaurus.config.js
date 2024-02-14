@@ -70,6 +70,10 @@ module.exports = {
             {
               label: 'Advanced Usage',
               to: 'docs/themes',
+            },
+            {
+              label: 'Why Monarch',
+              to: 'docs/hard-to-reach'
             }
           ],
         },

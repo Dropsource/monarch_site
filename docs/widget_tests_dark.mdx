@@ -1,0 +1,64 @@
+---
+id: widget-tests-dark
+title: Writing widget tests in the dark
+description: Monarch is a tool for building Flutter widgets in isolation. It makes it easy to build, test and debug complex UIs.
+---
+
+Widget tests are hard because we need to set up data for them and because we write them blind. We can't see the screen we are testing when we write a widget test.
+
+Here is an example widget test.
+
+```dart
+testWidgets('Has Favorite button', (WidgetTester tester) async {
+
+  // PRE-CONDITION
+  Widget screen = CourseDetailsScreen(
+    course: Course(
+      imagePath: 'assets/design_course/team.png',
+      title: 'Flutter Programming',
+      lessonCount: 12,
+      money: 250,
+      rating: 4.8,
+      isActive: true,
+      categoryType: CategoryType.coding,
+    ),
+    onBack: (p0) => null,
+  );
+
+  // ACTION
+  await tester.pumpWidget(screen);
+
+  // VERIFICATION
+  expect(find.byIcon(Icons.favorite), findsOneWidget);
+
+});
+```
+
+This widget test, like any other test, has three major parts: the pre-condition where we set up the UI we want to test, then there is the action, which may be just rendering the pre-condition, and the final step is the verification of the results.
+
+In a widget test, **the hardest part to write is the pre-condition**. This is the part that we need to see what it looks like. You write the code for it but you can't see what the output of that pre-condition will look like on the screen.
+
+The pre-condition is also where we need to set up the most data.
+
+What if writing the pre-condition of widget test was easy? What if you could see what the pre-condition looks like?
+
+Monarch makes this possible because the pre-condition of a widget test is a story. Thus, we can go from the previous example to the one below, notice the pre-condition:
+
+```dart
+testWidgets('Has Favorite button', (WidgetTester tester) async {
+
+  // PRE-CONDITION
+  Widget screen = details_active();
+
+  // ACTION
+  await tester.pumpWidget(screen);
+
+  // VERIFICATION
+  expect(find.byIcon(Icons.favorite), findsOneWidget);
+
+});
+```
+
+We are re-using the story `details_active`. With Monarch you can **re-use your stories inside your widget tests**. First, you write the story, then you can see what that looks like in Monarch, then you re-use it from your widget test. You can now be confident that your precondition is exactly what you want.
+
+**Writing widgets tests with monarch is easy.** And a test that is easy to write, it's also easy to maintain—which is huge.

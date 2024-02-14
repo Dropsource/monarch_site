@@ -261,10 +261,8 @@ function Home() {
                   <li>Enjoy!</li>
                 </ol>
               </div>
-              <div className="col col--3 get-started-center">
-                <p>
-                  <CtaButton text="Get Started" />
-                </p>
+              <div className="col col--3 get-started-center" style={{marginBottom: 20}}>
+                <CtaButton text="Get Started" />
               </div>
             </div>
           </div>
@@ -288,20 +286,21 @@ function Home() {
               <div className="col col--6">
                 <p>From above:</p>
                 <ul>
-                  <li>Hard-to-reach use cases are <a href="">painful</a></li>
-                  <li>Data sources generate <a href="">friction</a></li>
-                  <li>Testing edge cases is <a href="">hard</a></li>
+                  <li>Hard-to-reach use cases are <a href="docs/hard-to-reach">painful</a></li>
+                  <li>Data sources generate <a href="docs/data-sources-friction">friction</a></li>
+                  <li>Testing edge cases is <a href="docs/test-edge-cases">hard</a></li>
                 </ul>
               </div>
               <div className="col col--6">
                 <p>Even more:</p>
                 <ul>
-                  <li>Debugging <a href="">sucks</a></li>
-                  <li>Writing widget tests in the <a href="">dark</a></li>
-                  <li>Refactoring is <a href="">expensive</a></li>
-                  <li>Timezones are <a href="">confusing</a></li>
-                  <li>Ephemeral states <a href="">disappear</a></li>
-                  <li>Building widgets <a href="">without context</a></li>
+                  <li>Debugging <a href="docs/debugging-sucks">sucks</a></li>
+                  <li>Tweaks are <a href="docs/tweaks-are-important">important</a></li>
+                  <li>Writing widget tests in the <a href="docs/widget-tests-dark">dark</a></li>
+                  <li>Timezones are <a href="docs/other-pains#dates-times-and-timezones">confusing</a></li>
+                  <li>Ephemeral states <a href="docs/other-pains#ephemeral-states">disappear</a></li>
+                  <li>Building widgets <a href="docs/other-pains#building-reusable-widgets">without context</a></li>
+                  <li>Refactoring is <a href="docs/other-pains#refactoring">expensive</a></li>
                 </ul>
               </div>
 
@@ -335,9 +334,9 @@ function Home() {
               <div className="col">
                 <h2>Our guarantee</h2>
                 <ul>
-                  <li>A very <a href="">low learning curve</a></li>
-                  <li>Monarch works with any Flutter project: look at all these <a href="">samples</a></li>
-                  <li>The Monarch isolation is <a href="">best-in-class</a></li>
+                  <li>A very low learning curve</li>
+                  <li>Monarch works with any Flutter project: look at all these <a href="docs/examples">samples</a></li>
+                  <li>The isolation of the Monarch Preview is <a href="docs/monarch-preview">best-in-class</a></li>
                   <li>There is no vendor lock-in</li>
                   <li>The more stories you write the more you can focus on writing code</li>
                 </ul>
@@ -370,7 +369,7 @@ function Home() {
                 <blockquote>
                   <p>
                     Since the first releases of Monarch, I could improve my team's productivity. We could document and test all UI widgets without any extra effort. We also felt confident that nothing was broken for the wide variety of screen sizes we support.<br />
-                    <br/>
+                    <br />
                     Also, before Monarch, I'd spend many hours creating my own widget catalogs for each design system I worked on. Now, I don't have to do that anymore because Monarch saves me all that time.
                   </p>
                   <p>—<a target="_blank" href="https://twitter.com/kranfix">@kranfix</a></p>
