@@ -279,25 +279,24 @@ function Home() {
         <section>
           <div className="container">
             <h2>Learn more links</h2>
-            <div className="row">
+            <div className="row underline-links">
               <div className="col col--6">
                 <p>From above:</p>
                 <ul>
-                  <li><a href="">Hard-to-reach use cases are painful</a></li>
-                  <li><a href="">Data sources generate friction</a></li>
-                  <li><a href="">Testing edge cases is hard</a></li>
+                  <li>Hard-to-reach use cases are <a href="">painful</a></li>
+                  <li>Data sources generate <a href="">friction</a></li>
+                  <li>Testing edge cases is <a href="">hard</a></li>
                 </ul>
               </div>
               <div className="col col--6">
                 <p>Even more:</p>
                 <ul>
-                  <li><a href="">Debugging sucks</a></li>
-                  <li><a href="">Writing widget tests in the dark</a></li>
-                  <li><a href="">Refactoring is expensive</a></li>
-                  <li><a href="">Timezones are confusing</a></li>
-                  <li><a href="">Ephemeral states disappear too quickly</a></li>
-                  <li><a href="">Building reusable widgets without context</a></li>
-                  <li><a href="">Testing internationalization & themes</a></li>
+                  <li>Debugging <a href="">sucks</a></li>
+                  <li>Writing widget tests in the <a href="">dark</a></li>
+                  <li>Refactoring is <a href="">expensive</a></li>
+                  <li>Timezones are <a href="">confusing</a></li>
+                  <li>Ephemeral states <a href="">disappear</a></li>
+                  <li>Building widgets <a href="">without context</a></li>
                 </ul>
               </div>
 
@@ -327,15 +326,15 @@ function Home() {
 
         <section style={{ backgroundColor: 'var(--mon-blue-darker)' }}>
           <div className="container">
-            <div className="row">
+            <div className="row underline-links">
               <div className="col">
                 <h2>Our guarantee</h2>
                 <ul>
-                  <li>A very low learning curve (link).</li>
-                  <li>Monarch works with any Flutter project. Look at all these samples (link).</li>
-                  <li>The Monarch isolation is best-in-class (link).</li>
-                  <li>There is no vendor lock-in (link).</li>
-                  <li>The more stories you write the more you can focus on writing code.</li>
+                  <li>A very <a href="">low learning curve</a></li>
+                  <li>Monarch works with any Flutter project: look at all these <a href="">samples</a></li>
+                  <li>The Monarch isolation is <a href="">best-in-class</a></li>
+                  <li>There is no vendor lock-in</li>
+                  <li>The more stories you write the more you can focus on writing code</li>
                 </ul>
               </div>
             </div>
@@ -344,7 +343,7 @@ function Home() {
 
         <section>
           <div className="container">
-            <div className="row">
+            <div className="row underline-links">
               <div className="col">
                 <h2>Testimonials</h2>
                 <blockquote>
@@ -359,7 +358,7 @@ function Home() {
                     🔥 Iterate with hot reload<br />
                     ...<br />
                     Since I learned about it at the DC Flutter meetup this past Wednesday, I've set it up in 3 apps and found a handful of bugs that would have been tough to find before.</p>
-                  <p>—@codtr_flutter (link)</p>
+                  <p>—<a target="_blank" href="https://twitter.com/cotr_flutter/status/1702667620720235007">@codtr_flutter</a></p>
                 </blockquote>
 
                 <blockquote>
@@ -367,12 +366,12 @@ function Home() {
                     Since the first releases of Monarch, I could improve my team's productivity. We could document and test all UI widgets without any extra effort. We also felt confident that nothing was broken for the wide variety of screen sizes we support.<br />
                     Also, before Monarch, I'd spend many hours creating my own widget catalogs for each design system I worked on. Now, I don't have to do that anymore because Monarch saves me all that time.
                   </p>
-                  <p>—@kranfix, Frank Moreno (link)</p>
+                  <p>—<a target="_blank" href="https://twitter.com/kranfix">@kranfix</a></p>
                 </blockquote>
 
                 <blockquote>
                   <p>First I want to thank you for opening this amazing tool, the documentation is very good too, I think it's the best from these tools that mimic Storybook.</p>
-                  <p>—@gcostaapps (link)</p>
+                  <p>—<a target="_blank" href="https://github.com/Dropsource/monarch/issues/6#issue-838991569">@gcostaapps</a></p>
                 </blockquote>
               </div>
             </div>

@@ -121,6 +121,11 @@ video {
   font-family: var(--ifm-font-family-monospace);
 }
 
+.underline-links a {
+  text-decoration: underline;
+  color: var(--ifm-font-color);
+}
+
 .team-pic {
   margin: 2rem 0;
 }
