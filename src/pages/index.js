@@ -187,7 +187,7 @@ function Home() {
               <div className="col">
                 <h2>Hard-to-reach use cases are painful</h2>
                 <p>Imagine making changes to the last step of the onboarding flow below.</p>
-                <p><img src="assets/hard-to-reach.png" /></p>
+                <p><img src="assets/hard-to-reach-arrows.png" /></p>
                 <p>Every time you make a change you have to navigate through the entire flow. That is so frustrating and tedious.</p>
                 <p className="text-pop">What if you didn't have to go through this pain?</p>
                 <p>With Monarch you can isolate each piece of the onboarding flow by writing stories:</p>
@@ -195,8 +195,8 @@ function Home() {
                 <p>Monarch will then preview your stories. Now you can jump straight to the last step—or any step you like.</p>
                 <p>
                   <video autoPlay={true} muted={true} loop={true} playsInline={true}>
-                    <source src="assets/animation-onboarding.webm" type="video/webm" />
                     <source src="assets/animation-onboarding.mp4" type="video/mp4" />
+                    <source src="assets/animation-onboarding.webm" type="video/webm" />
                   </video>
                 </p>
                 <p className="text-pop">All your screens are just one click away. That's nice.</p>
@@ -215,7 +215,12 @@ function Home() {
                 <p>With Monarch you can isolate your screens from data sources. You can write stories that use mocks, stubs, or whatever you like.</p>
                 <DataSourcesStories />
                 <p>Then use Monarch to preview your changes.</p>
-                <p><img src="assets/data-sources-3.png" /></p>
+                <p>
+                  <video autoPlay={true} muted={true} loop={true} playsInline={true}>
+                    <source src="assets/animation-data-sources.mp4" type="video/mp4" />
+                    <source src="assets/animation-data-sources.webm" type="video/webm" />
+                  </video>
+                </p>
                 <p className="text-pop">All the friction is gone. That's liberating.</p>
               </div>
             </div>
@@ -232,8 +237,8 @@ function Home() {
                 <p>With Monarch, you can easily test on any device and on any text scale factor. </p>
                 <p>
                   <video autoPlay={true} muted={true} loop={true} playsInline={true}>
-                    <source src="assets/animation-edges.webm" type="video/webm" />
                     <source src="assets/animation-edges.mp4" type="video/mp4" />
+                    <source src="assets/animation-edges.webm" type="video/webm" />
                   </video>
                 </p>
                 <p className="text-pop">That was easy.</p>
@@ -343,9 +348,9 @@ function Home() {
 
         <section>
           <div className="container">
+            <h2>Testimonials</h2>
             <div className="row underline-links">
-              <div className="col">
-                <h2>Testimonials</h2>
+              <div className="col col--6">
                 <blockquote>
                   <p>
                     I discovered a hidden gem in the Flutter ecosystem this week 💎<br />
@@ -360,18 +365,15 @@ function Home() {
                     Since I learned about it at the DC Flutter meetup this past Wednesday, I've set it up in 3 apps and found a handful of bugs that would have been tough to find before.</p>
                   <p>—<a target="_blank" href="https://twitter.com/cotr_flutter/status/1702667620720235007">@codtr_flutter</a></p>
                 </blockquote>
-
+              </div>
+              <div className="col col--6">
                 <blockquote>
                   <p>
                     Since the first releases of Monarch, I could improve my team's productivity. We could document and test all UI widgets without any extra effort. We also felt confident that nothing was broken for the wide variety of screen sizes we support.<br />
+                    <br/>
                     Also, before Monarch, I'd spend many hours creating my own widget catalogs for each design system I worked on. Now, I don't have to do that anymore because Monarch saves me all that time.
                   </p>
                   <p>—<a target="_blank" href="https://twitter.com/kranfix">@kranfix</a></p>
-                </blockquote>
-
-                <blockquote>
-                  <p>First I want to thank you for opening this amazing tool, the documentation is very good too, I think it's the best from these tools that mimic Storybook.</p>
-                  <p>—<a target="_blank" href="https://github.com/Dropsource/monarch/issues/6#issue-838991569">@gcostaapps</a></p>
                 </blockquote>
               </div>
             </div>
