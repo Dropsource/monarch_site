@@ -257,7 +257,9 @@ function Home() {
                 </ol>
               </div>
               <div className="col col--3 get-started-center">
-                <CtaButton text="Get Started" />
+                <p>
+                  <CtaButton text="Get Started" />
+                </p>
               </div>
             </div>
           </div>
@@ -376,8 +378,8 @@ function Home() {
             </div>
           </div>
         </section>
-        <hr />
-        <section>
+
+        <section style={{ backgroundColor: 'var(--ifm-color-gray-900)' }}>
           <div className="container">
             <h2>The Monarch Team</h2>
             <p>We have been working on developer tools since 2014 and working with Flutter since 2018.</p>
