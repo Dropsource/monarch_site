@@ -19,10 +19,10 @@ function OnboardingStories() {
         language="dart">
         {`...
 Widget onboarding_2_relax() =>
-    IntroductionAnimationScreen(initial: 0.0, target: 0.2);
+    IntroductionAnimationScreen(initial: 1, target: 2);
 ...
 Widget onboarding_5_welcome() =>
-    IntroductionAnimationScreen(initial: 0.6, target: 0.8);
+    IntroductionAnimationScreen(initial: 4, target: 5);
   `}
       </CodeBlock>
     </div>
@@ -166,7 +166,7 @@ function Home() {
   // set as the `description` field in every markdown file. The `description` field
   // becomes the <meta name="description" content="..."/> and <meta property="og:description" content="..."/> 
   // in <head>, used by search engines. 
-  const monarchPurpose = "Monarch is a tool for Flutter developers. It helps you build screens without pain.";
+  const monarchPurpose = "Monarch is a tool for Flutter developers. It makes building screens painless.";
 
   return (
     <Layout
@@ -186,13 +186,13 @@ function Home() {
             <div className="row">
               <div className="col">
                 <h2>Hard-to-reach use cases are painful</h2>
-                <p>Imagine working on the last step of the onboarding flow below.</p>
+                <p>Imagine making changes the last step of the onboarding flow below.</p>
                 <p><img src="assets/hard-to-reach.png" /></p>
-                <p>Reaching the last step, every time you have to make a change, is frustrating and tedious.</p>
+                <p>Every time you make a change you have to navigate through the entire flow. That is so frustrating and tedious.</p>
                 <p className="text-pop">What if you didn't have to go through this pain?</p>
-                <p>With Monarch you can write stories for each piece of the onboarding flow you want to isolate.</p>
+                <p>With Monarch you can isolate each piece of the onboarding flow by writing stories:</p>
                 <OnboardingStories />
-                <p>Monarch will then preview your stories. Now you can jump straight to the last step or to any step you like.</p>
+                <p>Monarch will then preview your stories. Now you can jump straight to the last step—or any step you like.</p>
                 <p>
                   <video autoPlay={true} muted={true} loop={true} playsInline={true}>
                     <source src="assets/animation-onboarding.webm" type="video/webm" />
@@ -204,7 +204,7 @@ function Home() {
             </div>
           </div>
         </section>
-        <hr/>
+        <hr />
         <section>
           <div className="container">
             <div className="row">
@@ -212,7 +212,7 @@ function Home() {
                 <h2>Data sources generate friction</h2>
                 <p>Screens depend heavily on data sources which makes your job very difficult.</p>
                 <p className="text-pop">What if you didn't have to feel this friction anymore?</p>
-                <p>With Monarch you can write stories to isolate your screens from data sources by using mocks, stubs, or whatever you like.</p>
+                <p>With Monarch you can isolate your screens from data sources. You can write stories that use mocks, stubs, or whatever you like.</p>
                 <DataSourcesStories />
                 <p>Then use Monarch to preview your changes.</p>
                 <p><img src="assets/data-sources-3.png" /></p>
@@ -221,13 +221,13 @@ function Home() {
             </div>
           </div>
         </section>
-        <hr/>
+        <hr />
         <section>
           <div className="container">
             <div className="row">
               <div className="col">
                 <h2>Testing edge cases is hard</h2>
-                <p>Testing an edge case like testing on the smallest device with the largest text will reveal bugs. However, running those tests is hard.</p>
+                <p>Testing an edge case, like previewing the largest text on the smallest device, will always reveal bugs. However, running those tests is hard.</p>
                 <p className="text-pop">What if you could test edge cases easily?</p>
                 <p>With Monarch, you can easily test on any device and on any text scale factor. </p>
                 <p>
@@ -241,7 +241,7 @@ function Home() {
             </div>
           </div>
         </section>
-        <hr/>
+        <hr />
 
         <section>
           <div className="container">
@@ -257,7 +257,7 @@ function Home() {
                 </ol>
               </div>
               <div className="col col--3 get-started-center">
-                  <CtaButton text="Get Started" />
+                <CtaButton text="Get Started" />
               </div>
             </div>
           </div>
@@ -268,7 +268,7 @@ function Home() {
             <div className="row">
               <div className="col">
                 <h2>We feel your pain</h2>
-                <p>You want to write code but front-end development is very difficult. We understand the frustration so we built Monarch as a guide to make things easier. With an isolated UI and Monarch you will feel less stress, you will work faster, and you can enjoy writing code again.</p>
+                <p>You want to write code but front-end development is very difficult, which makes your job frustrating and slow. We know how annoying this is, which is why we built Monarch. With Monarch you will feel less stress, you will work faster, and you can enjoy writing code again.</p>
               </div>
             </div>
           </div>
@@ -323,7 +323,7 @@ function Home() {
           </div>
         </section> */}
 
-        <section style={{ backgroundColor: 'var(--mon-blue)' }}>
+        <section style={{ backgroundColor: 'var(--mon-blue-darker)' }}>
           <div className="container">
             <div className="row">
               <div className="col">
@@ -376,8 +376,8 @@ function Home() {
             </div>
           </div>
         </section>
-
-        <section style={{ backgroundColor: 'var(--mon-dark-text-color)', color: 'var(--mon-dark-background-color)' }}>
+        <hr />
+        <section>
           <div className="container">
             <h2>The Monarch Team</h2>
             <p>We have been working on developer tools since 2014 and working with Flutter since 2018.</p>
@@ -395,11 +395,13 @@ function Home() {
             </div>
           </div>
         </section>
-
-
-        <section className={clsx(styles.newsletterSection)}>
+        <section className="footer--dark newsletter-section" style={{ backgroundColor: 'var(--ifm-footer-background-color)' }}>
           <div className="container">
-            <NewsletterCta />
+            <div className="row">
+              <div className="col">
+                <NewsletterCta />
+              </div>
+            </div>
           </div>
         </section>
       </main>

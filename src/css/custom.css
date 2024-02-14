@@ -37,6 +37,21 @@
   --mon-green: #4DF28D;
   --mon-orange: #FB7448;
   --mon-yellow: #FBCA44;
+
+  --mon-blue-dark: #2d32a8;
+  --mon-blue-darker: #2a2f9f;
+  --mon-blue-darkest: #232783;
+  --mon-blue-light: #3a40ca;
+  --mon-blue-lighter: #4449cd;
+  --mon-blue-lightest: #6064d4;
+   
+  --mon-orange-dark: #fa5c28;
+  --mon-orange-darker: #fa5019;
+  --mon-orange-darkest: #dd3a05;
+  --mon-orange-light: #fc8c68;
+  --mon-orange-lighter: #fc9877;
+  --mon-orange-lightest: #fdbca7;
+
 }
 
 .navbar .navbar__logo {
@@ -127,19 +142,11 @@ blockquote {
   margin-bottom: 3rem;
 }
 
-/* .button__container {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-} */
-
 .get-started-button .button {
   background-color: var(--ifm-color-primary-darker);
   color: var(--ifm-font-color);
   border: none;
-  /* font-size: 1.4rem; */
   padding-top: 17px;
-  /* margin-top: 15px; */
 }
 
 .get-started-button .button:hover {
@@ -200,4 +207,8 @@ blockquote {
   .blog-video video {
     width: 98%;
   }
+}
+
+.newsletter-section {
+  padding-top: 1rem;
 }
