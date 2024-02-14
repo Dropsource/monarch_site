@@ -186,7 +186,7 @@ function Home() {
             <div className="row">
               <div className="col">
                 <h2>Hard-to-reach use cases are painful</h2>
-                <p>Imagine making changes the last step of the onboarding flow below.</p>
+                <p>Imagine making changes to the last step of the onboarding flow below.</p>
                 <p><img src="assets/hard-to-reach.png" /></p>
                 <p>Every time you make a change you have to navigate through the entire flow. That is so frustrating and tedious.</p>
                 <p className="text-pop">What if you didn't have to go through this pain?</p>
