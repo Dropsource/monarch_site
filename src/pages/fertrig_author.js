@@ -3,6 +3,8 @@ import clsx from 'clsx';
 
 import BlogPostItemHeaderAuthor from '@theme/BlogPostItem/Header/Author';
 
+/// Renders the author markup with fertrig details hard-coded.
+/// @GOTCHA: keep author details in sync with authors.yml
 function FertrigAuthor() {
   return (
     <div style={{marginBottom: 'var(--ifm-leading)'}}>

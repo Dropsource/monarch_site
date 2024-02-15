@@ -1,3 +1,5 @@
+# This file is used by the blog posts
+# @GOTCHA: keep author details in sync with fertrig_author.js
 fertrig:
   name: Fernando Trigoso
   title: Creator of Monarch
