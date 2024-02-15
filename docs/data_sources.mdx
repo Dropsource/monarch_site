@@ -31,24 +31,21 @@ Here we have a sample app which manages courses.
 
 It has a list-details pattern. This first page has a list of courses. The second page has details for a selected course.
 
-Let's say we get a new set of requirements:
+Let's say we get a couple of new requirements: (1) courses can now have an active or inactive status, and (2) active courses should show a Favorite button on the details screen.
 
-- courses can now have an active or inactive status,
-- and active courses should show a Favorite button on the details screen.
+Here is a sequence of events we need to follow in order to implement those requirements:
 
-So here is a sequence of events we may have follow to implement those requirements:
+1. We change the app state of the mobile app to include this new status field.
+1. We then change the UI code to show the favorite button only for active courses.
+1. We are done with our changes but the back-end developers haven't added the new fields to the API yet. **We are blocked.** We would like to test this new code but we can't until the back-end is ready.
+1. So we wait a bit more time.
+1. Some time passes and now the back-end is ready with the new changes.
+1. We fetch thew new back-end code, we merge it, and we build the new back-end.
+1. Fortunately, the new back-end works! We are relieved that the new back-end works because new changes usually don't work the first time.
+1. However, we realize the data is not in the right state, we can't test the Favorite button yet because all courses seem to be inactive, the back-end developers made all existing courses in the test database inactive by default.
+1. This is frustrating, now we have to ask a back-end developer to set up an active course for us, or we have to make the change ourselves in the test database.
 
-- While we wait for back-end developers to add new fields to the API we change our app state to include this new status.
-- We then change the UI code to show the favorite button only for active courses.
-- Then we realize we can't go any further, we are blocked, we would like to test this new code but we can't until the back-end is ready.
-- So we wait a bit more time.
-- Some time passes and now the back-end is ready with the new changes.
-- So we fetch thew new code, we merge it and we build the new back-end.
-- We run the new back-end changes, we are happy that the new changes work, we are happy about it because it doesn't always work so we expect it to fail sometimes.
-- However, we realize the data is not in the right state, we can't test the Favorite button yet because all courses seem to be inactive, the back-end made all existing courses in the test database inactive by default.
-- This is frustrating, now we have to ask a back-end developer to set up an active course for us, or we have to make the change ourselves in the test database.
-
-**This is painful.**
+**There is so much friction—it is painful.**
 
 We all know this story. It's littered with hurdles. Anything could have gone wrong.
 
