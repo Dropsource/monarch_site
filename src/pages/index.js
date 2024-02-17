@@ -332,13 +332,13 @@ function Home() {
           <div className="container">
             <div className="row underline-links">
               <div className="col">
-                <h2>Our guarantee</h2>
+                <h2>The Monarch experience guarantee</h2>
                 <ul>
-                  <li>A very low learning curve</li>
-                  <li>Monarch works with any Flutter project: look at all these <a href="docs/examples">samples</a></li>
+                  <li>Achieve an ideal workflow: write code, get feedback, do it again.</li>
+                  <li>Avoid impediments, awkward movements, and stressful situations. </li>
+                  <li>A very low learning curve because the Monarch API is super simple.</li>
+                  <li>Monarch can work on any Flutter project, look at all these <a href="docs/examples">samples</a></li>
                   <li>The isolation of the Monarch Preview is <a href="docs/monarch-preview">best-in-class</a></li>
-                  <li>There is no vendor lock-in</li>
-                  <li>The more stories you write the more you can focus on writing code</li>
                 </ul>
               </div>
             </div>
@@ -381,7 +381,7 @@ function Home() {
 
         <section style={{ backgroundColor: 'var(--ifm-navbar-background-color)' }}>
           <div className="container">
-            <h2>The Monarch Team</h2>
+            <h2>The Monarch team</h2>
             <p>We have been working on developer tools since 2014 and working with Flutter since 2018.</p>
             <div className="row text--center">
               <div className="col col--6 team-pic">
