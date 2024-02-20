@@ -87,6 +87,10 @@ module.exports = {
             {
               label: 'Dropsource',
               href: 'https://dropsource.com',
+            },
+            {
+              label: 'Credits',
+              to: 'docs/credits'
             }
           ],
         },
