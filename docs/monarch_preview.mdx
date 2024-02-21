@@ -9,16 +9,21 @@ import FertrigAuthor from '/src/pages/fertrig_author';
 
 <FertrigAuthor/>
 
-Monarch uses two windows which we call the Controller and the Preview. A lot of the value of Monarch comes from its Preview window. 
+Monarch uses two windows which we call the Controller and the Preview. A lot 
+of the value of Monarch comes from its Preview window. 
 
 ![](/assets/preview/controller-and-preview.png)  
 _The Controller on the left. The Preview on the right._
 
-The Controller window has all the controls and list of stories that you can use to control the preview of your stories in the Preview window.
+The Controller window has all the controls and list of stories that you can use 
+to control the preview of your stories in the Preview window.
 
-The Preview window is the area where your stories are rendered. As you can see, in Monarch, the Preview is its own dedicated window. This is very meaningful.
+The Preview window is the area where your stories are rendered. As you can see, 
+in Monarch, the Preview is its own dedicated window. This is very meaningful.
 
-Back when we started designing Monarch, we wanted the preview of stories to be very well isolated because Monarch promotes the principle of building in isolation, thus its Preview needed to embody that principle.
+Back when we started designing Monarch, we wanted the preview of stories to be 
+very well isolated because Monarch promotes the principle of building in 
+isolation, thus its Preview needed to embody that principle.
 
 Some characteristics of the Monarch Preview:
 - Runs on a separate process from the Monarch controls
@@ -29,16 +34,21 @@ Some characteristics of the Monarch Preview:
 What does this mean for your code? What does it mean for the stories you write?
 - Your code is executed in isolation, by itself
 - All you see in the Monarch Preview are your widgets, nothing else
-- The preview of your stories has clear and hard boundaries enforced by the platform you are running on
+- The preview of your stories has clear and hard boundaries enforced by the 
+  platform you are running on
 - There is no leak between Monarch and your code
 - You can be confident that when you need to work the tool will get out of your way
 
-However, implementing the Preview isolation was hard. It meant a lot of hard work for us.
-- **Monarch has to manage native windows** on every platform it runs, which means maintaining native code on every platform
-- Since the Preview and Controller windows are separate process, their **communication** **is non-trivial**.
+Implementing the Preview isolation was hard work:
+- **Monarch has to manage native windows** on every platform it runs, which 
+  means maintaining native code on every platform
+- Since the Preview and Controller windows are separate processes, their 
+  **communication** **is non-trivial**.
 - Which means that the Monarch **build process is also non-trivial.**
 
-Again, Monarch was hard work for us, and we are so happy we chose this path: your previews are very well isolated which means you can do more and, we can do more for you.
+Again, Monarch was hard work for me, and I'm so happy I chose this path: 
+your previews are very well isolated which means you can do more and Monarch can do 
+more for you.
 
 Other tools, like Storybook or Widgetbook, don't isolate the preview.
 
@@ -48,10 +58,13 @@ _Storybook_
 ![](/assets/preview/widgetbook.png)  
 _Widgetbook_
 
-They preview stories inside of a larger window wrapped by many controls. Thus, your preview is surrounded by code, and inside of widgets, that are not yours. This approach is fundamentally problematic.
+They preview stories inside of a larger window wrapped by many controls. Thus, 
+your preview is surrounded by code, and inside of widgets, that are not yours. 
+This approach is fundamentally problematic.
 
 ### Things you can only do with Monarch
-Here is a list of things you can only do with Monarch that you can’t do, or would be hard to do, with other tools:
+Here is a list of things you can only do with Monarch that you can’t do, or 
+would be hard to do, with other tools:
 
 - You can have stories that launch dialogs, modals, etc.
 ![](/assets/preview/monarch-dialog.png)

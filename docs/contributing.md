@@ -7,12 +7,12 @@ description: Monarch is a tool for building Flutter widgets in isolation. It mak
 If you like to code: Monarch is a really cool project. 
 - It uses lower level APIs of Flutter and the Flutter Engine. 
 - It runs on multiple platforms. 
-- Its mostly written on Dart, and there is also C++ and Swift. 
+- It's mostly written on Dart, and there is also C++ and Swift. 
 - There are guides on the [Monarch Architecture](https://github.com/Dropsource/monarch/wiki/Monarch-Architecture) and [how to set up](https://github.com/Dropsource/monarch/wiki/Setting-up-your-local-development-environment) your local development environment
 - There are build scripts you can use to easily build Monarch on your local. 
-- And the technology is exciting.
+- The technology is exciting!
 
-If you want to write content: this is a great project for you. The value proposition is compelling and there is lots to write about.
+If you want to write content: this is also a great project for you. The value proposition is compelling and there is a lot to write about.
 
 
 <!--GOTCHA: the content of this page should match CONTRIBUTING.md in the monarch repo-->

@@ -10,18 +10,26 @@ import FertrigAuthor from '/src/pages/fertrig_author';
 
 Testing edge cases is very important because bugs hide on these edges.
 
-On mobile platforms, since the screen size is small, the device size and text size matter a lot. They matter because they represent edge cases we need to test. Thus, we need to test those edges so we can expose bugs hiding in there.
+On mobile platforms, since the screen size is small, how the device size and 
+text size interact matters a lot because they represent edge cases we need to 
+test. 
 
 A couple of interesting test cases for device size and text size would be:
 
 - Test on a small device with large text
 - Test on a large device with small text
 
-However, running and executing those tests is not easy. You would need to run multiple simulators and then change their text size settings.
+However, running and executing those tests is not easy. You would need to 
+run multiple simulators and then change their text size settings.
 
-What if you could easily test device size and text size at the same time? How many bugs will you find?
+What if you could easily test device size and text size at the same time? 
+How many bugs will you find?
 
-Let's look at the home screen of this sample app in Monarch. Let's see how easy it is to test it on a small device with large text with Monarch. With Monarch, you can switch the device to the smallest one this application supports. Then, you can increase the text scale factor, one notch at a time until you find the edge where the UI breaks.
+Let's look at the home screen of this sample app in Monarch. Let's see 
+how easy it is to test it on a small device with large text with Monarch. 
+With Monarch, you can switch the device to the smallest one this application 
+supports. Then, you can increase the text scale factor one notch at a time 
+until you find the edge where the UI breaks.
 
 <video autoPlay={true} muted={true} loop={true} playsInline={true}>
     <source src="/assets/animation-edges.mp4" type="video/mp4" />
@@ -30,9 +38,11 @@ Let's look at the home screen of this sample app in Monarch. Let's see how easy 
 <br/>
 <br/>
 
-Let's get curious: how about other screens? How are they behaving under a small device with large text? 
+Let's get curious: how about other screens? How are they behaving on a 
+small device with large text? 
 
-With Monarch you can preview the details screen, then you would notice that text is getting cut off and that it is not scrollable.
+With Monarch you can easily preview the details screen and quickly notice
+two bugs: the text is getting cut off and the screen is not scrollable.
 
 <video autoPlay={true} muted={true} loop={true} playsInline={true}>
     <source src="/assets/animation-scroll.mp4" type="video/mp4" />
@@ -40,6 +50,10 @@ With Monarch you can preview the details screen, then you would notice that text
 <br/>
 <br/>
 
-This developer experience is so good for so many reasons. Let's mention one here: If you are a front-end developer, you are responsible for bugs in the UI. Those bugs are hiding in your UI waiting to be found. A tool like Monarch helps you find bugs so that you can be responsible for them more easily. You can find bugs before they go to testing, and specially before users find them.
+This developer experience is so good for so many reasons. In this case, 
+if you are a front-end developer, you are responsible for bugs in the 
+UI. Those bugs are hiding in your UI waiting to be found. A tool like Monarch 
+helps you find bugs so you can fix them quickly and easily. You 
+can find bugs before they go to testing, and especially before users find them.
 
 **With Monarch you can find and fix bugs with ease.**

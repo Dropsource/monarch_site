@@ -9,9 +9,11 @@ import FertrigAuthor from '/src/pages/fertrig_author';
 
 <FertrigAuthor/>
 
-Debugging can be the most painful experience in all of software development. Debugging can be tedious, slow, frustrating.
+Debugging can be the most painful experience in all of software development. 
+Debugging can be tedious, slow, and frustrating.
 
-If your front-end is coupled with the back-end then to debug your UI you need to do one or more of these things:
+If your front-end is coupled with the back-end then in order to debug your 
+UI you need to do one or more of these things:
 
 - set up data in your backend system
 - run local servers
@@ -19,13 +21,17 @@ If your front-end is coupled with the back-end then to debug your UI you need to
 - or attach to running processes
 - then do it over and over again until you find the issue
 
-**Debugging can be very painful.**
+**This is why debugging can be very painful.**
 
-What if we could make debugging less painful? How can we alleviate this pain?
+What if we could make debugging less painful? 
 
-One of the steps of debugging is isolating the problem. Isolating the problem is easy with an isolated UI. It's easy because your UI is already isolated in discrete interactions that you can just go and verify. The more stories you have, the more likely it is that the bug is near one of the interactions you have stories for already.
+One of the steps of debugging is isolating the problem. Isolating the problem 
+is easy with Monarch because your UI is already isolated in 
+discrete interactions that you can just go and verify. The more stories you 
+have, the more likely it is that the bug is near one of the interactions you 
+have stories for already.
 
-Once you have found the bug, you have to fix it, and you can use Monarch to test that fix.
+Once you have found the bug, you have to fix it, and then you can use Monarch to test that fix.
 
 With Monarch, you can do visual debugging. 
 <video autoPlay={true} muted={true} loop={true} playsInline={true}>
@@ -34,9 +40,14 @@ With Monarch, you can do visual debugging.
 <br/>
 <br/>
 
-Above we have isolated a section of the UI with the render overflow error so we can debug it easier. We can use Monarch to show guidelines so we can easily see what is going on. In this case, those lines help us see that the text is overflowing to the next line which pushes everything down.
+Above we have isolated a section of the UI with the render overflow error 
+so we can debug it more easily. We can use Monarch to show guidelines so we can 
+easily see what is going on. In this case, those lines help us see that the 
+text is overflowing to the next line which pushes everything down.
 
-Also, with Monarch, you can leverage Flutter DevTools so you can debug your stories. You can set a breakpoint, select a story, and your breakpoint will hit so you can start a source code debug session.
+Also, with Monarch, you can leverage Flutter DevTools so you can debug your 
+stories. You can set a breakpoint, select a story, and your breakpoint will 
+hit so you can start a source code debug session.
 
 <img className="docs-screenshot macos" alt="Details Tree" src={breakpoint} />
 <br/>

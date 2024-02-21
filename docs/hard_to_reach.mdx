@@ -8,16 +8,17 @@ import FertrigAuthor from '/src/pages/fertrig_author';
 
 <FertrigAuthor/>
 
-A use case in an app is hard to reach when you have to take many steps to get to it, or when you have to 
-spend energy setting things up so you can reach it. 
-An example of a hard to reach use cases is the last step of an onboarding screen or an onboarding workflow.
+A use case in an app is hard to reach when you have to take multiple steps to get to it, 
+or when you have to spend energy setting things up so you can reach it. 
+An example of a hard to reach use cases is the last step of an onboarding screen or an 
+onboarding workflow.
 
 ![](/assets/hard-to-reach-arrows.png)
 
-To reach that last step we need to follow all these steps:
+To reach that last screen we need to follow all these steps:
 
 1. Launch the Simulator
-1. Launch the app, wait while that loads
+1. Launch the app and wait while that loads
 1. Realize you are already logged in
 1. Uninstall the app
 1. Install it again
@@ -35,8 +36,9 @@ How can we make this use case easy to reach?
 
 That's where Monarch comes in.
 
-With Monarch we can write stories for each piece of the onboarding flow we want to isolate. 
-This way we don't have to run the app or go through the onboarding flow. Here you can see a 
+With Monarch we can write stories for each piece of the onboarding flow we want 
+to isolate. This way we don't have to run the app or go through the onboarding 
+flow each time we need to make a change. Here you can see a 
 couple of the stories we could write for this app:
 
 ```dart
@@ -48,9 +50,10 @@ Widget onboarding_5_welcome() =>
     IntroductionAnimationScreen(initial: 4, target: 5);
 ```
 
-And here you see those stories in Monarch. We can now go to the first onboarding step, then the second,
-and from there we can go straight to the last step. The last step, which was so hard to reach before, 
-is now just one click away. 
+And here you see those stories in Monarch. We can now easily click to preview any step 
+in the process. You can go to the first onboarding 
+step, then the second, or go straight to the last step. That last step, which was so 
+hard to reach before, is now just one click away. 
 
 <video autoPlay={true} muted={true} loop={true} playsInline={true}>
     <source src="/assets/animation-onboarding.mp4" type="video/mp4" />

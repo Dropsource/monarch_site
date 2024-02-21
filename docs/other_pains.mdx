@@ -11,12 +11,19 @@ import FertrigAuthor from '/src/pages/fertrig_author';
 Here is a quick list of other pains you may encounter while building front-ends.
 
 ### Dates, times, and timezones
-This is always hard, specially timezones, for some reason it is difficult for most of us to think about timezones. But, if your UI is decoupled, this becomes much easier to deal with because you don't depend on the system clock anymore.
+This is always hard, especially timezones, for some reason it is difficult for 
+most of us to think about timezones. But, if your UI is decoupled, this becomes 
+much easier to deal with because you don't depend on the system clock anymore.
 
 ![](/assets/other-pains/timezone.png)
 
 ### Ephemeral states
-Some states come and go really fast and their lifetime depends on how fast your device and network are. So it may be difficult for you to test how your UI reacts to things like image processing, animations, waiting for the network. Things that are fast on your local may be really slow out in the wild. With Monarch you can write stories for these ephemeral states and it feels like freezing them in time.
+Some states come and go really fast and their lifetime depends on how fast your 
+device and network are. So it may be difficult for you to test how your UI 
+reacts to things like image processing, animations, waiting for the network. 
+Things that are fast on your local may be really slow out in the wild. With 
+Monarch you can write stories for these ephemeral states and it feels like 
+freezing them in time.
 
 <video autoPlay={true} muted={true} loop={true} playsInline={true}>
     <source src="/assets/other-pains/loading.mp4" type="video/mp4" />
@@ -26,24 +33,36 @@ Some states come and go really fast and their lifetime depends on how fast your 
 </video>
 
 ### Building reusable widgets
-You may be tasked with writing a widget that will be reused from many places in the app, so you don't want to deal with the context from all those call sites, thus you want to build it in isolation. Monarch is perfect for that. You can use Monarch to render your reusable widget without any context.
+You may be tasked with writing a widget that will be reused from many places 
+in the app, so you don't want to deal with the context from all those call 
+sites, thus you want to build it in isolation. Monarch is perfect for that. 
+You can use Monarch to render your reusable widget without any context.
 
 ![](/assets/other-pains/categories.png)
 
 ### Internationalization
-If your app is localized in multiple languages, then to test simple changes, like changing a label, you will have to go to the device settings to change the preferred language. With Monarch, changing the language is as easy as selecting a new language in a drop-down.
+If your app is localized in multiple languages, then to test simple changes, 
+like changing a label, you will have to go to the device settings to change 
+the preferred language. With Monarch, changing the language is as easy as 
+selecting a new language in a drop-down.
 
 <video autoPlay={true} muted={true} loop={true} playsInline={true}>
     <source src="/assets/other-pains/locale-y.mp4" type="video/mp4" />
 </video>
 
 ### Themes
-Playing with new themes is hard, you have to either change an app setting or a device setting. With Monarch, adding new themes and playing with them is easy.
+Playing with new themes is hard, you have to either change an app setting or 
+a device setting. With Monarch, adding new themes and playing with them is easy.
 
 <video autoPlay={true} muted={true} loop={true} playsInline={true}>
     <source src="/assets/other-pains/themes.mp4" type="video/mp4" />
 </video>
 
 ### Refactoring
-New requirements come in all the time, those new requirements change your understanding of the system. Your code expresses your understanding of the system. Since that understanding has changed, now you need to refactor. But if you can't easily test those changes then that refactoring is hard and expensive, so you don't refactor as often. Monarch makes it easy to test your UI so you can refactor with ease.
+New requirements come in all the time, those new requirements change your 
+understanding of the system. Your code expresses your understanding of the 
+system. Since that understanding has changed, now you need to refactor. But if 
+you can't easily test those changes then that refactoring is hard and 
+expensive, so you don't refactor as often. Monarch makes it easy to test your 
+UI so you can refactor with ease.
 
