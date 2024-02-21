@@ -7,16 +7,16 @@ import FertrigAuthor from '/src/pages/fertrig_author';
 
 <FertrigAuthor/>
 
-All user interface data originates from a data source. Data sources are major 
-sources of pain because most user interfaces depend heavily on data from 
-multiple different data sources. Here are some examples of data sources.
+User interfaces need data from data sources. Moreover, most user 
+interfaces depend heavily on multiple different data sources, which 
+creates a lot of pain. Here are some examples of data sources.
 
-- back-end APIs
-- third-party APIs (firebase, analytics, etc.)
-- databases
-- files
-- device settings
-- local storage
+- Back-end APIs
+- Third-party APIs (e.g., Firebase, analytics)
+- Databases
+- Files
+- Device settings
+- Local storage
 
 Many times data from these data sources is not available when you need it 
 or it can be tedious to set up.
@@ -24,12 +24,11 @@ or it can be tedious to set up.
 Let's use the back-end data source as an example to illustrate this point.
 
 ### Developing with a back-end
-To work on your front-end, you need an instance of the backend running. Which 
-means you either build and run the backend in your local, which may also mean 
-you need to run and maintain a local database.
-
-Or, it means you need to use a backend deployed in a remote server, which 
-means you now have a dependency with the network.
+To work on your front-end, you need an instance of the backend running. This 
+means you either build and run the backend in your local, which may require 
+a local database. Or, it means you need to use 
+a backend deployed in a remote server, which means you now have a dependency 
+with the network.
 
 Also, new requirements may introduce new fields and objects to the domain 
 model of your system. So now you need to wait on the back-end developers 
@@ -37,12 +36,15 @@ to implement those new fields in the API your front-end uses.
 
 
 ### Courses app
-Here we have a sample app which manages courses. 
+Take, for instance, a sample app managing courses:
 ![](/assets/design-course-screens.png)
 
-It has a list-details pattern. This first page has a list of courses. The second page has details for a selected course.
+It has a list-details pattern. This first page has a list of courses. The 
+second page has details for a selected course.
 
-Let's say we get a couple of new requirements: (1) courses can now have an active or inactive status, and (2) active courses should show a Favorite button on the details screen.
+Now, suppose we receive two new requirements: (1) courses can now have an 
+active or inactive status, and (2) active courses should display a Favorite 
+button on the details screen.
 
 Here is a sequence of events we need to follow in order to implement those requirements:
 
