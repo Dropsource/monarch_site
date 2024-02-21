@@ -24,6 +24,11 @@ module.exports = {
       disableSwitch: true,
       defaultMode: 'dark',
     },
+    metadata: [
+      {name: 'keywords', content: 'flutter, tool, front-end, mobile, desktop, monarch, dart, user-interface, ui'},
+      {name: 'twitter:card', content: 'summary_large_image'},
+      {name: 'description', content: 'Monarch is a tool for Flutter developers. It makes building front-ends a pleasant experience.'},
+    ],
     navbar: {
       title: 'Monarch',
       style: 'dark',

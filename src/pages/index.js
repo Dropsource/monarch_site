@@ -161,11 +161,8 @@ function Home() {
   const context = useDocusaurusContext();
   const { siteConfig = {} } = context;
 
-  // @GOTCHA: if you change `monarchPurpose` make sure to find-replace-all instances
-  // of its string contents in the *.md and *.mdx files. The monarch purpose is
-  // set as the `description` field in every markdown file. The `description` field
-  // becomes the <meta name="description" content="..."/> and <meta property="og:description" content="..."/> 
-  // in <head>, used by search engines. 
+  // @GOTCHA: if you change `monarchPurpose` make sure to change it in docusaurus.config.js
+  // under themeConfig > metadata > description
   const monarchPurpose = "Monarch is a tool for Flutter developers. It makes building front-ends a pleasant experience.";
 
   return (
