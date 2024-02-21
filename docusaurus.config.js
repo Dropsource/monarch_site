@@ -2,7 +2,7 @@ const isProductionDeployment = process.env.DEPLOYMENT === 'production';
 
 module.exports = {
   title: 'Monarch',
-  tagline: 'Build high-quality UIs with ease',
+  tagline: 'Focus on writing code',
   url: 'https://monarchapp.io',
   baseUrl: '/',
   trailingSlash: false,
@@ -21,10 +21,18 @@ module.exports = {
   themeConfig: {
     image: 'assets/monarch-open-graph-purple.png',
     colorMode: {
-      disableSwitch: true
+      disableSwitch: true,
+      defaultMode: 'dark',
     },
+    metadata: [
+      {name: 'keywords', content: 'flutter, tool, front-end, mobile, desktop, monarch, dart, user-interface, ui'},
+      {name: 'twitter:card', content: 'summary_large_image'},
+      {name: 'description', content: 'Monarch is a tool for Flutter developers. It makes building front-ends a pleasant experience.'},
+    ],
     navbar: {
       title: 'Monarch',
+      style: 'dark',
+      hideOnScroll: true,
       logo: {
         alt: 'Monarch Logo',
         src: 'assets/logo-monarch.png',
@@ -32,7 +40,7 @@ module.exports = {
       },
       items: [
         {
-          to: 'docs/introduction',
+          to: 'docs/install',
           activeBasePath: 'docs',
           label: 'Docs',
           position: 'right',
@@ -40,11 +48,13 @@ module.exports = {
         {
           to: 'blog',
           label: 'Releases', 
-          position: 'right'},
+          position: 'right'
+        },
         {
           href: 'https://github.com/Dropsource/monarch',
-          label: 'GitHub',
           position: 'right',
+          className: 'header-github-link',
+          'aria-label': 'GitHub repository',
         },
       ],
     },
@@ -60,11 +70,15 @@ module.exports = {
           items: [
             {
               label: 'Get Started',
-              to: 'docs/introduction',
+              to: 'docs/install',
             },
             {
               label: 'Advanced Usage',
               to: 'docs/themes',
+            },
+            {
+              label: 'Why Monarch',
+              to: 'docs/hard-to-reach'
             }
           ],
         },
@@ -78,6 +92,10 @@ module.exports = {
             {
               label: 'Dropsource',
               href: 'https://dropsource.com',
+            },
+            {
+              label: 'Credits',
+              to: 'docs/credits'
             }
           ],
         },
@@ -105,32 +123,6 @@ module.exports = {
             }
           ],
         },
-        {
-          title: 'Credits',
-          items: [
-            {
-              label: 'Storybook (inspiration for Monarch)',
-              href: 'https://storybook.js.org/'
-            },
-            {
-              label: 'Best Flutter UI Templates (used for the samples above)',
-              href: 'https://github.com/mitesh77/Best-Flutter-UI-Templates'
-            }
-          ]
-        }
-        // {
-        //   title: 'More',
-        //   items: [
-        //     {
-        //       label: 'Releases',
-        //       to: 'blog',
-        //     },
-        //     {
-        //       label: 'GitHub',
-        //       href: 'https://github.com/facebook/docusaurus',
-        //     },
-        //   ],
-        // },
       ],
       copyright: `Copyright © ${new Date().getFullYear()} Dropsource`,
     },
@@ -146,6 +138,8 @@ module.exports = {
       {
         docs: {
           sidebarPath: require.resolve('./sidebars.js'),
+          showLastUpdateAuthor: false,
+          showLastUpdateTime: false,
         },
         blog: {
           showReadingTime: false,

@@ -1,0 +1,9 @@
+# This file is used by the blog posts
+# @GOTCHA: keep author details in sync with fertrig_author.js
+fertrig:
+  name: Fernando Trigoso
+  title: Creator of Monarch
+  url: https://trigoso.xyz
+  image_url: https://trigoso.xyz/images/fertrig-90.jpg
+  twitter: fertrig
+  email: fertrig@gmail.com

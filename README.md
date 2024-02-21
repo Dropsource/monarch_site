@@ -47,8 +47,9 @@ pngquant *.png
 
 ### static/assets (not content versioned)
 The command `yarn build` moves `static/assets` to `build/assets`. It does the 
-same thing with `static/gifs` and `static/img`. Moving forward only use the
-`static/assets` directory.
+same thing with `static/gifs` and `static/img`. 
+
+Moving forward only use the `static/assets` directory.
 
 Images in the `static/assets` directory do not get content versioned. Their cache 
 busting is more difficult but they are good to use for content which should be
@@ -74,9 +75,13 @@ If you are adding an open graph image, then make sure its dimensions are
 You can use the page `/opengraph` to draft your own open graph image. Edit the page
 via opengraph.js
 
+## Styles
+To see the generated css go to: http://localhost:3000/styles.css
+
+
 ## Deployments
 
-## Deployment PROD
+### Deployment PROD
 
 We use render.com to host the production monarch_site. The production site 
 deploys the contents of the `master` branch in Github. The monarch automation edits the master branch when it generates a new monarch version.
@@ -90,7 +95,7 @@ Then go to:
 - https://monarchapp.io/
 - https://monarch-site.onrender.com/
 
-## Deployment DEV
+### Deployment DEV
 
 We also have a dev site on render.com which deploys from the `dev` branch 
 in Github. The monarch automation edits the dev branch when it runs dev builds.
@@ -102,7 +107,7 @@ sh deploy_dev.sh
 Then go to: 
 - https://monarch-site-dev.onrender.com/
 
-## Staging Site
+### Staging Site
 There is also a staging site, which we can use to collaborate on content. The master and
 dev branch have protection rules in Github. Content collaborators could submit changes 
 to the staging branch which will then need to be merged to dev or master.

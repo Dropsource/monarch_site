@@ -20,122 +20,161 @@
   --ifm-color-primary-lighter: #DC9CFF;
   --ifm-color-primary-lightest: #F6B6FF;
   --ifm-code-font-size: 95%;
-  --mon-dark-text-color: #f5f6f7;
-  --mon-dark-background-color: #2C2C32;
+
   --ifm-font-family-base: 'poppinsregular';
   --ifm-heading-font-family: 'poppinssemibold';
-  --ifm-h1-font-size: 2.1rem;
+  --ifm-heading-margin-top: 0;
+  --ifm-font-size-base: 150%;
+  --ifm-line-height-base: 1.75;
+  --ifm-leading-desktop: 1.55; /* increases paragraph margin bottom */
+
+  --ifm-blockquote-font-size: 75%;
+  --ifm-hr-background-color: var(--ifm-color-gray-800);
+
   --mon-purple: #A969DF;
   --mon-blue: #3237BB;
   --mon-celeste: #55DEF8;
   --mon-green: #4DF28D;
   --mon-orange: #FB7448;
   --mon-yellow: #FBCA44;
-}
 
-.navbar {
-  font-family: 'poppinsmedium';
-  font-weight: normal;
-  font-size: 1.1rem;
-  background-color: var(--mon-dark-background-color);
-  color: var(--mon-dark-text-color);
-}
+  --mon-blue-dark: #2d32a8;
+  --mon-blue-darker: #2a2f9f;
+  --mon-blue-darkest: #232783;
+  --mon-blue-light: #3a40ca;
+  --mon-blue-lighter: #4449cd;
+  --mon-blue-lightest: #6064d4;
+   
+  --mon-orange-dark: #fa5c28;
+  --mon-orange-darker: #fa5019;
+  --mon-orange-darkest: #dd3a05;
+  --mon-orange-light: #fc8c68;
+  --mon-orange-lighter: #fc9877;
+  --mon-orange-lightest: #fdbca7;
 
-.navbar .navbar__logo {
-  height: 42px;
 }
 
 .navbar .navbar__title {
-  font-size: 1.6rem;
-  font-weight: normal;
-  color: var(--mon-dark-text-color);
+  font-size: 1.5rem;
 }
 
-.navbar__link {
-  color: var(--mon-dark-text-color);
-}
-
-.navbar-sidebar {
-  background-color: var(--mon-dark-background-color);
-  color: var(--mon-dark-text-color);
-}
-
-.navbar-sidebar .menu__link {
-  color: var(--mon-dark-text-color);
-}
-
-.hero {
-  background-color: var(--mon-dark-background-color);
-  color: var(--mon-dark-text-color);
-}
-
-.hero .hero__title {
-  font-size: 3.3rem;
-}
-
-.hero .hero__subtitle {
-  font-size: 1.8rem;
-}
-
-.button__container {
+.header-github-link::before {
+  content: '';
+  width: 50px;
+  height: 50px;
+  margin-top: 16px;
   display: flex;
-  align-items: center;
-  justify-content: center;
+  background-color: var(--ifm-navbar-link-color);
+  mask-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 40 40' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12' fill='%23fff'/%3E%3C/svg%3E");
+
+  transition: background-color var(--ifm-transition-fast)
+    var(--ifm-transition-timing-default);
 }
 
-.button__container .button {
-  background-color: var(--ifm-color-primary);
-  border: none;
-  font-size: 1.4rem;
-  padding-top: 11px;
-  margin-top: 15px;
-  color: var(--mon-dark-text-color);
-  /* color: var(--ifm-font-color-base); */
+.header-github-link:hover::before {
+  background-color: var(--ifm-navbar-link-hover-color);
 }
 
-.button__container .button:hover {
+
+.hero--primary {
+  --ifm-hero-background-color: var(--ifm-background-color);
+  --ifm-hero-text-color: var(--ifm-font-color);
+}
+
+.container {
+  padding-top: 2.5rem;
+  padding-bottom: 1rem;
+}
+
+video {
+  max-width: 100%;
+  border-radius: 10px;
+}
+
+html.docs-wrapper, html.blog-wrapper {
+  --ifm-font-size-base: 125%;
+}
+
+.get-started-center {
+  margin-top: 3.5rem;
+}
+
+.theme-code-block div {
+  --prism-background-color: var(--ifm-navbar-background-color);
+  background-color: var(--ifm-navbar-background-color);
+}
+
+/* mobile */
+@media screen and (max-width: 996px) {
+  :root {
+    --ifm-code-font-size: 95%;
+    --ifm-font-size-base: 110%;
+  }
+
+  .get-started-center {
+    margin-top: 0;
+  }
+
+  html.docs-wrapper, html.blog-wrapper {
+    --ifm-font-size-base: 100%;
+  }
+}
+
+
+
+.text-pop {
+  color: var(--ifm-color-primary-lighter)
+}
+
+.mono {
+  font-family: var(--ifm-font-family-monospace);
+}
+
+.underline-links a {
+  text-decoration: underline;
+  color: var(--ifm-font-color);
+}
+
+.team-pic {
+  margin: 2rem 0;
+}
+
+.team-pic img {
+  border-radius: 50% !important;
+  margin-bottom: 1rem;
+}
+
+.team-pic h3 {
+  margin-bottom: 0;
+}
+
+.underline-links a {
+  text-decoration: underline;
+}
+
+blockquote {
+  margin-bottom: 3rem;
+}
+
+.get-started-button .button {
   background-color: var(--ifm-color-primary-darker);
+  color: var(--ifm-font-color);
+  border: none;
+  padding-top: 17px;
 }
 
-.os__buttons .button__container .button {
-  font-size: 1.2rem;
-}
-
-.button__container .coming__soon {
-  font-size: 1.2rem;
-  margin-top: 23px;
-  font-weight: var(--ifm-button-font-weight);
+.get-started-button .button:hover {
+  background-color: var(--ifm-color-primary-darkest);
 }
 
 .os__buttons .col {
-  padding-bottom: 6rem;
+  padding: 3rem 0;
 }
 
-@media screen and (max-width: 966px) {
-  .hero .hero__title {
-    font-size: 2.6rem;
-  }
 
-  .hero .hero__subtitle {
-    font-size: 1.4rem;
-  }
-}
 
 .footer {
-  background-color: var(--mon-dark-background-color);
   padding-top: 5rem;
-}
-
-
-.docusaurus-highlight-code-line {
-  background-color: rgb(72, 77, 91);
-  display: block;
-  margin: 0 calc(-1 * var(--ifm-pre-padding));
-  padding: 0 var(--ifm-pre-padding);
-}
-
-[class^="docMainContainer"] .prism-code {
-  font-size: 0.9rem;
 }
 
 .docs-intro {
@@ -163,12 +202,15 @@
   border-radius: 5px;
   object-fit: cover;
   box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px;
-  
-  /* background: no-repeat center url(/assets/video-loading-spinner.gif), var(--mon-dark-background-color); */
+
 }
 
 @media screen and (max-width: 650px) {
   .blog-video video {
     width: 98%;
   }
+}
+
+.newsletter-section {
+  padding-top: 1rem;
 }

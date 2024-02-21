@@ -6,16 +6,12 @@
  */
 
 .heroBanner {
-  padding: 6rem 2rem;
-  text-align: center;
-  position: relative;
-  overflow: hidden;
-  font-family: 'poppinsregular';
+
 }
 
-@media screen and (max-width: 966px) {
+@media screen and (max-width: 996px) {
   .heroBanner {
-    padding: 4rem 0;
+    padding: 0 0 4rem 0;
   }
 }
 
@@ -112,7 +108,7 @@
   height: 100px;
   width: 100px;
   background-size: contain !important;
-  margin: 0 auto;
+  margin: 0 auto 1rem auto;
   -ms-high-contrast-adjust: none;
 }
 
@@ -126,18 +122,4 @@
 
 .osLogo.apple {
   background: url(/assets/apple-logo.svg) center center no-repeat;
-}
-
-.osSection {
-  padding-bottom: 0;
-  /* background-color: #f5f5f5; */
-}
-
-.newsletterSection {
-  text-align: center;
-  background-color: #f5f5f5;
-}
-
-.newsletterSection p {
-  font-size: 1.1rem;
 }

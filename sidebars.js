@@ -1,12 +1,20 @@
 module.exports = {
   someSidebar: {
     'Get Started': [
-      'introduction',
       'install',
-      'write-first-story',
       'examples',
       'community',
       'learn-more'
+    ],
+    'Why Monarch': [
+      'hard-to-reach',
+      'data-sources-friction',
+      'test-edge-cases',
+      'debugging-sucks',
+      'tweaks-are-important',
+      'widget-tests-dark',
+      'other-pains',
+      'monarch-preview'
     ],
     'Advanced Usage': [
       'themes',
