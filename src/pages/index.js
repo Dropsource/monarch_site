@@ -381,9 +381,9 @@ function Home() {
             <h2>The Monarch team</h2>
             <p>We have been working on developer tools since 2014 and working with Flutter since 2018.</p>
             <div className="row text--center">
-              <div className="col col--6 team-pic">
+              <div className="col col--6 team-pic underline-links">
                 <img src="assets/fertrig.png" width="260" height="260" />
-                <h3>Fernando Trigoso</h3>
+                <h3><a href="https://trigoso.xyz/" target="_blank">Fernando Trigoso</a></h3>
                 <small>Creator and principal developer of Monarch</small>
               </div>
               <div className="col col--6 team-pic">
